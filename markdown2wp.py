@@ -3,6 +3,7 @@ import sys
 import markdown
 import json
 import requests
+from urllib.parse import urljoin
 import glob
 from datetime import datetime
 

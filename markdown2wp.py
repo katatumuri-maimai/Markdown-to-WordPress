@@ -7,7 +7,7 @@ print("はじめるよ")
 
 filelist = glob.glob('posts/*.md')
 
-for(i in filelist):
+for i in filelist:
     with open(filelist[i], mode='r', encoding='UTF-8') as fh:
         text = fh.read()
         md = markdown.Markdown()

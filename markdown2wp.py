@@ -6,6 +6,7 @@ import requests
 from urllib.parse import urljoin
 import glob
 from datetime import datetime
+import re
 
 print("はじめるよ")
 
@@ -49,29 +50,33 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 
 
-filelist = sys.argv[4]
-print(filelist)
+filelist_input = sys.argv[4]
+print(filelist_input)
 
-print('posts/*.md' in filelist)
+if 'posts/*.md' in filelist_input:
+    filelist = [s for s in filelist_input if re.match('pots/*.md', s)]
+    print(filelist)
 
-for file in filelist:
-    with open(file, mode='r', encoding='UTF-8') as fh:
-        text = fh.read()
-        md = markdown.Markdown(extensions=["extra"])
-        html = md.convert(text)
-        print("html")
-        title=file.replace('.md','').replace('posts/','')
-        h1= '<h1>'+title+'</h1>'
-        content= html.replace(h1,'')
+if len(filelist)!= 0 :
+    print("リストの中身があります")
+    for file in filelist:
+        with open(file, mode='r', encoding='UTF-8') as fh:
+            text = fh.read()
+            md = markdown.Markdown(extensions=["extra"])
+            html = md.convert(text)
+            print("html")
+            title=file.replace('.md','').replace('posts/','')
+            h1= '<h1>'+title+'</h1>'
+            content= html.replace(h1,'')
 
-        f = open("collections.json", 'r')
-        json_data = json.load(f)
+            f = open("collections.json", 'r')
+            json_data = json.load(f)
 
-        for key in json_data:
-            content = content.replace(key,json_data[key])
+            for key in json_data:
+                content = content.replace(key,json_data[key])
 
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
-        post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)
+            post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)
 
 print("できた！")

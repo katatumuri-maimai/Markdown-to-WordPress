@@ -52,8 +52,8 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 filelist_input = sys.argv[4]
 filelist_split=filelist_input.replace("[","").replace("]","").split(",")
-filelist=[filelist_split]
-print()
+filelist=[]
+print(filelist_split)
 l_in = [s for s in filelist_split if '.*.md' in s]
 print(l_in)
 

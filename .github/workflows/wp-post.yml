@@ -33,7 +33,5 @@ jobs:
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
           FILE_LIST: $(git diff origin/${GITHUB_BASE_REF}..origin/${GITHUB_HEAD_REF} --name-only --diff-filter=A -- '*.md')
         run: |
-          for $file in $FILE_LIST;then
-            echo $file
-            python markdown2wp.py "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" $file
-          fi
+          python markdown2wp.py "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" $FILE_LIST
+          

@@ -59,9 +59,9 @@ for file in filelist:
         md = markdown.Markdown(extensions=["extra"])
         html = md.convert(text)
         print("html")
-        h1= '<h1>*</h1>'
+        title=file.replace('.md','').replace('posts/','')
+        h1= '<h1>'+title+'</h1>'
         content= html.replace(h1,'')
-        title=file.replace('.md','')
         print(h1)
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）

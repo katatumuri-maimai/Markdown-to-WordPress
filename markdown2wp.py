@@ -62,6 +62,7 @@ for file in filelist:
         h1= '<h1>*</h1>'
         content= html.replace(h1,'')
         title=file.replace('.md','')
+        print(h1)
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
         post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)

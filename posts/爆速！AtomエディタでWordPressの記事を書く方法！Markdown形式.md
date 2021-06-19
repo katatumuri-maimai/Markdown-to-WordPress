@@ -72,6 +72,20 @@ Markdown形式で書くなら、以下のように書いたらOKです。
 codeを綺麗に表示したい
 ```
 
+```javascript
+import a
+
+```
+```css
+*{
+
+}
+```
+```python
+import
+
+```
+
 [wordpressにmarkdown形式で投稿するための設定][a118aa7a]
 
   [a118aa7a]: https://qiita.com/stmon19/items/77aee1027678755d040f "wordpressにmarkdown形式で投稿するための設定"

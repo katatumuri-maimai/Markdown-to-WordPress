@@ -57,9 +57,9 @@ for file in filelist:
         text = fh.read()
         md = markdown.Markdown(extensions=["extra"])
         html = md.convert(text)
-        print(html)
+        print("html")
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
-        post_article('draft', 'test-api-post', 'テストタイトルだよ', html, category_ids=[], tag_ids=[], media_id=None)
+        post_article('draft', 'test-api-post', 'テストタイトルだよ', "html", category_ids=[], tag_ids=[], media_id=None)
 
 print("できた！")

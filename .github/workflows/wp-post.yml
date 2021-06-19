@@ -32,6 +32,6 @@ jobs:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
         run: |
-          for file in $(git diff origin/${GITHUB_BASE_REF}..origin/${GITHUB_HEAD_REF} --name-only --diff-filter=A -- '*.md') ; do
+          for file in $(git diff origin/katatumuri-maimai-patch-1..origin/katatumuri-maimai-patch-1 --name-only --diff-filter=A -- '*.md') ; do
           python markdown2wp.py "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" file
           done

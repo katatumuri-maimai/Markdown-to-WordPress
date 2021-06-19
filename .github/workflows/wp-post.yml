@@ -38,7 +38,7 @@ jobs:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
         run: |
-          for file in $(git diff ${{ github.event.before }}..${{ github.event.after }} --name-only --diff-filter=A -- '*.md') ; do
+          for file in $(git diff-tree --no-commit-id --name-only -r <commit-ish>) ; do
             echo ${file}
           done
           

@@ -55,9 +55,8 @@ filelist=[]
 
 md_file_name = '.*.md'
 
-for i in range(len(filelist_input)):
-    if filelist_input[i] == '.*.md':
-        print(filelist_input[i])
+m = re.match(r'(.*).md', filelist_input)
+print(m)
 
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import sys
 import markdown
 import json
 import requests
@@ -6,6 +7,12 @@ import glob
 from datetime import datetime
 
 print("はじめるよ")
+
+WP_URL = sys.argv[0]
+WP_USERNAME = sys.argv[1]
+WP_PASSWORD = sys.argv[2]
+
+print (WP_URL)
 
 filelist = glob.glob('posts/*.md')
 print(filelist)

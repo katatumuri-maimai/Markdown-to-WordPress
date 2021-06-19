@@ -52,18 +52,11 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 filelist_input = sys.argv[4]
 filelist=[]
-regex = re.compile(r'(.md)$')
-print(filelist_input)
-print(regex)
 
-for name in filelist_input:
-    if regex.search(name):
-        filelist.append(name)
+md_file_name = '.*' + '.md'
 
-print(filelist_input)
-
-filelist = [re.sub('posts/(.*).md', s) for s in filelist_input if re.match('posts/.*.md', s)]
-print(filelist)
+for md_file_name in filelist_input:
+    print(md_file_name)
 
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")

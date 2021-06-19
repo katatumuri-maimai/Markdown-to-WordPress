@@ -67,7 +67,7 @@ for file in filelist:
         json_data = json.load(f)
 
         for key in json_data:
-            content = convert.replace(key,json_data[key])
+            content = content.replace(key,json_data[key])
         print(content)
 
 
@@ -76,7 +76,7 @@ for file in filelist:
         # code_header='<pre><code>'
         # code_fotter='</code></pre>'
         # code_html = '<pre><code class="language-html">'
-        # 
+        #
         # content_code=content.replace(code_header,'<!-- wp:codemirror-blocks/code-block --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>').replace(code_fotter,'</pre></div><!-- /wp:codemirror-blocks/code-block -->').replace(code_html,'<!-- wp:codemirror-blocks/code-block {"mode":"htmlmixed","mime":"text/html"} --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>')
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）

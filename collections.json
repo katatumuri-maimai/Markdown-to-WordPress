@@ -1,4 +1,4 @@
-{"""<pre><code>""":"""<!-- wp:codemirror-blocks/code-block --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>""",
-  """</code></pre>""":"""</pre></div><!-- /wp:codemirror-blocks/code-block -->""",
-  """<pre><code class="language-html">""":"""<!-- wp:codemirror-blocks/code-block {"mode":"htmlmixed","mime":"text/html"} --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>"""
+{"'<pre><code>'":"'<!-- wp:codemirror-blocks/code-block --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>'",
+  "'</code></pre>'":"'</pre></div><!-- /wp:codemirror-blocks/code-block -->'",
+  "'<pre><code class="language-html">'":"'<!-- wp:codemirror-blocks/code-block {"mode":"htmlmixed","mime":"text/html"} --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>'"
 }

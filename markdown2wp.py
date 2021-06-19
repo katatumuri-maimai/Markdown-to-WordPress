@@ -56,9 +56,9 @@ regex = re.compile(r'(.md)$')
 print(filelist_input)
 print(regex)
 
-for name in filelist_input:　　#filesは上記例で得られたリスト
-  if regex.search(name):
-      filelist.append(name)
+for name in filelist_input:
+    if regex.search(name):
+        filelist.append(name)
 
 print(filelist_input)
 

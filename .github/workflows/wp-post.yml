@@ -34,10 +34,10 @@ jobs:
 
       - name: echo output
         run: |
-          echo ${{ steps.getfile.outputs.files }}
+          echo "${{ steps.getfile.outputs.files }}"
       
       - name: markdown2wp
         env:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
-        run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+        run: python "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" "${{ steps.getfile.outputs.files }}"

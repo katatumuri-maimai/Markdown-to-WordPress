@@ -10,6 +10,6 @@ print(filelist)
 for file in filelist:
     with open(file, mode='r', encoding='UTF-8') as fh:
         text = fh.read()
-        md = markdown.Markdown()
+        md = markdown.Markdown(extensions=["extra"])
         html = md.convert(text)
         print(html)

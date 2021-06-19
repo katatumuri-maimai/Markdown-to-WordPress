@@ -51,7 +51,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 
 filelist_input = sys.argv[4]
-print(filelist_input.split())
+print(filelist_input.replace("[","'").replace("]","'").split())
 filelist=[]
 
 for i in range(len(filelist_input)):

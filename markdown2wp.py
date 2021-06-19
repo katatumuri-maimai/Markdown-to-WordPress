@@ -59,7 +59,7 @@ if 'posts/*.md' in filelist_input:
     print(filelist)
 
 if len(filelist)!= 0 :
-    print("リストの中身があります")
+    print(".mdファイルを検出したので、HTMLに変換します。")
     for file in filelist:
         with open(file, mode='r', encoding='UTF-8') as fh:
             text = fh.read()
@@ -76,8 +76,10 @@ if len(filelist)!= 0 :
             for key in json_data:
                 content = content.replace(key,json_data[key])
 
-
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
             post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)
 
-print("できた！")
+else:
+    print(".mdファイルはなかったみたいです。")
+
+print("処理が終了しました。")

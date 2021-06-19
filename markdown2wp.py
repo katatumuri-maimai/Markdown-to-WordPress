@@ -51,6 +51,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 
 filelist_input = sys.argv[4]
+filelist=[]
 print(filelist_input)
 
 if 'posts/*.md' in filelist_input:

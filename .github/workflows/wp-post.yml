@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [katatumuri-maimai-patch-1]
 
+env:
+  TARGET_BRANCH: ${{ github.base_ref }}
+
 jobs:
   build:
 
@@ -34,7 +37,6 @@ jobs:
         env:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
-          TARGET_BRANCH: ${{ github.base_ref }}
         run: |
           for file in $(git diff origin/${TARGET_BRANCH} HEAD --diff-filter=AM --name-only -- "*.md") ; do
             echo ${file}

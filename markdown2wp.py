@@ -56,7 +56,7 @@ filelist=[]
 md_file_name = '.*.md'
 
 for i in range(len(filelist_input)):
-    if filelist_input[i] == md_file_name:
+    if filelist_input[i] == '.*.md':
         print(filelist_input[i])
 
 if len(filelist)!= 0 :

@@ -59,6 +59,9 @@ l_n_str = [str(n) for n in filelist_split]
 print("l_n_str")
 print(l_n_str)
 
+l_re_match = [s for s in l_n_str if re.match('.*\.md', s)]
+print(l_re_match)
+
 l_in = [s for s in l_n_str if '.*\.md' in s]
 print("l_in")
 print(l_in)

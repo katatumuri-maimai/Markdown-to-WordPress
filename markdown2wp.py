@@ -51,6 +51,9 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 filelist = sys.argv[4]
 print(filelist)
+
+print(filelist.index('*.md'))
+
 for file in filelist:
     with open(file, mode='r', encoding='UTF-8') as fh:
         text = fh.read()

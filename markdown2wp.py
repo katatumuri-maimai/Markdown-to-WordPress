@@ -53,7 +53,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 filelist_input = sys.argv[4]
 filelist=[]
 
-md_file_name = '.*' + '.md'
+md_file_name = '.*.md'
 
 for md_file_name in filelist_input:
     print(md_file_name)

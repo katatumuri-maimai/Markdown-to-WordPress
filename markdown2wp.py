@@ -54,9 +54,9 @@ filelist_input = sys.argv[4]
 filelist=[]
 print(filelist_input)
 
-if 'posts/(.*).md' in filelist_input:
-    filelist = [s for s in filelist_input if re.match('posts/*.md', s)]
-    print(filelist)
+
+filelist = [s for s in filelist_input if re.match('posts/*.md', s)]
+print(filelist)
 
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")

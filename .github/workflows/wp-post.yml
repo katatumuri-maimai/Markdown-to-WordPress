@@ -2,9 +2,9 @@ name: Advanced Usage
 
 on:
   push:
-    branches: [katatumuri-maimai-patch-1]
+    branches: [main]
   pull_request:
-    branches: [katatumuri-maimai-patch-1]
+    branches: [main]
     
 jobs:
   build:

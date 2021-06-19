@@ -62,7 +62,12 @@ for file in filelist:
         title=file.replace('.md','').replace('posts/','')
         h1= '<h1>'+title+'</h1>'
         content= html.replace(h1,'')
-        print(h1)
+
+        code_header='<pre><code>'
+        code_fotter='</code></pre>'
+        code_html = '<pre><code class="language-html">'
+
+        content_code=content.replace(code_header,'<!-- wp:codemirror-blocks/code-block --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>').replace(code_fotter,'</pre></div><!-- /wp:codemirror-blocks/code-block -->').replace(code_html,'<!-- wp:codemirror-blocks/code-block {"mode":"htmlmixed","mime":"text/html"} --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>')
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
         post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)

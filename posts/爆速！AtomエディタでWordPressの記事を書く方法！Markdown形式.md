@@ -70,10 +70,6 @@ Markdown形式で書くなら、以下のように書いたらOKです。
 ## ソースコードを綺麗に表示
 
 
-[wordpressにmarkdown形式で投稿するための設定][a118aa7a]
-
-  [a118aa7a]: https://qiita.com/stmon19/items/77aee1027678755d040f "wordpressにmarkdown形式で投稿するための設定"
-
 ↑こちらの記事を参考にCrayon Syntax Highlighterプラグインを入れてみたらエラーがやighlighterブロックに変換できなかったので、CodeMirror Blocksを入れました。
 これで、マークダウンで書いたコードをWordPressの投稿画面でポチポチするとコードブロックに返還できるようになりました。
 （一回変換すると自動で変換してくれるようになるみたいだがはて…？）

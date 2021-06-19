@@ -41,7 +41,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    # send POST request
    res = requests.post(urljoin(WP_URL, "wp-json/wp/v2/posts"),
                        data=json.dumps(payload),
-                       headers={'Content-type': "application/json",'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36"},
+                       headers={'Content-type': "application/json"},
                        auth=(user_, pass_))
    print('----------\n件名:「{}」の投稿リクエスト結果 res.status: {}'.format(title, repr(res.status_code)))
    return res

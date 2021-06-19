@@ -1,27 +1,32 @@
-name: Advanced Usage
+# This is a basic workflow to help you get started with Actions
+name: test
 
-on: push
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ main ]
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  convert_via_pandoc:
-    runs-on: ubuntu-18.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: create file list
-        id: files_list
-        run: |
-          echo "Lorem ipsum" > lorem_1.md  # create two example files
-          echo "dolor sit amet" > lorem_2.md
-          mkdir output  # create output dir
-          # this will also include README.md
-          echo "::set-output name=files::$(printf '"%s" ' *.md)"
-
-      - uses: docker://pandoc/latex:2.9
-        with:
-          args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
-          
-      - uses: actions/upload-artifact@master
-        with:
-          name: output
-          path: output
+    - uses: actions/checkout@master
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+    - name: Generate PDF
+      uses: 3rdJCG/mdtopdf-action@0.1.0
+      with:
+        root_file: main.md
+    - name: Commit files
+      run: |
+        git add main.pdf
+        git config --local user.email "action@github.com"
+        git config --local user.name "katatumuri-maimai"
+        git commit -m "Generate main.pdf" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}

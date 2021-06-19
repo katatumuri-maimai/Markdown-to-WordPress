@@ -52,7 +52,9 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 filelist_input = sys.argv[4]
 filelist=[]
+regex = re.compile(r'(.md)$')
 print(filelist_input)
+print(regex)
 
 
 filelist = [re.sub('posts/(.*).md', s) for s in filelist_input if re.match('posts/.*.md', s)]

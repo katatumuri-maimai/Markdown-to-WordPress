@@ -4,7 +4,8 @@ import json
 
 print("はじめるよ")
 
-with open("main.md") as fh:
+with open("main.md", mode='r', encoding='UTF-8') as fh:
+    text = f.read()
     md = markdown.Markdown()
-    html = md.convert(fh)
+    html = md.convert(text)
     print(html)

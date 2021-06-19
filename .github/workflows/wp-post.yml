@@ -33,6 +33,6 @@ jobs:
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
         run: |
           file = $(git diff origin/${GITHUB_BASE_REF}..origin/${GITHUB_HEAD_REF} --name-only --diff-filter=A -- '*.md')
-          if $file != null;then
-            python markdown2wp.py "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" $file
+          test -e $file
+          python markdown2wp.py "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" $file
           fi

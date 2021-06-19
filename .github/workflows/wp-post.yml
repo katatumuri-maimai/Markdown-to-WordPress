@@ -24,8 +24,8 @@ jobs:
       - uses: docker://pandoc/core:2.9
         with:
           args: --output=output/test1.html ${{ steps.files_list.outputs.files }}
-          
-      - uses: actions/upload-artifact@katatumuri-maimai-patch-1
+
+      - uses: actions/upload-artifact@master
         with:
           name: output
           path: output

@@ -1,6 +1,10 @@
 name: Advanced Usage
 
-on: push
+on:
+  push:
+    branches: [katatumuri-maimai-patch-1]
+  pull_request:
+    branches: [katatumuri-maimai-patch-1]
 
 jobs:
   convert_via_pandoc:
@@ -21,7 +25,7 @@ jobs:
         with:
           args: --output=output/test1.html ${{ steps.files_list.outputs.files }}
           
-      - uses: actions/upload-artifact@main
+      - uses: actions/upload-artifact@katatumuri-maimai-patch-1
         with:
           name: output
           path: output

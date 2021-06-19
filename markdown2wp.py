@@ -71,7 +71,7 @@ for file in filelist:
 
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
-        post_article('draft', 'test-api-post', title, content_code, category_ids=[], tag_ids=[], media_id=None)
+        post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)
         shutil.move(file,'./posted')
 
 print("できた！")

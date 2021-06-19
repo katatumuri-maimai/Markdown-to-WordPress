@@ -53,6 +53,9 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 filelist_input = sys.argv[4]
 filelist=[]
 
+for i in range(len(filelist_input)):
+    print(i)
+
 md_file_name = '.*.md'
 
 m = re.match(r'(.*).md', filelist_input)

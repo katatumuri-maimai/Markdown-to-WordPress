@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: WP-POST
 
 # Controls when the action will run. 
 on:
@@ -28,6 +28,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Markdown to HTML
         uses: lifepal/markdown-to-html@v1.2
+        with: 
+          text: 'Hello there'
 
 
       # Runs a set of commands using the runners shell

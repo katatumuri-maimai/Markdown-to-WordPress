@@ -43,7 +43,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
                        data=json.dumps(payload),
                        headers={'Content-type': "application/json"},
                        auth=(user_, pass_))
-   print('----------\n件名:「{}」の投稿リクエスト結果:{} res.status: {}'.format(title, "result", repr(res.status_code)))
+   print('----------\n件名:「{}」の投稿リクエスト結果 res.status: {}'.format(title, repr(res.status_code)))
    return res
 
 

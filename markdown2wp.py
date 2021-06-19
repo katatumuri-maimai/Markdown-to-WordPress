@@ -55,7 +55,7 @@ filelist=[]
 print(filelist_input)
 
 
-filelist = [s for s in filelist_input if re.match('posts/*.md', s)]
+filelist = [re.sub('posts/(.*).md', s) for s in l if re.match('posts/.*.md', s)]
 print(filelist)
 
 if len(filelist)!= 0 :

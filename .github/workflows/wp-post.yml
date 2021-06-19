@@ -9,3 +9,4 @@ jobs:
       - uses: docker://pandoc/core:2.9
         with:
           args: pandoc main.md -f markdown -t html -s -o test1.html
+          working-directory: ./

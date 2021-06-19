@@ -5,7 +5,7 @@ import json
 print("はじめるよ")
 
 with open("main.md", mode='r', encoding='UTF-8') as fh:
-    text = f.read()
+    text = fh.read()
     md = markdown.Markdown()
     html = md.convert(text)
     print(html)

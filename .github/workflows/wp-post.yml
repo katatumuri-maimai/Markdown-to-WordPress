@@ -34,4 +34,4 @@ jobs:
         run: |
           BEFORE_SHA=$(jq -r '.before' $GITHUB_EVENT_PATH)
           AFTER_SHA=$(jq -r '.after' $GITHUB_EVENT_PATH)
-          git diff-tree --no-commit-id --name-only -r <commit-ish>
+          git diff-tree --no-commit-id --name-only -r ${{ github.sha }}

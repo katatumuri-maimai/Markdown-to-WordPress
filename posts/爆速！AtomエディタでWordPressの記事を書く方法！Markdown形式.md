@@ -53,21 +53,6 @@ Markdown形式で書くなら、以下のように書いたらOKです。
   今はそのままコピペしてもいけるので、参考までに。
 ※WordPressの方のエディタは、ブロックエディタで試したので、テキストエディタで使えなかったらごめんなさいｗ
 
-## Markdown
-
-[Qiitaに投稿するマークダウン（Markdown）記法のメモ][249a0451]
-
-  [249a0451]: https://qiita.com/maboy/items/bbfea777544b96b57cda "Qiitaに投稿するマークダウン（Markdown）記法のメモ"
-
-  [  WordPressでMarkdownを使ってみる][75e75510]
-
-  [75e75510]: https://gatespace.jp/2014/07/03/wordpress-markdown/ "WordPressでMarkdownを使ってみる"
-
-[  【cheatsheet】Markdownとは？【使い方/書き方】][a615324a]
-
-  [a615324a]: https:/demo/theme.html "Theme Demo"
-
-
 
 ## 今後のためのメモ
   Githubと連携して自動で記事投稿できる可能性がある気がするので、後で読みたい記事を貼っておきます。

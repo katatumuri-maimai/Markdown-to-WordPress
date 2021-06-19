@@ -38,7 +38,11 @@ jobs:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
         run: |
-          for file in $(git diff-tree --no-commit-id --name-only -r <commit-ish>) ; do
-            echo ${file}
-          done
+          git diff origin/${GITHUB_BASE_REF}..origin/${GITHUB_HEAD_REF} \
+            --diff-filter=AM \
+            --name-only -- '*.md' \
+            | while read script ; do \
+                echo $script
+              done
+          test ! -e error.$$
           

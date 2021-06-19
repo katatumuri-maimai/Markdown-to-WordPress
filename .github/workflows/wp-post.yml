@@ -17,9 +17,9 @@ jobs:
           # this will also include README.md
           echo "::set-output name=files::$(printf '"%s" ' *.md)"
 
-      - uses: docker://pandoc/latex:2.9
+      - uses: docker://pandoc/core:2.9
         with:
-          args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
+          args: --output=output/test1.html ${{ steps.files_list.outputs.files }}
           
       - uses: actions/upload-artifact@main
         with:

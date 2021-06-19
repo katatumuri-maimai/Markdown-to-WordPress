@@ -12,6 +12,7 @@ print("はじめるよ")
 WP_URL = sys.argv[1]
 WP_USERNAME = sys.argv[2]
 WP_PASSWORD = sys.argv[3]
+print(WP_USERNAME)
 
 def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    """

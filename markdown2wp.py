@@ -6,6 +6,7 @@ import requests
 from urllib.parse import urljoin
 import glob
 from datetime import datetime
+import shutil
 
 print("はじめるよ")
 
@@ -49,8 +50,6 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 
 
-print (WP_URL)
-
 filelist = glob.glob('posts/*.md')
 print(filelist)
 for file in filelist:
@@ -71,15 +70,8 @@ for file in filelist:
         print(content)
 
 
-
-        #
-        # code_header='<pre><code>'
-        # code_fotter='</code></pre>'
-        # code_html = '<pre><code class="language-html">'
-        #
-        # content_code=content.replace(code_header,'<!-- wp:codemirror-blocks/code-block --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>').replace(code_fotter,'</pre></div><!-- /wp:codemirror-blocks/code-block -->').replace(code_html,'<!-- wp:codemirror-blocks/code-block {"mode":"htmlmixed","mime":"text/html"} --><div class="wp-block-codemirror-blocks-code-block code-block"><pre>')
-
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
-        # post_article('draft', 'test-api-post', title, content_code, category_ids=[], tag_ids=[], media_id=None)
+        post_article('draft', 'test-api-post', title, content_code, category_ids=[], tag_ids=[], media_id=None)
+        shutil.move(file,'./posted')
 
 print("できた！")

@@ -30,14 +30,14 @@ jobs:
       - name: get changed files
         id: getfile
         run: |
-          echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
+          echo "::set-output name=files::$(git diff --no-commit-id --name-only -r ${{ github.sha }} -- '*.md')"
 
       - name: echo output
         run: |
-          echo ${{ steps.getfile.outputs.files }}
+          echo "${{ steps.getfile.outputs.files }}"
       
       - name: markdown2wp
         env:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
-        run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+        run: python "markdown2wp.py" "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" "${{ steps.getfile.outputs.files }}"

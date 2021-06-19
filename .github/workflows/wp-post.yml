@@ -34,7 +34,7 @@ jobs:
         run: |
           BEFORE_SHA=$(jq -r '.before' $GITHUB_EVENT_PATH)
           AFTER_SHA=$(jq -r '.after' $GITHUB_EVENT_PATH)
-          for file in $(git diff ${BEFORE_SHA}..${AFTER_SHA} --name-only --diff-filter=A -- '*.md') ; do
+          for file in $(git diff 05d5c9734895be093e4802022bde65eb8bd53b6b..c2210a1249717a24ab3d0679e4e5425f44058281 --name-only --diff-filter=A -- '*.md') ; do
             echo ${file}
           done
           

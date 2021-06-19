@@ -55,12 +55,15 @@ filelist_split=filelist_input.replace("[","").replace("]","").split(",")
 filelist=[]
 print(filelist_split)
 l_in = [s for s in filelist_split if '.*.md' in s]
+print("l_in")
 print(l_in)
 
 l_si_i = [int(s) for s in filelist_split]
+print("l_si_i")
 print(l_si_i)
 
 l_n_str = [str(n) for n in filelist_split]
+print("l_n_str")
 print(l_n_str)
 
 if len(filelist)!= 0 :

@@ -58,7 +58,7 @@ l_n_str = [str(n) for n in filelist_split]
 print(l_n_str)
 
 filelist = [s for s in l_n_str if re.match('.*\.md', s)]
-print(l_re_match)
+print(filelist)
 
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")

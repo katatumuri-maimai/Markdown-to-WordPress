@@ -40,4 +40,4 @@ jobs:
         env:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
-        run: python "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" "${{ steps.getfile.outputs.files }}"
+        run: python "markdown2wp.py" "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" "${{ steps.getfile.outputs.files }}"

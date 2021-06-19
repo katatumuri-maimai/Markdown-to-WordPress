@@ -51,6 +51,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 
 filelist_input = sys.argv[4]
+print(type(filelist_input))
 filelist=[]
 
 for i in range(len(filelist_input)):

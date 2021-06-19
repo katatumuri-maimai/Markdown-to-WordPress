@@ -52,19 +52,13 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 filelist_input = sys.argv[4]
 filelist_split=filelist_input.replace("[","").replace("]","").split(",")
-filelist=[]
 print(filelist_split)
 
 l_n_str = [str(n) for n in filelist_split]
-print("l_n_str")
 print(l_n_str)
 
-l_re_match = [s for s in l_n_str if re.match('.*\.md', s)]
+filelist = [s for s in l_n_str if re.match('.*\.md', s)]
 print(l_re_match)
-
-l_in = [s for s in l_n_str if '.*\.md' in s]
-print("l_in")
-print(l_in)
 
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")

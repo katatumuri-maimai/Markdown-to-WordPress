@@ -68,23 +68,7 @@ Markdown形式で書くなら、以下のように書いたらOKです。
   [a615324a]: https://suwaru.tokyo/%E3%80%90cheatsheet%E3%80%91markdown%E3%81%A8%E3%81%AF%EF%BC%9F%E3%80%90%E4%BD%BF%E3%81%84%E6%96%B9-%E6%9B%B8%E3%81%8D%E6%96%B9%E3%80%91/ "【cheatsheet】Markdownとは？【使い方/書き方】"
 
 ## ソースコードを綺麗に表示
-```html
-codeを綺麗に表示したい
-```
 
-```javascript
-import a
-
-```
-```css
-*{
-
-}
-```
-```python
-import
-
-```
 
 [wordpressにmarkdown形式で投稿するための設定][a118aa7a]
 

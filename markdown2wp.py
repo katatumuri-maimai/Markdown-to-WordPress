@@ -54,8 +54,8 @@ filelist_input = sys.argv[4]
 filelist_split=filelist_input.replace("[","").replace("]","").split(",")
 filelist=[]
 
-m = re.match(r'(.*).md', filelist_split)
-print(m)
+l_in = [s for s in filelist_split if '.*\.md' in s]
+print(l_in)
 
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")

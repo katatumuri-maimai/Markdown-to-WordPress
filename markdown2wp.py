@@ -12,7 +12,6 @@ print("はじめるよ")
 WP_URL = sys.argv[1]
 WP_USERNAME = sys.argv[2]
 WP_PASSWORD = sys.argv[3]
-print(WP_USERNAME)
 
 def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    """
@@ -62,6 +61,6 @@ for file in filelist:
         print("html")
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
-        post_article('draft', 'test-api-post', 'テストタイトルだよ', "html", category_ids=[], tag_ids=[], media_id=None)
+        post_article('draft', 'test-api-post', 'テストタイトルだよ', html, category_ids=[], tag_ids=[], media_id=None)
 
 print("できた！")

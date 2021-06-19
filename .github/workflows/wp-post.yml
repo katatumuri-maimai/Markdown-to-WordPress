@@ -38,7 +38,10 @@ jobs:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
         run: |
-          for file in $(git diff origin/${TARGET_BRANCH} HEAD --diff-filter=AM --name-only -- "*.md") ; do
+          BEFORE_SHA=$(jq -r '.before' $GITHUB_EVENT_PATH)
+          AFTER_SHA=$(jq -r '.after' $GITHUB_EVENT_PATH)
+          REF_BRANCH=$(jq -r '.ref' $GITHUB_EVENT_PATH)
+          for file in $(git diff ${BEFORE_SHA}..${AFTER_SHA} --name-only --diff-filter=A -- '*.md') ; do
             echo ${file}
           done
           

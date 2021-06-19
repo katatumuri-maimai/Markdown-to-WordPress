@@ -55,9 +55,9 @@ filelist=[]
 
 md_file_name = '.*.md'
 
-for name in filelist_input:
-    if filelist_input[name] == md_file_name:
-        print(filelist_input[name])
+for i in range(len(filelist_input)):
+    if filelist_input[i] == md_file_name:
+        print(filelist_input[i])
 
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")

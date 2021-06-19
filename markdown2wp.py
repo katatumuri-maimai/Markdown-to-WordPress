@@ -6,7 +6,6 @@ import requests
 from urllib.parse import urljoin
 import glob
 from datetime import datetime
-import shutil
 
 print("はじめるよ")
 
@@ -50,7 +49,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 
 
 
-filelist = glob.glob('posts/*.md')
+filelist = sys.argv[4]
 print(filelist)
 for file in filelist:
     with open(file, mode='r', encoding='UTF-8') as fh:
@@ -67,11 +66,9 @@ for file in filelist:
 
         for key in json_data:
             content = content.replace(key,json_data[key])
-        print(content)
 
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
         post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)
-        shutil.move(file,'./posted')
 
 print("できた！")

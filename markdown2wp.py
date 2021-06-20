@@ -16,7 +16,6 @@ WP_PASSWORD = sys.argv[3]
 
 def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    """
-   記事を投稿して成功した場合はTrue、失敗した場合はFalseを返します。
    :param status: 記事の状態（公開:publish, 下書き:draft）
    :param slug: 記事識別子。URLの一部になる（ex. slug=aaa-bbb/ccc -> https://wordpress-example.com/aaa-bbb/ccc）
    :param title: 記事のタイトル
@@ -29,12 +28,13 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    # credential and attributes
    user_ = WP_USERNAME
    pass_ = WP_PASSWORD
+   date = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
    # build request body
    payload = {"status": status,
               "slug": slug,
               "title": title,
               "content": content,
-              "date": datetime.now().isoformat(),
+              "date": date,
               "categories": category_ids,
               "tags": tag_ids}
    if media_id is not None:

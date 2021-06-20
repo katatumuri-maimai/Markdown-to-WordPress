@@ -57,7 +57,7 @@ print(filelist_split)
 l_n_str = [str(n) for n in filelist_split]
 print(l_n_str)
 
-filelist = [s for s in l_n_str if re.match('.*\.md', s)]
+filelist = [s for s in l_n_str if re.match('posts\/.*\.md', s)]
 print(filelist)
 
 if len(filelist)!= 0 :

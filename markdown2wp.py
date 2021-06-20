@@ -29,7 +29,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    user_ = WP_USERNAME
    pass_ = WP_PASSWORD
    JST = timezone(timedelta(hours=+9), 'JST')
-   dt = datetime.now(JST)
+   dt = datetime.now(JST).isoformat()
    # build request body
    payload = {"status": status,
               "slug": slug,

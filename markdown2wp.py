@@ -5,7 +5,7 @@ import json
 import requests
 from urllib.parse import urljoin
 import glob
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import re
 
 print("はじめるよ")
@@ -28,13 +28,14 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    # credential and attributes
    user_ = WP_USERNAME
    pass_ = WP_PASSWORD
-   date = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
+   JST = timezone(timedelta(hours=+9), 'JST')
+   dt = datetime.now(JST)
    # build request body
    payload = {"status": status,
               "slug": slug,
               "title": title,
               "content": content,
-              "date": date,
+              "date": dt,
               "categories": category_ids,
               "tags": tag_ids}
    if media_id is not None:

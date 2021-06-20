@@ -30,14 +30,7 @@ Reactでモーダルウィンドウを作る時に、「閉じるボタンだけ
 実際のコードを見てみたい方はこちらから↓
 
 [GitHubでコードを見る](https://github.com/katatumuri-maimai/react-code-sample/tree/develop/my-react-app/src/pages/modaltest)
-
-## 環境
-- Reactを使っている
-- create-react-appで作成している
-
-私の環境はこんな感じです♪
-ディレクトリ構造などは作るアプリによって違うと思うので、のせません。
-質問などはコメントによろしくお願いいたします(*´ω｀)
+[デモサイト](https://katatumuri-maimai.github.io/ModalPage/Modal_ClassComponent)もあります！
 
 ## モーダルを作る流れ
 色んなやり方があると思うのですが、私はこんな流れでモーダルを作ってみました↓
@@ -662,20 +655,27 @@ class Modal extends React.Component {
 こうすることで、モーダルを開くボタンの時と同様に、`addEventListener`の適用外にできます。
 
 
+これでモーダルの完成です～！
+お疲れ様でした♪
+
 ## モーダル作成時の注意点
-アンマウント時のメモリリーク対策をするの詳しい説明
+アンマウント時のメモリリーク対策ができていないと、以下の様なエラーが出ます(´;ω;｀)
 
 ![アンマウント時のエラー](images/2021/06/アンマウント時のエラー【クラスコンポーネント】.png)
-Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.
+> Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.
     at Modal_ClassComponent
 
+```javascript
+componentWillUnmount(){
+  document.removeEventListener('click',this.closeModal)
+}
+```
+↑のように記述することで、対策できるので、気を付けてみてください♪
 
 
+## 参考
 
-Reactはマウント・アンマウントの扱いが難しい…。
-一度クリックイベントを発動するして関数を呼び出すと、他のページでもクリックするたびに関数が動くんですよね。
-
-
+[【JavaScript】クリックイベントで取得したオブジェクトの使い方 まとめ](http://www.hp-stylelink.com/news/2014/04/20140422.php)
 
 [React.Componentで外部要素のevent bind,unbindを正しく行う](https://creators-note.chatwork.com/entry/2017/11/22/113344)
 

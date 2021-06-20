@@ -65,7 +65,7 @@ if len(filelist)!= 0 :
     for file in filelist:
         with open(file, mode='r', encoding='UTF-8') as fh:
             text = fh.read()
-            md = markdown.Markdown(extensions=["extra"])
+            md = markdown.Markdown(extensions=["extra",'nl2br','sane_lists'])
             html = md.convert(text)
             print("html")
             title=file.replace('.md','').replace('posts/','')

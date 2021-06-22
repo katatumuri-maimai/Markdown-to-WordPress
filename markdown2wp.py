@@ -67,6 +67,90 @@ def find_md_file(filelist_input):
 
     return filelist
 
+#
+# .mdファイルの冒頭に記事情報を挿入
+#
+def add_article_header(file):
+    article_header = ""
+    serial_number = ""
+    file_content = ""
+    with open(file, mode='r', encoding='UTF-8') as fh:
+        text = fh.read()
+        article_header_ini = re.findall('>-+<.*?>-+<',text, flags=re.DOTALL)
+        article_header_ini_content = re.findall('>-+<(.*?)>-+<',text, flags=re.DOTALL)
+        serial_ini = re.findall('識別番号\[.*?\]',text)
+        serial_number_ini = re.findall('識別番号\[(.*?)\]',text)
+        print(serial_number_ini)
+
+        if not article_header_ini:
+            article_header_ini=""
+        else:
+            article_header_ini = article_header_ini[0]
+
+        if not serial_number_ini:
+            serial_number_ini=""
+        else:
+            serial_number_ini = serial_number_ini[0]
+
+
+        if len(serial_number_ini)==0 and len(article_header_ini)==0:
+            serial_number = randomname(12)
+
+            article_header=""">------------<
+- タイトル:[]
+- 投稿時:p[]公開d[]下書き
+- カスタムURL:[]
+- カテゴリID:[]
+- タグID:[]
+- 見出し画像のID:[]
+- 識別番号[{}]
+>------------<
+""".format(serial_number)
+            file_content =article_header + text
+            print("1")
+
+        elif len(serial_number_ini)!=0 and len(article_header_ini)==0:
+            serial_number = randomname(12)
+            article_header = """>------------<
+- タイトル:[]
+- 投稿時:p[]公開d[]下書き
+- カスタムURL:[]
+- カテゴリID:[]
+- タグID:[]
+- 見出し画像のID:[]
+- 識別番号[{}]
+>------------<""".format(serial_number)
+            file_content = re.sub('識別番号\[.*?\]',article_header,text)
+
+        elif len(serial_number_ini)==0 and len(article_header_ini)!=0:
+            serial_number = randomname(12)
+            if not serial_ini:
+                article_header = """>------------<{}- 識別番号[{}]
+>------------<""".format(article_header_ini_content[0],serial_number)
+                file_content = text.replace(article_header_ini,article_header)
+                print("2.5")
+
+            else:
+                article_header = article_header_ini.replace('識別番号[]','識別番号[{}]'.format(serial_number))
+                print("3")
+                file_content = text.replace(article_header_ini,article_header)
+
+        elif len(serial_number_ini)!=0 and len(article_header_ini)!=0:
+            file_content = text
+            print("4")
+
+        fh.close()
+
+    if len(serial_number_ini)==0 or len(article_header_ini)==0:
+        with open(file, mode='w', encoding='UTF-8') as fh:
+            fh.write(file_content)
+            fh.close()
+            print(article_header)
+            print("書き込みした")
+
+#
+# .mdファイルの冒頭の記事情報を検出
+#
 def find_article_header(file):
     title =""
     status_p = ""
@@ -96,6 +180,7 @@ def find_article_header(file):
             category_ids = re.findall('\- カテゴリID\:\[(.*?)\]',heater_content, flags=re.DOTALL)[0]
             tag_ids = re.findall('\- タグID\:\[(.*?)\]',heater_content, flags=re.DOTALL)[0]
             media_id = re.findall('\- 見出し画像のID\:\[(.*?)\]',heater_content, flags=re.DOTALL)[0]
+            serial_number = re.findall('識別番号\[(.*?)\]',heater_content, flags=re.DOTALL)[0]
 
             if len(title)==0:
                 title = file_name
@@ -113,70 +198,19 @@ def find_article_header(file):
             print("記事投稿情報がありません。ファイル名をタイトルにしますね！")
             title = file_name
 
-        return title, state, slug, category_ids, tag_ids, media_id
+        return title, state, slug, category_ids, tag_ids, media_id, serial_number
+
+
+
 
 filelist = find_md_file(UPDATED_FILES)
 if len(filelist)!= 0 :
-    for file in filelist:
-        article_header = ""
-        serial_number = ""
-        file_content = ""
-        with open(file, mode='r', encoding='UTF-8') as fh:
-            text = fh.read()
-            article_header_ini = re.findall('>識別番号\[.*?\].>-+<.*?>-+<',text, flags=re.DOTALL)
-            serial_number_ini = re.findall('>識別番号\[(.*?)\]',article_header)
-
-            if not article_header_ini:
-                article_header_ini=""
-            else:
-                article_header_ini = article_header_ini[0]
-
-            if not serial_number_ini:
-                serial_number_ini=""
-            else:
-                serial_number_ini = serial_number_ini[0]
-
-            if len(serial_number_ini)==0 and len(article_header_ini)==0:
-                serial_number = randomname(12)
-                article_header=""">識別番号[{}]
->------------<
-- タイトル:[]
-- 投稿時:p[]公開d[]下書き
-- カスタムURL:[]
-- カテゴリID:[]
-- タグID:[]
-- 見出し画像のID:[]
->------------<""".format(serial_number)
-                print("1")
-
-            elif len(serial_number_ini)==0 and len(article_header_ini)!=0:
-                serial_number = randomname(12)
-                article_header = article_header_ini.replace('>識別番号[]','>識別番号[{}]'.format(serial_number))
-                print("2")
-
-            elif len(serial_number_ini)!=0 and len(article_header_ini)==0:
-                serial_number = serial_number_ini
-                article_header = article_header_ini.replace('>識別番号[]','>識別番号[{}]'.format(serial_number))
-                print("3")
-
-
-            elif len(serial_number_ini)!=0 and len(article_header_ini)!=0:
-                article_header = article_header_ini
-                print("4")
-
-            file_content = text.replace(article_header_ini,article_header)
-            fh.close()
-
-
-        with open(file, mode='w', encoding='UTF-8') as fh:
-            fh.write(file_content)
-            fh.close()
-            print("書き込みした")
-
-
-if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")
     for file in filelist:
+        add_article_header(file)
+        title, state, slug, category_ids, tag_ids, media_id, serial_number = find_article_header(file)
+
+
         with open(file, mode='r', encoding='UTF-8') as fh:
             text = fh.read()
             # print(text)

@@ -61,12 +61,22 @@ def find_md_file(filelist_input):
 
 
 filelist = find_md_file(UPDATED_FILES)
+
+for file in filelist:
+    with open(file, mode='r', encoding='UTF-8') as fh:
+        text = fh.read()
+        article_header = re.findall('>-+<.*?>-+<',text, flags=re.DOTALL)
+        
+        print(article_header)
+
+
+
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")
     for file in filelist:
         with open(file, mode='r', encoding='UTF-8') as fh:
             text = fh.read()
-            print(text)
+            # print(text)
             md = markdown.Markdown(extensions=["extra",'nl2br','sane_lists'])
             html = md.convert(text)
             print("htmlに変換しました。")

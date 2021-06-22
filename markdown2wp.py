@@ -118,10 +118,60 @@ def find_article_header(file):
 filelist = find_md_file(UPDATED_FILES)
 if len(filelist)!= 0 :
     for file in filelist:
+        article_header = ""
+        serial_number = ""
+        file_content = ""
         with open(file, mode='r', encoding='UTF-8') as fh:
             text = fh.read()
-            article_header = re.findall('>.*?>-+<.*?>-+<',text, flags=re.DOTALL)
-            print(article_header)
+            article_header_ini = re.findall('>識別番号\[.*?\].>-+<.*?>-+<',text, flags=re.DOTALL)
+            serial_number_ini = re.findall('>識別番号\[(.*?)\]',article_header)
+
+            if not article_header_ini:
+                article_header_ini=""
+            else:
+                article_header_ini = article_header_ini[0]
+
+            if not serial_number_ini:
+                serial_number_ini=""
+            else:
+                serial_number_ini = serial_number_ini[0]
+
+            if len(serial_number_ini)==0 and len(article_header_ini)==0:
+                serial_number = randomname(12)
+                article_header=""">識別番号[{}]
+>------------<
+- タイトル:[]
+- 投稿時:p[]公開d[]下書き
+- カスタムURL:[]
+- カテゴリID:[]
+- タグID:[]
+- 見出し画像のID:[]
+>------------<""".format(serial_number)
+                print("1")
+
+            elif len(serial_number_ini)==0 and len(article_header_ini)!=0:
+                serial_number = randomname(12)
+                article_header = article_header_ini.replace('>識別番号[]','>識別番号[{}]'.format(serial_number))
+                print("2")
+
+            elif len(serial_number_ini)!=0 and len(article_header_ini)==0:
+                serial_number = serial_number_ini
+                article_header = article_header_ini.replace('>識別番号[]','>識別番号[{}]'.format(serial_number))
+                print("3")
+
+
+            elif len(serial_number_ini)!=0 and len(article_header_ini)!=0:
+                article_header = article_header_ini
+                print("4")
+
+            file_content = text.replace(article_header_ini,article_header)
+            fh.close()
+
+
+        with open(file, mode='w', encoding='UTF-8') as fh:
+            fh.write(file_content)
+            fh.close()
+            print("書き込みした")
 
 
 if len(filelist)!= 0 :

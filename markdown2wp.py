@@ -176,9 +176,12 @@ def find_article_header(file):
 
             # 記事情報の抽出
             title = re.findall('\- タイトル\:\[(.*?)\]',heater_content, flags=re.DOTALL)[0]
+            upload_y = re.findall('\- WordPressにアップロードしますか？\:y\[(.*?)\]はいn\[.*?\]まだしない',heater_content, flags=re.DOTALL)[0]
+            upload_n = re.findall('\- WordPressにアップロードしますか？\:y\[.*?\]はいn\[(.*?)\]まだしない',heater_content, flags=re.DOTALL)[0]
+            upload = upload_y + upload_n
             status_p = re.findall('\- 投稿時\:p\[(.*?)\]公開d\[.*?\]下書き',heater_content, flags=re.DOTALL)[0]
-            status_b = re.findall('\- 投稿時\:p\[.*?\]公開d\[(.*?)\]下書き',heater_content, flags=re.DOTALL)[0]
-            state = status_p + status_b
+            status_d = re.findall('\- 投稿時\:p\[.*?\]公開d\[(.*?)\]下書き',heater_content, flags=re.DOTALL)[0]
+            state = status_p + status_d
             slug = re.findall('\- カスタムURL\:\[(.*?)\]',heater_content, flags=re.DOTALL)[0]
             category_ids = re.findall('\- カテゴリID\:\[(.*?)\]',heater_content, flags=re.DOTALL)[0]
             tag_ids = re.findall('\- タグID\:\[(.*?)\]',heater_content, flags=re.DOTALL)[0]
@@ -189,9 +192,19 @@ def find_article_header(file):
                 title = file_name
                 print("タイトル情報がないので、ファイル名「{}」をタイトルにしました。".format(title))
 
-            if len(state)==0 | len(state)==2:
+            if len(upload)==0 or len(upload)==2:
+                upload = "notupload"
+                print("下書き状態にしておきます。")
+            else:
+                upload = "upload"
+
+            if len(state)==0 or len(state)==2:
                 state = "draft"
                 print("下書き状態にしておきます。")
+            elif len(status_p)==0:
+                state = "draft"
+            elif len(status_d)==0:
+                state = "publish"
 
             if len(slug)==0:
                 slug = file_name
@@ -201,7 +214,7 @@ def find_article_header(file):
             print("記事投稿情報がありません。ファイル名をタイトルにしますね！")
             title = file_name
 
-        return title, state, slug, category_ids, tag_ids, media_id, serial_number
+        return title, upload, state, slug, category_ids, tag_ids, media_id, serial_number
 
 def isSerial(serial_number):
     Serial = False
@@ -220,20 +233,26 @@ if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")
     for file in filelist:
         add_article_header(file)
-        title, state, slug, category_ids, tag_ids, media_id, serial_number = find_article_header(file)
+        title, upload, state, slug, category_ids, tag_ids, media_id, serial_number = find_article_header(file)
 
-        if isSerial(serial_number):
-            print('既存の記事を編集')
+        # 'articles.json'に識別番号がある場合は、変更箇所だけ変更。ない場合は新しく登録。
+        with open('articles.json', 'r') as d:
+            json_articles = json.load(d)
 
-        else:
-            print('新しくID追加')
-            with open('articles.json', 'r') as d:
-                json_articles = json.load(d)
-                print(json_articles)
-                json_articles[serial_number]="remote"
+            if isSerial(serial_number):
+                id = json_articles[serial_number]["articleid"]
+            else:
+                id = "none"
 
-            with open('articles.json', mode='wt', encoding='utf-8') as f:
-                json.dump(json_articles, f, ensure_ascii=False, indent=2)
+            json_articles[serial_number]={
+                            "status":state,
+                            "upload":upload,
+                            "articleid":id
+                            }
+
+        with open('articles.json', mode='wt', encoding='utf-8') as f:
+            json.dump(json_articles, f, ensure_ascii=False, indent=2)
+            print('articles.jsonファイルに記事情報を追加しました。')
 
 
         with open(file, mode='r', encoding='UTF-8') as fh:

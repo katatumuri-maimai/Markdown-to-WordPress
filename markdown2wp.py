@@ -140,6 +140,7 @@ def add_article_header(file):
 
             article_header=""">------------<
 - タイトル:[]
+- WordPressにアップロードしますか？:y[]はいn[]まだしない
 - 投稿時:p[]公開d[]下書き
 - カスタムURL:[]
 - カテゴリID:[]
@@ -155,6 +156,7 @@ def add_article_header(file):
             serial_number = randomname(12)
             article_header = """>------------<
 - タイトル:[]
+- WordPressにアップロードしますか？:y[]はいn[]まだしない
 - 投稿時:p[]公開d[]下書き
 - カスタムURL:[]
 - カテゴリID:[]

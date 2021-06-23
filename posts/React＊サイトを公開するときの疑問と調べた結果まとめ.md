@@ -1,9 +1,9 @@
 >------------<
 - タイトル:[React＊サイトを公開するときの疑問と調べた結果まとめ]
-- WordPressにアップロードしますか？:y[]はいn[]まだしない
-- 投稿時:p[]公開d[]下書き
-- カスタムURL:[]
-- カテゴリID:[]
+- WordPressにアップロードしますか？:y[x]はいn[]まだしない
+- 投稿時:p[x]公開d[]下書き
+- カスタムURL:[React site deployment questions and research-results]
+- カテゴリID:[3]
 - タグID:[]
 - 見出し画像のID:[]
 - 識別番号[XpVZzeNDHRIx]

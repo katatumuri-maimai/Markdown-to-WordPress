@@ -216,6 +216,9 @@ def find_article_header(file):
 
         return title, upload, state, slug, category_ids, tag_ids, media_id, serial_number
 
+#
+# 識別番号があるかないか確認
+#
 def isSerial(serial_number):
     Serial = False
     with open('articles.json', 'r') as d:
@@ -225,6 +228,25 @@ def isSerial(serial_number):
             if key == serial_number:
                 Serial = True
     return Serial
+
+#
+# .mdファイルをＨＴＭＬに変換したものを返す
+#
+def md2html(file):
+    with open(file, mode='r', encoding='UTF-8') as fh:
+        text = fh.read()
+        # print(text)
+        md = markdown.Markdown(extensions=["extra",'nl2br','sane_lists'])
+        html = md.convert(text)
+        print("htmlに変換しました。")
+
+        f = open("collections.json", 'r')
+        json_data = json.load(f)
+
+        for key in json_data:
+            content = content.replace(key,json_data[key])
+
+    return content
 
 
 
@@ -254,24 +276,6 @@ if len(filelist)!= 0 :
             json.dump(json_articles, f, ensure_ascii=False, indent=2)
             print('articles.jsonファイルに記事情報を追加しました。')
 
-
-        with open(file, mode='r', encoding='UTF-8') as fh:
-            text = fh.read()
-            # print(text)
-            md = markdown.Markdown(extensions=["extra",'nl2br','sane_lists'])
-            html = md.convert(text)
-            print("htmlに変換しました。")
-
-            print("投稿前処理を行います。")
-            title=file.replace('.md','').replace('posts/','')
-            h1= '<h1>'+title+'</h1>'
-            content= html.replace(h1,'')
-
-            f = open("collections.json", 'r')
-            json_data = json.load(f)
-
-            for key in json_data:
-                content = content.replace(key,json_data[key])
 
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
             # post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)

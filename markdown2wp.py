@@ -39,7 +39,46 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
                        data=json.dumps(payload),
                        headers={'Content-type': "application/json"},
                        auth=(WP_USERNAME, WP_PASSWORD))
-   print('＝＝＝＝＝＝「{}」の送信結果 → {}:{}＝＝＝＝＝＝'.format(title, repr(res.reason),repr(res.status_code)))
+
+   articleid = post_res.json()["id"]
+   with open('articles.json', 'r') as d:
+       json_articles = json.load(d)
+       json_articles[serial_number]["articleid"] = articleid
+
+   with open('articles.json', mode='wt', encoding='utf-8') as f:
+       json.dump(json_articles, f, ensure_ascii=False, indent=2)
+       print('idをarticles.jsonに追加しました。')
+       
+   print('＝＝＝＝＝＝「{}」の新規投稿結果 → {}:{}＝＝＝＝＝＝'.format(title, repr(res.reason),repr(res.status_code)))
+   return res
+
+
+#
+# 更新処理関数
+#
+def patch_article(articleid,status, slug, title, content, category_ids, tag_ids, media_id):
+
+   # 情報の設定
+   JST = timezone(timedelta(hours=+9), 'JST')
+   dt = datetime.now(JST).isoformat()
+   # ボディ
+   payload = {"status": status,
+              "slug": slug,
+              "title": title,
+              "content": content,
+              "date": dt,
+              "categories": category_ids,
+              "tags": tag_ids}
+   if media_id is not None:
+       payload['featured_media'] = media_id
+   # 送信処理
+   res = requests.patch(urljoin(WP_URL, "wp-json/wp/v2/posts")+ "/" +str(articleid),
+                       data=json.dumps(payload),
+                       headers={'Content-type': "application/json"},
+                       auth=(WP_USERNAME, WP_PASSWORD))
+   print(urljoin(WP_URL, "wp-json/wp/v2/posts")+ "/" +str(articleid))
+   print(urljoin(WP_URL, "wp-json/wp/v2/posts/",articleid))
+   print('＝＝＝＝＝＝「{}」の更新結果 → {}:{}＝＝＝＝＝＝'.format(title, repr(res.reason),repr(res.status_code)))
    return res
 
 
@@ -284,20 +323,17 @@ if len(filelist)!= 0 :
         title, upload, state, slug, category_ids, tag_ids, media_id, serial_number,article_content = find_article_header(file)
 
         articleid = set_article_json(serial_number,state,upload)
-
         content = md2html(article_content)
 
-        
-        res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
-        id = res.json()["id"]
+        if articleid == "none":
+            print("新規投稿します")
 
-        with open('articles.json', 'r') as d:
-            json_articles = json.load(d)
-            id = json_articles[serial_number]["articleid"] = id
+            post_res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
 
-        with open('articles.json', mode='wt', encoding='utf-8') as f:
-            json.dump(json_articles, f, ensure_ascii=False, indent=2)
-            print('idをarticles.jsonに追加しました。')
+
+        else:
+            patch_res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
 else:
     print(".mdファイルはなかったみたいです。")
 

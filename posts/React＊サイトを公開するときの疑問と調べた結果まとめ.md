@@ -14,13 +14,10 @@ Reactでサイトを作ったはいいものの、どうやって公開したら
 ## 公開の仕方の疑問
 まずは、公開に関して疑問に思ったことを書いていきます～！
 
-<div class="sng-box box2">
-
 - create-react-appしてReactサイトを作ったけど、どうしたら公開できる？
 - Dockerを利用してReactサイトを作ったけど、コンテナごと公開するの…？
 - 公開先ってどこ？（レンタルサーバーとか？）
 
-</div>
 
 
 ### Q.create-react-appしてReactサイトを作ったけど、どうしたら公開できる？
@@ -62,8 +59,6 @@ HTMLやwebサーバー上のWordPressでサイトを公開することはあり�
 #### A.レンタルサーバーでも公開できる。公開用のサービスも沢山ある
 色んなデプロイ（公開）用のサービスがあるみたいですね。
 
-<div class="sng-box box2">
-
 - <a href="https://px.a8.net/svt/ejp?a8mat=3HEC9T+5OTGGA+CO4+609HU" rel="nofollow">エックスサーバー</a><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3HEC9T+5OTGGA+CO4+609HU" alt="">などのレンタルサーバー
 - [AWS Amplify](https://aws.amazon.com/jp/amplify/)
 - [Azure](https://azure.microsoft.com/ja-jp/)
@@ -71,7 +66,6 @@ HTMLやwebサーバー上のWordPressでサイトを公開することはあり�
 - [GitHub Pages](https://pages.github.com/)
 - [Netlify](https://www.netlify.com/)
 
-</div>
 
 参考:[CreateReactAppの公式ドキュメント](https://create-react-app.dev/docs/deployment/)では、各サービスでReactアプリを公開する手順が紹介されています。
 
@@ -79,13 +73,11 @@ HTMLやwebサーバー上のWordPressでサイトを公開することはあり�
 こちらの方は、静的なサーバー（レンタルサーバーなど）で公開してみたとのことですよ。
 
 ## 専門用語の疑問
-<div class="sng-box box2">
 
 - デプロイって何？
 - ビルドって何？
 - Reactで作ったのはアプリ？サイト？
 
-</div>
 
 ### Q.デプロイって何？
 「React　公開　やり方」　とかで調べていると、ちらほら**「デプロイ」**という言葉を見かけます。
@@ -132,14 +124,11 @@ Twitterみたいに、ユーザーが投稿したり設定を変更したりと�
 ## GitHub Pagesの疑問
 最後は、デプロイする時に利用したGitHub Pagesの疑問です～！
 
-<div class="sng-box box2">
-
 - GitHub Pagesって何？
 - サブディレクトリにあるReactアプリってどうやって公開するの？
 - gh-pagesで公開した後はどうやって更新するの？
 - GitHubでmainなど特定のブランチにpushやmergeした時に自動的に公開してほしいけどできる？
 
-</div>
 
 ### Q.GitHub Pagesって何？
 GitHub Pagesでデプロイしてみた人がたくさんいるので、デプロイできる場所なんだ！とは思っていたのですが…。

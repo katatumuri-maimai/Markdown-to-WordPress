@@ -210,11 +210,14 @@ def find_article_header(file):
                 slug = file_name
                 print("カスタムURLがないので、ファイル名「{}」をカスタムURLにしました。".format(title))
 
+            if len(media_id)==0:
+                media_id= None
+
         else:
             print("記事投稿情報がありません。ファイル名をタイトルにしますね！")
             title = file_name
 
-        return title, upload, state, slug, category_ids, tag_ids, media_id, serial_number
+        return title, upload, state, slug, category_ids, tag_ids, media_id, serial_number, article_content
 
 #
 # 識別番号があるかないか確認
@@ -229,24 +232,47 @@ def isSerial(serial_number):
                 Serial = True
     return Serial
 
+def set_article_json(serial_number,state,upload):
+    # 'articles.json'に識別番号がある場合は、変更箇所だけ変更。ない場合は新しく登録。
+    with open('articles.json', 'r') as d:
+        json_articles = json.load(d)
+
+        if isSerial(serial_number):
+            id = json_articles[serial_number]["articleid"]
+        else:
+            id = "none"
+
+        json_articles[serial_number]={
+                        "status":state,
+                        "upload":upload,
+                        "articleid":id
+                        }
+
+    with open('articles.json', mode='wt', encoding='utf-8') as f:
+        json.dump(json_articles, f, ensure_ascii=False, indent=2)
+        print('articles.jsonファイルに記事情報を追加しました。')
+
+    return id
+
 #
 # .mdファイルをＨＴＭＬに変換したものを返す
 #
-def md2html(file):
-    with open(file, mode='r', encoding='UTF-8') as fh:
-        text = fh.read()
-        # print(text)
-        md = markdown.Markdown(extensions=["extra",'nl2br','sane_lists'])
-        html = md.convert(text)
-        print("htmlに変換しました。")
+def md2html(article_content):
+    # print(text)
+    md = markdown.Markdown(extensions=["extra",'nl2br','sane_lists'])
+    html = md.convert(article_content)
+    print("htmlに変換しました。")
 
-        f = open("collections.json", 'r')
-        json_data = json.load(f)
+    f = open("collections.json", 'r')
+    json_data = json.load(f)
+    # print(json_data)
 
-        for key in json_data:
-            content = content.replace(key,json_data[key])
+    content = html
+    for key in json_data:
+        content = content.replace(key,json_data[key])
 
     return content
+
 
 
 
@@ -255,30 +281,18 @@ if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")
     for file in filelist:
         add_article_header(file)
-        title, upload, state, slug, category_ids, tag_ids, media_id, serial_number = find_article_header(file)
+        title, upload, state, slug, category_ids, tag_ids, media_id, serial_number,article_content = find_article_header(file)
 
-        # 'articles.json'に識別番号がある場合は、変更箇所だけ変更。ない場合は新しく登録。
-        with open('articles.json', 'r') as d:
-            json_articles = json.load(d)
+        articleid = set_article_json(serial_number,state,upload)
 
-            if isSerial(serial_number):
-                id = json_articles[serial_number]["articleid"]
-            else:
-                id = "none"
-
-            json_articles[serial_number]={
-                            "status":state,
-                            "upload":upload,
-                            "articleid":id
-                            }
-
-        with open('articles.json', mode='wt', encoding='utf-8') as f:
-            json.dump(json_articles, f, ensure_ascii=False, indent=2)
-            print('articles.jsonファイルに記事情報を追加しました。')
+        if articleid == "none":
+            print("新規投稿します")
 
 
+        content = md2html(article_content)
         # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
-            # post_article('draft', 'test-api-post', title, content, category_ids=[], tag_ids=[], media_id=None)
+        print(state, slug, title,category_ids, tag_ids, media_id)
+        post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
 
 else:
     print(".mdファイルはなかったみたいです。")

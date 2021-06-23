@@ -234,10 +234,12 @@ def find_article_header(file):
                 print("タイトル情報がないので、ファイル名「{}」をタイトルにしました。".format(title))
 
             if len(upload)==0 or len(upload)==2:
-                upload = "notupload"
+                upload = False
                 print("下書き状態にしておきます。")
-            else:
-                upload = "upload"
+            elif len(upload_y)==0:
+                upload = False
+            elif len(upload_n)==0:
+                upload = True
 
             if len(state)==0 or len(state)==2:
                 state = "draft"
@@ -327,18 +329,23 @@ if len(filelist)!= 0 :
         articleid = set_article_json(serial_number,state,upload)
         content = md2html(article_content)
 
-        if articleid == "none":
-            print("新規投稿します")
-            res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+        if upload:
+            print("記事をWordPressにアップロードしてみます。")
+            if articleid == "none":
+                print("新規投稿します")
+                res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
+            else:
+                print("既存の記事を更新します")
+                res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
+            if res.reason =='Not Found':
+                print("既存記事の更新ができなかったので、新規投稿します。")
+                res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
 
         else:
-            print("既存の記事を更新します")
-            res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+            print("記事を保存しました。（WordPressにアップロードはしていません。）")
 
-        if res.reason =='Not Found':
-            print("既存記事の更新ができなかったので、新規投稿しました。")
-            res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
-            print(res.reason)
 
 else:
     print(".mdファイルはなかったみたいです。")

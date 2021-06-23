@@ -40,7 +40,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
                        headers={'Content-type': "application/json"},
                        auth=(WP_USERNAME, WP_PASSWORD))
 
-   articleid = post_res.json()["id"]
+   articleid = res.json()["id"]
    with open('articles.json', 'r') as d:
        json_articles = json.load(d)
        json_articles[serial_number]["articleid"] = articleid
@@ -48,7 +48,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    with open('articles.json', mode='wt', encoding='utf-8') as f:
        json.dump(json_articles, f, ensure_ascii=False, indent=2)
        print('idをarticles.jsonに追加しました。')
-       
+
    print('＝＝＝＝＝＝「{}」の新規投稿結果 → {}:{}＝＝＝＝＝＝'.format(title, repr(res.reason),repr(res.status_code)))
    return res
 
@@ -327,12 +327,16 @@ if len(filelist)!= 0 :
 
         if articleid == "none":
             print("新規投稿します")
-
-            post_res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
-
+            res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
 
         else:
-            patch_res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+            print("既存の記事を更新します")
+            res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
+        if res.reason =='Not Found':
+            print("既存記事の更新ができなかったので、新規投稿しました。")
+            res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+            print(res.reason)
 
 else:
     print(".mdファイルはなかったみたいです。")

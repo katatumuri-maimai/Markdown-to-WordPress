@@ -285,15 +285,19 @@ if len(filelist)!= 0 :
 
         articleid = set_article_json(serial_number,state,upload)
 
-        if articleid == "none":
-            print("新規投稿します")
-
-
         content = md2html(article_content)
-        # 記事を下書き投稿する（'draft'ではなく、'publish'にすれば公開投稿できます。）
-        print(state, slug, title,category_ids, tag_ids, media_id)
-        post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
 
+        
+        res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+        id = res.json()["id"]
+
+        with open('articles.json', 'r') as d:
+            json_articles = json.load(d)
+            id = json_articles[serial_number]["articleid"] = id
+
+        with open('articles.json', mode='wt', encoding='utf-8') as f:
+            json.dump(json_articles, f, ensure_ascii=False, indent=2)
+            print('idをarticles.jsonに追加しました。')
 else:
     print(".mdファイルはなかったみたいです。")
 

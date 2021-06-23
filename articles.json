@@ -2,7 +2,7 @@
   "serialnumber": "id",
   "QrbrHgLEylcT": {
     "status": "draft",
-    "upload": "notupload",
+    "upload": true,
     "articleid": 481
   },
   "XpVZzeNDHRIx": {

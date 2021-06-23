@@ -47,7 +47,10 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
 # ランダムに文字列を生成
 #
 def randomname(n):
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=n))
+    serial_number = ''.join(random.choices(string.ascii_letters + string.digits, k=n))
+    if isSerial(serial_number):
+        serial_number = ''.join(random.choices(string.ascii_letters + string.digits, k=n))
+    return serial_number
 
 #
 # 読み込んだファイルをリストに変換してmd検出ファイルを検出
@@ -200,6 +203,15 @@ def find_article_header(file):
 
         return title, state, slug, category_ids, tag_ids, media_id, serial_number
 
+def isSerial(serial_number):
+    Serial = False
+    with open('articles.json', 'r') as d:
+        json_articles = json.load(d)
+
+        for key in json_articles:
+            if key == serial_number:
+                Serial = True
+    return Serial
 
 
 
@@ -209,6 +221,19 @@ if len(filelist)!= 0 :
     for file in filelist:
         add_article_header(file)
         title, state, slug, category_ids, tag_ids, media_id, serial_number = find_article_header(file)
+
+        if isSerial(serial_number):
+            print('既存の記事を編集')
+
+        else:
+            print('新しくID追加')
+            with open('articles.json', 'r') as d:
+                json_articles = json.load(d)
+                print(json_articles)
+                json_articles[serial_number]="remote"
+
+            with open('articles.json', mode='wt', encoding='utf-8') as f:
+                json.dump(json_articles, f, ensure_ascii=False, indent=2)
 
 
         with open(file, mode='r', encoding='UTF-8') as fh:

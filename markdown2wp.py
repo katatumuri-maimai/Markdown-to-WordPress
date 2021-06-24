@@ -305,10 +305,10 @@ def set_article_json(serial_number,state,upload):
 #
 # imgをbase64へ変換
 #
-
 def pil_to_base64(img):
     buffer = BytesIO()
-    img.save(buffer, format="png")
+    # print(img.format)
+    img.save(buffer, format=img.format)
     img_str = base64.b64encode(buffer.getvalue()).decode("ascii")
 
     return img_str
@@ -320,25 +320,21 @@ def md2html(article_content):
     # print(text)
     md = markdown.Markdown(extensions=["extra",'nl2br','sane_lists'])
     html = md.convert(article_content)
+    content = html
     print("htmlに変換しました。")
-    # print(html)
 
     soup = BeautifulSoup(html,'lxml')
-    # print(soup)
     imgs = soup.find_all('img')
-    print(imgs)
 
     for img in imgs:
         img_data = Image.open(img['src'])
         img_str = pil_to_base64(img_data)
-        # print(img_str)
+        content = content.replace(img['src'],'data:image/jpeg;base64,'+img_str)
 
 
     f = open("collections.json", 'r')
     json_data = json.load(f)
-    # print(json_data)
 
-    content = html
     for key in json_data:
         content = content.replace(key,json_data[key])
 
@@ -356,24 +352,23 @@ if len(filelist)!= 0 :
 
         articleid = set_article_json(serial_number,state,upload)
         content = md2html(article_content)
-        # print(content)
 
-        # if upload:
-        #     print("記事をWordPressにアップロードしてみます。")
-        #     if articleid == "none":
-        #         print("新規投稿します")
-        #         res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
-        #
-        #     else:
-        #         print("既存の記事を更新します")
-        #         res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
-        #
-        #     if res.reason =='Not Found':
-        #         print("既存記事の更新ができなかったので、新規投稿します。")
-        #         res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
-        #
-        # else:
-        #     print("記事を保存しました。（WordPressにアップロードはしていません。）")
+        if upload:
+            print("記事をWordPressにアップロードしてみます。")
+            if articleid == "none":
+                print("新規投稿します")
+                res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
+            else:
+                print("既存の記事を更新します")
+                res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
+            if res.reason =='Not Found':
+                print("既存記事の更新ができなかったので、新規投稿します。")
+                res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
+        else:
+            print("記事を保存しました。（WordPressにアップロードはしていません。）")
 
 
 else:

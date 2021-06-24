@@ -8,6 +8,7 @@
 - 見出し画像のID:[]
 - 識別番号[oBjks6AzNTyV]
 >------------<
+
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 最近、Reactでコードのデモサイトを作ったのですが、せっかくなのでそちらをデプロイ（公開）してみました♪
 
@@ -21,3 +22,14 @@
 
 `GitHub`というサービスの`GitHub Pages`と`GitHub Actions`という機能を使います。
 いずれも無料プランの範囲内でできるので、ぜひ試してみてください♪
+
+それでは、詳しく説明していきます！
+
+
+## 環境
+- ソースコードをGitHubで管理
+- DockerでReact環境構築
+- create-react-appでReactアプリを作った
+
+## 作業の流れ
+1.

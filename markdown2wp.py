@@ -369,8 +369,6 @@ if len(filelist)!= 0 :
         else:
             print("記事を保存しました。（WordPressにアップロードはしていません。）")
 
-        print(res.json())
-
 
 else:
     print(".mdファイルはなかったみたいです。")

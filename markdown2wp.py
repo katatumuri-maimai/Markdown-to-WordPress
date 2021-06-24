@@ -71,7 +71,6 @@ def patch_article(articleid,status, slug, title, content, category_ids, tag_ids,
               "slug": slug,
               "title": title,
               "content": content,
-              "date": dt,
               "categories": category_ids,
               "tags": tag_ids}
    if media_id is not None:
@@ -369,6 +368,8 @@ if len(filelist)!= 0 :
 
         else:
             print("記事を保存しました。（WordPressにアップロードはしていません。）")
+
+        print(res.json())
 
 
 else:

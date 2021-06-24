@@ -8,6 +8,11 @@ import glob
 from datetime import datetime, timedelta, timezone
 import re
 import random, string
+from bs4 import BeautifulSoup
+import lxml
+import base64
+from io import BytesIO
+from PIL import Image
 
 print("はじめるよ")
 
@@ -66,7 +71,6 @@ def patch_article(articleid,status, slug, title, content, category_ids, tag_ids,
               "slug": slug,
               "title": title,
               "content": content,
-              "date": dt,
               "categories": category_ids,
               "tags": tag_ids}
    if media_id is not None:
@@ -298,19 +302,38 @@ def set_article_json(serial_number,state,upload):
     return id
 
 #
+# imgをbase64へ変換
+#
+def pil_to_base64(img):
+    buffer = BytesIO()
+    # print(img.format)
+    img.save(buffer, format=img.format)
+    img_str = base64.b64encode(buffer.getvalue()).decode("ascii")
+
+    return img_str
+
+#
 # .mdファイルをＨＴＭＬに変換したものを返す
 #
 def md2html(article_content):
     # print(text)
     md = markdown.Markdown(extensions=["extra",'nl2br','sane_lists'])
     html = md.convert(article_content)
+    content = html
     print("htmlに変換しました。")
+
+    soup = BeautifulSoup(html,'lxml')
+    imgs = soup.find_all('img')
+
+    for img in imgs:
+        img_data = Image.open(img['src'])
+        img_str = pil_to_base64(img_data)
+        content = content.replace(img['src'],'data:image/jpeg;base64,'+img_str)
+
 
     f = open("collections.json", 'r')
     json_data = json.load(f)
-    # print(json_data)
 
-    content = html
     for key in json_data:
         content = content.replace(key,json_data[key])
 
@@ -345,6 +368,8 @@ if len(filelist)!= 0 :
 
         else:
             print("記事を保存しました。（WordPressにアップロードはしていません。）")
+
+        print(res.json())
 
 
 else:

@@ -8,7 +8,7 @@ Reactでモーダルウィンドウを作る時に、「閉じるボタンだけ
 
 今回は**クラスコンポーネント**で作成した例です♪
 ↓クラスコンポーネントで作成したい方はこちらの記事から↓
-[Reactでモーダル外をクリックしても閉じるモーダルの作り方と注意点【関数コンポーネント編】](URL)
+[Reactでモーダル外をクリックしても閉じるモーダルの作り方と注意点【関数コンポーネント編】](https://katatumuri.xyz/react/357/react-modal-function-component/)
 
 
 ## モーダルのデモ
@@ -29,6 +29,7 @@ Reactでモーダルウィンドウを作る時に、「閉じるボタンだけ
 
 ## モーダルを作る流れ
 色んなやり方があると思うのですが、私はこんな流れでモーダルを作ってみました↓
+
 1. モーダルを表示したいページのコンポーネント（親）を作成
 2. モーダルコンポーネント（子）を作成
 3. ページとモーダルをつなげる
@@ -656,7 +657,7 @@ class Modal extends React.Component {
 ## モーダル作成時の注意点
 アンマウント時のメモリリーク対策ができていないと、以下の様なエラーが出ます(´;ω;｀)
 
-![アンマウント時のエラー](images/2021/06/アンマウント時のエラー【クラスコンポーネント】.png)
+![アンマウント時のエラー【クラスコンポーネント】](images/2021/06/アンマウント時のエラー【クラスコンポーネント】.png)
 > Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.
     at Modal_ClassComponent
 

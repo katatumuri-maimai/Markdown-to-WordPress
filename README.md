@@ -1,3 +1,5 @@
+<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+
 # <i class="fas fa-cat"></i>MarkdownからWordpressへ自動投稿
 Markdown記法で書いた拡張子が`.md`のファイルをpushすると、WordPressに自動投稿できる機能を作っています。  
 

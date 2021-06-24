@@ -33,6 +33,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install markdown
           pip install requests
+          pip install beautifulsoup4
+          pip install lxml
+          pip install Pillow
       
       - name: markdown2wp
         env:

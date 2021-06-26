@@ -33,12 +33,12 @@
 
 ※GitHubに登録済み・リポジトリがあるものとして説明していきます！
 
-## GitHubのリポジトリのディレクトリ（ファイル）構造
-![DirectoryStructure](images/2021/06/DirectoryStructure.png)
-
-
+## やりたいこと
 - GitHubにリポジトリがある
 - GitHubのrootには`react-app`などのReactのディレクトリがある
 - mainブランチにmergeした時にデプロイ・公開されるようにする
 - GitHub Pagesへのデプロイの仕方と設定
 - Actionsの設定
+
+## GitHubのリポジトリのディレクトリ（ファイル）構造
+![DirectoryStructure](images/2021/06/DirectoryStructure.png)

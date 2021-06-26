@@ -1,7 +1,7 @@
 >------------<
-- タイトル:[]
-- WordPressにアップロードしますか？:y[]はいn[]まだしない
-- 投稿時:p[]公開d[]下書き
+- タイトル:[無料！Reactで作ったサイトを公開・自動更新する方法【Github Pages】]
+- WordPressにアップロードしますか？:y[x]はいn[]まだしない
+- 投稿時:p[]公開d[x]下書き
 - カスタムURL:[]
 - カテゴリID:[]
 - タグID:[]
@@ -28,8 +28,17 @@
 
 ## 環境
 - ソースコードをGitHubで管理
-- DockerでReact環境構築
-- create-react-appでReactアプリを作った
+- DockerでNode.jsの環境構築
+- create-react-appでReactアプリのひな形作成
 
-## 作業の流れ
-1.
+※GitHubに登録済み・リポジトリがあるものとして説明していきます！
+
+## GitHubのリポジトリのディレクトリ（ファイル）構造
+![DirectoryStructure](images/2021/06/DirectoryStructure.png)
+
+
+- GitHubにリポジトリがある
+- GitHubのrootには`react-app`などのReactのディレクトリがある
+- mainブランチにmergeした時にデプロイ・公開されるようにする
+- GitHub Pagesへのデプロイの仕方と設定
+- Actionsの設定

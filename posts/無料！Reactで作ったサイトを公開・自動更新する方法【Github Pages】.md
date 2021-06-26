@@ -74,7 +74,7 @@ workflowのファイルを作成します！
 
 ↑この中身を↓のコードに書き換えます！
 
-```yml
+```
 name: github pages
 
 on:
@@ -122,11 +122,11 @@ jobs:
 
 #### コードの説明
 
-```yml
+```
 name: github pages
 ```
 
-```yml
+```
 on:
   pull_request:
     branches:
@@ -135,7 +135,7 @@ on:
       - closed
 ```
 
-```yml
+```
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -145,14 +145,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 ```
-```yml
+```
 - name: Setup Node
   uses: actions/setup-node@v2
   with:
     node-version: '16'
 ```
 
-```yml
+```
 - name: Cache dependencies
   uses: actions/cache@v2
   with:
@@ -161,13 +161,13 @@ jobs:
     restore-keys: |
       ${{ runner.os }}-node-
 ```
-```yml
+```
 - name: Install gh-pages
   run: npm i gh-pages --save-dev
   working-directory: ${{env.working-directory}}
 ```
 
-```yml
+```
 - name: Deploy with gh-pages
   working-directory: ${{env.working-directory}}
   run: |

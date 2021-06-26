@@ -70,6 +70,10 @@ Actionsのタブから新しくworkflowを作成していきます。
 workflowのファイルを作成します！
 今回は、`gh-pages.yml`って名前にしましたｗ
 
+![yml_ini](images/2021/06/yml-ini.png)
+
+↑この中身を↓のコードに書き換えます！
+
 ```yml
 name: github pages
 
@@ -115,6 +119,67 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 ```
+
+#### コードの説明
+
+```yml
+name: github pages
+```
+
+```yml
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+```
+
+```yml
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    env:
+       working-directory: ./my-react-app
+       SUPER_SECRET: ${{ secrets.SuperSecret }}
+    steps:
+      - uses: actions/checkout@v2
+```
+```yml
+- name: Setup Node
+  uses: actions/setup-node@v2
+  with:
+    node-version: '16'
+```
+
+```yml
+- name: Cache dependencies
+  uses: actions/cache@v2
+  with:
+    path: ~/.npm
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    restore-keys: |
+      ${{ runner.os }}-node-
+```
+```yml
+- name: Install gh-pages
+  run: npm i gh-pages --save-dev
+  working-directory: ${{env.working-directory}}
+```
+
+```yml
+- name: Deploy with gh-pages
+  working-directory: ${{env.working-directory}}
+  run: |
+    git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+    npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+
+
+### 2. ymlファイルのコミット編集
 
 ## GitHub Pagesの設定
 GitHub Pagesを公開する初期設定をしていきます。

@@ -47,6 +47,7 @@ GitHubのrootには`react-app`などのReactのディレクトリがあります
 - GitHubでmainブランチにmergeした時にReactサイトが公開・自動更新されるようにしたい
 
 
+
 ## Reactで作ったサイトを公開・自動更新する方法の手順
 1. Actionsの設定
   1. workflowの作成

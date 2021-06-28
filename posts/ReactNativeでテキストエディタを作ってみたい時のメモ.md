@@ -1,9 +1,9 @@
 >------------<
-- タイトル:[【1day】React Nativeでテキストエディタを作ってみる！]
+- タイトル:[【1】React Nativeでテキストエディタを作ってみる！【下調べ編】]
 - WordPressにアップロードしますか？:y[x]はいn[]まだしない
 - 投稿時:p[]公開d[x]下書き
-- カスタムURL:[React-Native-challenge-to-create-text-editor]
-- カテゴリID:[3]
+- カスタムURL:[React-Native-challenge-to-create-text-editor-1]
+- カテゴリID:[3,11,12]
 - タグID:[]
 - 見出し画像のID:[]
 - 識別番号[lmEQbAU1Pp1P]
@@ -83,9 +83,4 @@ React NativeとExpoつかってもできそう！
 
 と、いうことで、早速作り始めます～！
 
-## Dockerで環境構築
-[DockerでReact Native環境を構築する](https://px-wing.hatenablog.com/entry/2021/01/29/065249)
-
-↑こちらの手順にそって、環境構築。
-
-### 環境
+[card2 id="投稿ID"]

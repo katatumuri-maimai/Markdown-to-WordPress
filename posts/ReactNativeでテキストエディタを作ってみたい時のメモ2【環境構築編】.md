@@ -35,3 +35,9 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 
 ↑こちらの手順にそって、Expoアカウントを作成、メールが届くのでリンク先にログインして完了。  
 iPhoneとiPadでExpo Clientというシミュレーターみたいなものを導入。
+
+## 2.Dockerで環境構築
+[DockerでReact Native(TypeScript)+Expoのプロジェクト構築](https://qiita.com/hidenoritoki/items/9cd972ba102d12faec0e)
+
+↑こちらの手順とファイルを参考に作成
+GitHubでソースコードを管理しています。

@@ -79,7 +79,7 @@ Module build failed: Error: ENOENT: no such file or directory, open '/usr/src/ap
 
 `App.js`がおそらくメインの枠になるので、これに合わせてコンポーネントを作っていきます。
 
-## テキストエリアを作成
+## ためしにテキストエリアを作成
 そもそも、テキストエリアって、Inputエリアでいいのかな…？
 
 とりあえず、`TextArea.js`を作成し、`App.js`に読み込んでみます。
@@ -134,11 +134,64 @@ export default function UselessTextInput(props) {
 とりあえず、文字は打てるようになりました(*´ω｀)
 
 
-## iPad向けに整形
+## テキストエディタパッケージを使用するも断念
 [React Native Editor](https://www.npmjs.com/package/react-native-editor)
 
 `npm i react-native-editor`してみる。
 互換性があれば使いたい。
+
+ちょっと使ってみたけど、読み込みが遅すぎるので再起動したらエラー…
+`yarn install`しろとのことなので、しておきました。
+
+
+![picture 8](../images/f1f8c3446b09f79425c29e8356c5ec12e95a2140f2c3b33445dcd8f524df7b83.png)
+```  
+/usr/src/app/node_modules/react-native-editor/src/RichToolbar.js  
+Module not found: Can't resolve '../img/icon_format_bold.png' in '/usr/src/app/node_musr/src/app/node_modules/react-native-editor/src'
+```
+`RichToolbar.js `の14行目くらいを以下に変更
+
+
+```javascript
+function getDefaultIcon() {
+    const texts = {};
+    texts[actions.insertImage] = require('../img/icon_format_media@3x.png');
+    texts[actions.setBold] = require('../img/icon_format_bold@3x.png');
+    texts[actions.setItalic] = require('../img/icon_format_italic@3x.png');
+    texts[actions.insertBulletsList] = require('../img/icon_format_ul@3x.png');
+    texts[actions.insertOrderedList] = require('../img/icon_format_ol@3x.png');
+    texts[actions.insertLink] = require('../img/icon_format_ol@3x.png');
+    return texts;
+}
+```
+
+![picture 9](../images/36998eb0ca82a7e607ecb573c18670fb0ec962baa715de7fdac052352af0e358.png)  
+```
+/usr/src/app/node_modules/react-native-editor/src/RichEditor.js    
+react_native_1  
+Module not found: Can't resolve 'react-native-webview' in '/usr/src/app/node_modules/react-native-editor/src'
+```
+
+
+次はこれなので、`expo install react-native-webview`してみる
+[WebView](https://docs.expo.io/versions/latest/sdk/webview/)
+
+やっぱりうまくいかない😢
+
+
+`react-native-editor`は一旦やめて、自前で作ることにしました。
+
+`npm rm react-native-editor`
+
+
+## テキストエリアを作成
+
+
+
+
+
+
+
 
 
 <!-- ↓続き

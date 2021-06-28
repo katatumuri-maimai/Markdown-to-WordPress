@@ -1,3 +1,13 @@
+>------------<
+- タイトル:[]
+- WordPressにアップロードしますか？:y[]はいn[]まだしない
+- 投稿時:p[]公開d[]下書き
+- カスタムURL:[]
+- カテゴリID:[]
+- タグID:[]
+- 見出し画像のID:[]
+- 識別番号[lmEQbAU1Pp1P]
+>------------<
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 

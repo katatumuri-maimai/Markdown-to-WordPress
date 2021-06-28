@@ -160,7 +160,10 @@ buildしなおすも特にかわらずｗ
 > アプリが再び開いたら、デバイスを振って開発者メニューを表示します。エミュレーターを使用している場合は⌘+d、iOSまたはctrl+mAndroidの場合はを押します。
 > が表示されたらEnable Fast Refresh、それを押します。が表示された場合はDisable Fast Refresh、開発者メニューを閉じます。次に、別の変更を加えてみてください。
 
+
 > ExpoCLIで開発モードが有効になっていることを確認します
+
+
 ここなんですが、[公式ドキュメント](https://docs.expo.io/workflow/development-mode/#toggling-development-mode-in-expo-dev-tools)によると、、  `http://localhost:19002/`（Expo開発ツール）には接続必要って事みたいですね、、、。  
 ターミナルデモできる様な気もしますが、今後のために`Expo開発ツール`を使えるように試行錯誤します！
 

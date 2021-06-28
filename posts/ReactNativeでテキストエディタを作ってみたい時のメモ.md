@@ -33,23 +33,34 @@ Reactは使ってみたから、次はNativeやな。
 前置きはここまでにして、次のステップに進みたいと思います！
 
 
-## ひとまず調べてみた
+## ひとまず疑問をもとに調べてみた
+はじめるにあたって疑問点があったので調べました！
 
-### React Nativeでのアプリ開発
-[React Native](https://reactnative.dev/)
-[【連載】初めてのReact Native + Expo開発環境構築入門(Windowsベース)](https://qiita.com/hitotch/items/5142fff638c7805d84d5)
+### React Nativeでのアプリ開発について
+[React Native](https://reactnative.dev/)  
+[【連載】初めてのReact Native + Expo開発環境構築入門(Windowsベース)](https://qiita.com/hitotch/items/5142fff638c7805d84d5)  
 [【ReactNative開発】ReactNativeって？今後どうなる？](https://www.simpletraveler.jp/2021/01/10/whatis-reactnative/)
 
-## Expo使わないといけないの？
-Expo使わなくてもいいけど、使った方が楽そう
-アプリ開発の知識ないならExpo使おう
+### Expo使わないといけないの？
+Expo使わなくてもいいけど、使った方が楽そう  
+アプリ開発の知識ないならExpo使おう  
 
-## macなくてもできる？
-Expoがあればなくてもできるみたい
-一時的にmac借りてとかでもできるらしい
+[react nativeで開発する際の環境はどれがいいのって話](https://yuto-m.hatenablog.com/entry/2019/04/30/132644)
 
-## 無料でできる？
-Expoなら無料でできるっぽい
+### macなくてもできる？
+`Expo`があればなくてもできるみたい  
+一時的にmac借りてとかでもできるらしい  
 
-## テキストエディタ作りたい
+[React Native + Expo - WindowsでアプリビルドからAppストア申請まで！【2020年3月時点】](https://tkd708.hatenablog.com/entry/react_native_expo_windows_from_build_to_app_store_application_2020)
+
+### 無料でできる？
+Expoなら無料でできるっぽい（2021年6月28日現在）
+
+[expo/pricing](https://expo.io/pricing)
+
+
+### テキストエディタ作れる？
+JSの`ACE.js`っていうテキストエディタライブラリがあるみたい  
+自動補完やsyntaxhighlightなどしてくれるみたい（Reactでも使えるのかな？）
+
 [テキストエディターを作ってElectronの基礎を学ぼう！](https://ics.media/entry/8401/)

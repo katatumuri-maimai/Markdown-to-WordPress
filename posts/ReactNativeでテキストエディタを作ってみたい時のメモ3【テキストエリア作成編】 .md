@@ -184,15 +184,120 @@ Module not found: Can't resolve 'react-native-webview' in '/usr/src/app/node_mod
 `npm rm react-native-editor`
 
 
-## テキストエリアを作成
+## 試しに画面を作ってみる
+[React Nativeで任意のReact コンポーネントを使う方法](https://wawoon.dev/posts/react-native-any-component)
+↑この方法でできそう…？
+ということで、ちょっと自前で色々作ってみます。
+
+![picture 10](../images/6363fc04307323a7567cc032200e586fdf24cb0460e1831552a02dc3ed081e3e.png)  
+
+とりあえず、こんな感じです！
+コードは以下。
+
+
+```javascript
+// App.js
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import MyTextArea from './components/TextArea';
+import MyPreview from './components/Preview';
+import MyPanel from './components/Panel';
+import './styles/style.css'
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <div className="main_wrap">
+        <MyPanel
+        value="panel"
+        />
+        <MyTextArea
+          placeholder="Hello World!"
+          className="textarea_main"
+        />
+        <MyPreview
+          value="ぷれびゅ～"
+        />
+      </div>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+```
+
+
+```javascript
+// Panel.js
+import React, { Component } from 'react';
+import { StyleSheet, Text} from 'react-native';
+
+export default function MyPanel(props) {
+  // const [value, onChangeText] = React.useState(props.value);
+
+  return (
+      <Text style={styles.innerText}>
+        {props.value}
+      </Text>
+      
+  );
+};
+
+const styles = StyleSheet.create({
+  baseText: {
+    fontWeight: 'bold'
+  },
+  innerText: {
+    color: 'red'
+  }
+});
+```
+
+
+```javascript
+// TextArea.js
+import React, { Component } from 'react';
+import { StyleSheet, Text} from 'react-native';
+
+export default function MyPanel(props) {
+  // const [value, onChangeText] = React.useState(props.value);
+
+  return (
+      <Text style={styles.innerText}>
+        {props.value}
+      </Text>
+      
+  );
+};
+
+const styles = StyleSheet.create({
+  baseText: {
+    fontWeight: 'bold'
+  },
+  innerText: {
+    color: 'red'
+  }
+});
+```
+
+てきそうな気がしてきました。
+
+## 画面の整形
+StyleSheetで整えてみます。
 
 
 
 
-
-
-
-
-
+<!-- 
+```javascript
+```
+ -->
 <!-- ↓続き
 [kanren id=""] -->

@@ -27,6 +27,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 [kanren id="559"]
 
 
+
 ## いきなりエラーから始まります…
 ![picture 1](../images/123927f99a07ed87ca0beb39fefd9a2bbb4bd6e4ac201cd1721440248597feaf.png)  
 

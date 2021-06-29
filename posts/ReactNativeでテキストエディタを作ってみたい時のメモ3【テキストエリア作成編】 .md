@@ -1,7 +1,7 @@
 >------------<
 - タイトル:[【3】React Nativeでテキストエディタを作ってみる！【右往左往編】]
 - WordPressにアップロードしますか？:y[x]はいn[]まだしない
-- 投稿時:p[]公開d[x]下書き
+- 投稿時:p[x]公開d[]下書き
 - カスタムURL:[React-Native-challenge-to-create-text-editor-3]
 - カテゴリID:[3,11,12]
 - タグID:[]

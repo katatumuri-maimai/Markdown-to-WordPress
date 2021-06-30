@@ -786,5 +786,5 @@ Error notifying container about file change: exit status 1
 時間かかるので辞めましたｗ
 
 
-<!-- ↓続き
-[kanren id=""] -->
+↓続き
+[kanren id="572"]

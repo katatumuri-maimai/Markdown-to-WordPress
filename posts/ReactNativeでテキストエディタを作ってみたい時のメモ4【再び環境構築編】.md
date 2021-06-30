@@ -32,9 +32,6 @@ DockerでReact Nativeを開発すると、ホットリロードが効きませ�
 
 
 
-
-
-## 次の日…WSLでの環境構築
 Windows+DockerDesktopでのReact Native+Expoでは、仕様上ホットリロード効かないことが分かったので、WSLを使って環境構築をしていきます！
 （ホストマシンに環境構築しないのは、ただのこだわり。）
 
@@ -43,7 +40,7 @@ Windows+DockerDesktopでのReact Native+Expoでは、仕様上ホットリロー
 [WSLでReact Native + Expo環境を作ろう](https://qiita.com/h-yoshikawa44/items/610ffea888f13275cde8)
 
 
-### WSLのインストール
+## WSLのインストール
 とりあえず、WSLが必要なので、インストールします。
 
 [WSLをインストールする](https://qiita.com/matarillo/items/61a9ead4bfe2868a0b86)
@@ -74,17 +71,17 @@ WSL2の方が新しいみたいなので、WSL2をインストールします。
 
 Ubunto久しぶりで嬉しい～（普段Dockerで使っているけどなんとなくｗ）
 
-### Node.jsのインストール
+## Node.jsのインストール
 [Windows に WSL を使って Node 環境を構築する](https://qiita.com/nekonekonekosan/items/61a6b9d4da6bdfd1d0bb)
 ↑こちらを参考にインストールしていきます！
 
-### ReactNative+Expo環境構築
+## ReactNative+Expo環境構築
 やっとここまできました！
 [WSLでReact Native + Expo環境を作ろう](https://qiita.com/h-yoshikawa44/items/610ffea888f13275cde8)
 
 
 
-#### 疑問メモ
+### 疑問メモ
 ここでちょっと疑問：VScodeでコード編集できるんだろうか…？
 [VSCodeをWSLで使用する設定](https://infltech.com/articles/N0jUEQ)
 ↑でいけるっぽい。試してみよう。
@@ -95,7 +92,7 @@ Ubunto久しぶりで嬉しい～（普段Dockerで使っているけどなん�
 sourcetreeにも作業ディレクトリ登録できたので、いい感じですね。
 
 
-### 環境変数の設定がよくわからない
+## 環境変数の設定がよくわからない
 `~/.profile`ってどこ？って思ったので、探してみました。
 
 ubuntuを起動すると最初に表示される画面で、`ls -a`と打ってみます。
@@ -119,3 +116,6 @@ vimで編集できました。[Vim初心者に捧ぐ実践的入門](https://qii
 
 とりあえずTunnelモードで使ってみることにしたら、開けました！
 ホットリロードも効くので、実機確認できたあ良かった(*´ω｀)
+
+
+## Android Studioのインストール

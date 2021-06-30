@@ -17,12 +17,23 @@
 Reactを触ってみて、サイト的なものは作れるようになりました(*´ω｀)
 そこで、次はReactNativeを触ってみようと思い、簡単なテキストエディタを作成しようと企んでおります(笑)
 
+Dockerでの環境構築が難しかったので、やっとWSLで環境構築できました～！
+これからテキストエリアを作成していきたいと思います！
 
 [GitHub](https://github.com/katatumuri-maimai/ReactNative-TextEditer)でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="557"]
 
-<!-- **前回を見る↓**
-[kanren id="568"] -->
+**前回を見る↓**
+[kanren id="572"]
 
+
+
+## 環境
+- WSL
+- Expo
+- React Native
+- 
+- iPhone
+- iPad

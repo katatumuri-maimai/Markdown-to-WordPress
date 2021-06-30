@@ -683,10 +683,102 @@ pip uninstall docker-windows-volume-watcher
 
 
 
-[zippoxer
-/
-docker-windows-volume-watcher](https://github.com/zippoxer/docker-windows-volume-watcher)
+[zippoxer/docker-windows-volume-watcher](https://github.com/zippoxer/docker-windows-volume-watcher)
 ↑こっちも使ってみたいけど、インストールの仕方が分からず💦
+
+
+
+
+## `kerbe/expo`でコンテナ作成・実機確認
+[kerbe/expo](https://hub.docker.com/r/kerbe/expo)
+
+こちらを使っていきたいと思います！
+
+[kerbe/docker-expo](https://github.com/kerbe/docker-expo/blob/master/Dockerfile)を参考にDockerfileとdocker-compose.ymlを編集
+
+```yml
+FROM kerbe/expo
+
+WORKDIR /usr/src/app
+```
+
+```
+version: "3"
+services:
+  react_native:
+    build: ./docker/react_native
+    volumes:
+      - ./react_native:/usr/src/app
+    env_file: .env
+
+    command: start
+
+    ports:
+      - "19000:19000"
+      - "19001:19001"
+      - "19002:19002"
+      - "19006:19006"
+```
+
+`react_native`ディレクトリを削除して、以下を実行しました。
+```
+docker-compose build
+docker-compose run --rm react_native init .
+```
+
+templateを`blanck`と入力。
+終わったら、`docker-compose up`します。
+
+よくわからなかったので、ファイルの編集とコマンドの編集を何度もチャレンジしましたｗ
+
+成功！
+とりあえず、実機確認までできました。
+
+## ホットリロードができるか問題
+`CHOKIDAR_USEPOLLING=true`を設定しているので、webブラウザでは一応リロードしてくれます。
+iPhoneではホットリロードが効いていません。
+[merofeev/docker-windows-volume-watcher](https://github.com/merofeev/docker-windows-volume-watcher)
+これが使えないので、
+[zippoxer/docker-windows-volume-watcher](https://github.com/zippoxer/docker-windows-volume-watcher)
+こっちを使ってみることにしました。
+
+### goをインストール
+
+[WindowsにGo言語開発環境をインストールする](https://qiita.com/suke_masa/items/0c45c92934b9a2807ddb)
+↑こちらの手順にしたがって、Goをインストールしました。
+
+
+[How can I install a package with go get?](https://stackoverflow.com/questions/30295146/how-can-i-install-a-package-with-go-get)
+↑　`go get`したらいけるっぽい
+Windowsのコマンドプロンプトから、`go get github.com/zippoxer/docker-windows-volume-watcher`をします。
+
+```
+go get: github.com/zippoxer/docker-windows-volume-watcher@none updating to
+        github.com/zippoxer/docker-windows-volume-watcher@v0.0.0-20190226212435-676f3ba5696c: parsing go.mod:
+        module declares its path as: github.com/FrodeHus/docker-windows-volume-watcher
+                but was required as: github.com/zippoxer/docker-windows-volume-watcher
+```
+とのことなので、`go get github.com/FrodeHus/docker-windows-volume-watcher`してみます。
+
+```
+docker-windows-volume-watcher -container=[react_textediter_react_native_1]
+```
+↑をWindowsのコマンドプロンプトから作業ディレクトリに移動してうってみると、いけてる感じがします！
+
+試しにファイルを変更してみると…↓
+```
+Updating container file react_native/App.js
+Error notifying container about file change: exit status 1
+Updating container file react_native/.expo/web/cache/development/babel-loader/7c5042ec877f84a9db21a9f6f73ac149.json
+Error notifying container about file change: exit status 1
+```
+
+もうだめだ！＼(^o^)／ｵﾜﾀ
+
+
+ホットリロードは諦めます。
+
+そもそもDocker使わない方がいい気しかしないので、明日は違う方法検討しよう！
 
 
 
@@ -694,9 +786,5 @@ docker-windows-volume-watcher](https://github.com/zippoxer/docker-windows-volume
 時間かかるので辞めましたｗ
 
 
-<!-- 
-```javascript
-```
- -->
 <!-- ↓続き
 [kanren id=""] -->

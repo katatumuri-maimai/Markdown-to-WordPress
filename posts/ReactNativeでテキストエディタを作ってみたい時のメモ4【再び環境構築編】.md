@@ -417,7 +417,7 @@ androidエミュレーターでの確認は無理でした！！！＼(^o^)／�
 `.expo`削除して見ましただめだ！
 
 
-[[WSL 2] NIC Bridge mode 🖧 (Has TCP Workaround🔨)](https://github.com/microsoft/WSL/issues/4150)
+[[WSL 2] NIC Bridge mode (Has TCP Workaround🔨)](https://github.com/microsoft/WSL/issues/4150)
 ↑よりPowerShellのタスクを使ってみる。
 
 できない
@@ -460,7 +460,6 @@ iex "netsh interface portproxy add v4tov4 listenport=5037 listenaddress=127.0.0.
 [WSL2 環境で Windows 側の adb.exe を使うといろいろ楽](https://scrapbox.io/hotchpotch/WSL2_%E7%92%B0%E5%A2%83%E3%81%A7_Windows_%E5%81%B4%E3%81%AE_adb.exe_%E3%82%92%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D%E6%A5%BD)
 ↑これやってみよう
 
-C:\Users\mymai\AppData\Local\Android\Sdk\platform-tools\adb.exe
 
 
 `/usr/bin`にadbがあったので、削除して`/usr/bin`で↓

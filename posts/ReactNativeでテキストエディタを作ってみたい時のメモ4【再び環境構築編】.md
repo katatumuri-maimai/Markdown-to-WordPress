@@ -10,7 +10,7 @@
 >------------<
 
 <!-- ↓続き
-[kanren id=""] -->
+[kanren id="575"] -->
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -518,5 +518,10 @@ Error starting tunnel protocol fault (couldn't read status): connection reset
 ![picture 1](images/3f448e8c51b378af9b5d09eccd2d0f3c87cb4c969c0ac18e13a937c2ad0ffb83.png)  
 
 Pixel Xにしてみてもできました！
+
+
+これで、AndroidStudio、iPhone、iPadでの確認ができるー！
+しかも、ホットリロードも効くようになりました(*´ω｀)（Dockerの時より早い）
+LANの方がホットリロード速いらしいけど、ちょっとLANはあきらめてもよさそう！
 
 これでやっと環境構築完了です！お疲れ様でした！ここからが本題です(*´ω｀)

@@ -44,7 +44,7 @@ WSL2にReact NativeとExpoが入っています！
 とりあえず、タブレット用の画面を作っていきます！
 iPadとAndroidStudioのタブレットエミュレーターを確認しながら作ります。
 
-![picture 2](../images/ef373b0ce77e519ede33f71aa3c880af4de7a798abfaf12630fa3df6bba0686e.png)  
+![picture 2](images/ef373b0ce77e519ede33f71aa3c880af4de7a798abfaf12630fa3df6bba0686e.png)  
 
 iPadは横向きになるけど、Androidはならないですね💦
 ExpoかReact Native側の設定かなー💦
@@ -134,7 +134,7 @@ export default function App() {
 }
 ```
 
-![picture 3](../images/7533da69b617e20c6e3cc11c0d73dbc3e3391ee7b515a6a2fa7bc0184054e962.png)  
+![picture 3](images/7533da69b617e20c6e3cc11c0d73dbc3e3391ee7b515a6a2fa7bc0184054e962.png)  
 
 大分怪しい見た目ですが、とりあえず、パネル+テキストエリア+ぷれびゅ～のエリアは作成できました。
 
@@ -142,7 +142,7 @@ export default function App() {
 マークダウンで書くことを想定しているので、PreviewはHTMLのつもりです。
 ですが、まずはテキストエリアに書いた物をそのままPreviewしていきたいと思います。
 
-![picture 4](../images/3ad0710eb7e2735ae5101e627ab185869c2e9ae93054c1b9e520b14d87e81af8.png)  
+![picture 4](images/3ad0710eb7e2735ae5101e627ab185869c2e9ae93054c1b9e520b14d87e81af8.png)  
 できたぁ
 
 これはReactのコンポーネント間の値の受け渡し方と一緒ですね。
@@ -179,14 +179,14 @@ Unable to resolve module punycode from /home/mymai/ReactNative_TextEditor/node_m
 expo再起動
 （果たしてライブラリが使えるように私はなるのか！）
 
-![picture 5](../images/49d247b064e5356d30183aced82d0a95fb9bd8ab2e2a4403eb78dbbfc798a384.png)  
+![picture 5](images/49d247b064e5356d30183aced82d0a95fb9bd8ab2e2a4403eb78dbbfc798a384.png)  
 
 ↑いけました！
 右上の`text`ってやつですね。中身は`## text`なので、ちゃんとできてます。
 
 Previewコンポーネントと置き換えていきます。
 
-![picture 6](../images/77e4599fbdd315490579542ff7dc7aae7d67a1cf6511293b747f20c5a104fd9e.png)  
+![picture 6](images/77e4599fbdd315490579542ff7dc7aae7d67a1cf6511293b747f20c5a104fd9e.png)  
 なぜか文字を打つと右側に出現するようになりましたｗｗ
 
 どうやら置き換えるんじゃなくて、中に入れるといいらしい
@@ -214,7 +214,7 @@ Androidは入力中にMarkdownコンポーネントが動くｗｗｗ
 
 こちらは、Markdownライブラリのスタイルを上書きすることで治りました。
 
-![picture 7](../images/c9ff96627445b40b601b7010e57eb924abbf0b6cb5d109795438c1920d152a75.png)  
+![picture 7](images/c9ff96627445b40b601b7010e57eb924abbf0b6cb5d109795438c1920d152a75.png)  
 
 
 ## メニューバーの追加
@@ -223,7 +223,7 @@ Androidは入力中にMarkdownコンポーネントが動くｗｗｗ
 
 [View](https://reactnative.dev/docs/next/view)コンポーネントがHTMLでいう`div`みたいな物っぽいので、それを使っていきます。
 
-![picture 8](../images/bd5ac515089cde35a9ab91e3a1475484c0e58b9b5d3f41dbe3d9a27f2dcf0152.png)  
+![picture 8](images/bd5ac515089cde35a9ab91e3a1475484c0e58b9b5d3f41dbe3d9a27f2dcf0152.png)  
 
 ```javascript
 import React, { Component } from 'react';
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
 
 あと、iPhoneなどで角が見切れちゃうので、メニューバーの`View`を`SafeAreaView`に変更。
 
-![picture 9](../images/829f130b52c724942e63f5d5c49d752ad3d93b800e533fe1476bdc88391a5bbf.png)  
+![picture 9](images/829f130b52c724942e63f5d5c49d752ad3d93b800e533fe1476bdc88391a5bbf.png)  
 
 またまた怪しいですが、とりあえずのボタン完成ですｗ
 

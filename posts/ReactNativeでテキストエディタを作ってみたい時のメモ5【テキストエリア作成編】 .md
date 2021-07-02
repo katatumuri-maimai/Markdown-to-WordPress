@@ -9,8 +9,7 @@
 - 識別番号[HPawWtD9Sf46]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
+
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -277,3 +276,6 @@ const styles = StyleSheet.create({
 とりあえず、アプリが作れることは分かってきたので、今日はこの辺で終わります(*´ω｀)
 
 わーい！たのしい！
+
+↓続き
+[kanren id="590"]

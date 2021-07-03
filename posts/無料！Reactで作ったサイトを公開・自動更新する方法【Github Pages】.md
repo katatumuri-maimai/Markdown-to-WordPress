@@ -25,6 +25,10 @@
 
 それでは、詳しく説明していきます！
 
+## やりたいこと
+- GitHubでmainブランチにmergeした時にReactサイトが公開・自動更新されるようにしたい
+
+今回行う方法は、既にReactサイトをGitHUb Pagesに公開している方でも使えます！
 
 ## 環境
 - ソースコードをGitHubで管理
@@ -43,22 +47,52 @@
 
 GitHubのrootには`react-app`などのReactのディレクトリがあります！
 
-## やりたいこと
-- GitHubでmainブランチにmergeした時にReactサイトが公開・自動更新されるようにしたい
-
-
 
 ## Reactで作ったサイトを公開・自動更新する方法の手順
-1. Actionsの設定
+1. `package.json`の編集
+2. Actionsの設定
   1. workflowの作成
   2. `gh-pages.yml`ファイルの編集
-2. GitHub Pagesの設定
-3. デプロイ（公開）！
+3. GitHub Pagesの設定
+4. デプロイ（公開）！
 
 それでは、早速準備を進めていきましょう！
 
-## Actionsの設定
-まずは、GitHub Actionsの設定をしていきます！
+
+## 1. `package.json`の編集
+まずは、`package.json`にホームページやコマンドの設定を書いていきます。
+ここで書いたコマンドをGitHub Actionsで使います。
+```
+{
+  "name": "my-react-app",
+  "version": "0.1.0",
+  "homepage": "https://${ユーザ名}.github.io/${リポジトリ}", // ここに追加
+  "dependencies": {
+    // …省略
+  },
+  "scripts": {
+    "deploy": "npm run build && gh-pages -d build", // ここに追加
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+```
+↑これは、`package.json`の上の方に記載があります！
+```
+"homepage": "https://${ユーザ名}.github.io/${リポジトリ}", // ここに追加
+```
+↑`https://${ユーザ名}.github.io/${リポジトリ}`にはGitHub PagesのURLを入れてください(*´ω｀)
+
+```
+"deploy": "npm run build && gh-pages -d build", // ここに追加
+```
+↑これはこのまま書いちゃってOKです。
+
+[Create React App Deployment](https://create-react-app.dev/docs/deployment/#step-2-install-gh-pages-and-add-deploy-to-scripts-in-packagejson)
+
+## 2. Actionsの設定
+次に、GitHub Actionsの設定をしていきます！
 GitHub Actionsの機能を使って、公開・自動更新機能を作成しちゃいます(*´ω｀)
 
 ### 1. workflowの作成
@@ -121,68 +155,115 @@ jobs:
 
 ```
 
-#### コードの説明
+コードの説明を簡単にしていきます！
+
+#### ワークフローに名前をつける
 
 ```yml
-name: github pages
+name: github pages # ワークフロー全体の名前
 ```
+これは単純にワークフローに名前をつけています(*´ω｀)
+自動公開・更新機能の名前だと思っておいてください
 
+#### ワークフロー発動条件の設定
 ```yml
 on:
   pull_request:
     branches:
       - main
+```
+↑これで、`main`ブランチにプルリクエストがきた時に発動するという意味になります。
+```yml
     types:
       - closed
 ```
+↑は、`プルリクエストがクローズした時`という意味です。
+合わせると、プルリクエストが来てクローズした時、に発動するってことになります。
 
+mergeされなかったときもされたときもクローズしたことになるので、mergeの有無に関わらず発動はします。
+
+mergeされたときにだけ発動してほしい時は、条件を書くという方法もあります。
+[GitHub Actions でプルリクのマージでワークフローを実行する](https://qiita.com/okazy/items/7ab46f2c20ec341a2836)
+
+#### ワークフローの基本の設定
 ```yml
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-18.04 # ubuntuを使う
     env:
-       working-directory: ./my-react-app
-       SUPER_SECRET: ${{ secrets.SuperSecret }}
+       working-directory: ./my-react-app # my-react-appディレクトリのなか処理を行う
+       SUPER_SECRET: ${{ secrets.SuperSecret }} # シークレットキーを使う
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2 # ブランチをチェックアウトする
 ```
-```yml
-- name: Setup Node
-  uses: actions/setup-node@v2
-  with:
-    node-version: '16'
-```
+↑ここでワークフローの基本の設定をしています。
+`working-directory: ./my-react-app`の`./my-react-app`の部分は、Reactが入っているディレクトリにご自身で設定してください！
 
+#### NodeをGitHub上にインストール
+```yml
+- name: Setup Node  # ワークフローの名前
+  uses: actions/setup-node@v2 # setup-node@v2を使う設定
+  with:
+    node-version: '16' # Nodeのバージョン設定
+```
+最初に、`Setup Node`というワークフローを走らせます！
+NodeをGitHub上にインストールするみたいですねえ～すごいなぁ。
+
+#### キャッシュを使う設定
 ```yml
 - name: Cache dependencies
-  uses: actions/cache@v2
+  uses: actions/cache@v2 # キャッシュを使うよ
   with:
-    path: ~/.npm
-    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    restore-keys: |
-      ${{ runner.os }}-node-
+    path: ~/.npm # npmの場所の指定
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }} # 'package-lock.json'を設定
+    restore-keys: | # キャッシュを見つけるために使われる代理キー
+      ${{ runner.os }}-node- 
 ```
+キャッシュを使う設定をしています。
+スピードが上がるんだなぁくらいに思っていますｗ
+[依存関係をキャッシュしてワークフローのスピードを上げる](https://docs.github.com/ja/actions/guides/caching-dependencies-to-speed-up-workflows)
+
+#### gh-pagesをインストール
 ```yml
 - name: Install gh-pages
-  run: npm i gh-pages --save-dev
-  working-directory: ${{env.working-directory}}
+  run: npm i gh-pages --save-dev # gh-pagesのインストール
+  working-directory: ${{env.working-directory}} # gh-pagesをインストールするディレクトリの設定。上の方で設定したmy-react-appディレクトリの場所を呼び出しています。
 ```
+GitHub上にインストールしたNode.jsにgh-pagesをインストールしていきます。
 
+#### デプロイ（公開）の設定
 ```yml
 - name: Deploy with gh-pages
-  working-directory: ${{env.working-directory}}
-  run: |
+  working-directory: ${{env.working-directory}} # 以下のコマンドを実行するディレクトリの設定
+  run: | # 実行するコマンド（リポジトリの設定・デプロイ）
     git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
     npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GITHUB_TOKENの設定
 ```
+↑いよいよここでデプロイ（公開）の設定をしていきます。
 
+```yml
+git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+```
+↑で、gitリポジトリを設定しています。こう書くと自動で認識してくれます！
+GitHub Actionswを使用する場合、必要な工程だそうです。
 
+```yml
+npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+```
+↑で`package.json`に書いた`"deploy": "npm run build && gh-pages -d build",`が実行されます。
 
-### 2. ymlファイルのコミット編集
+[Github ActionのヒントをREADME ＃368に追加します](https://github.com/tschaub/gh-pages/pull/368)
 
-## GitHub Pagesの設定
+[gh-pages](https://www.npmjs.com/package/gh-pages)
+
+### 2. ymlファイルのコミット
+![picture 1](images/39ce4e7951a3f50e3768e9ee27cfef40d81c16d6921a20c2011b591f2d564826.png)  
+
+ymlファイルの編集ができたら、`Start commit`のボタンからコミットメッセージを入力して`Commit new file`でコミットします。
+
+## 3. GitHub Pagesの設定
 GitHub Pagesを公開する初期設定をしていきます。
 
 ### デプロイ（公開）！
@@ -191,7 +272,8 @@ GitHub Pagesを公開する初期設定をしていきます。
 
 
 
-
+**参考にした文献は↓の記事に**
+[kanren id="486"]
 
 
 

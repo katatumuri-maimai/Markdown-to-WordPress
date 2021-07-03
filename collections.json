@@ -3,5 +3,6 @@
   "<pre><code class=\"language-html\">":"<!-- wp:codemirror-blocks\/code-block {\"mode\":\"htmlmixed\",\"mime\":\"text\/html\"} --><div class=\"wp-block-codemirror-blocks-code-block code-block\"><pre>",
 "<pre><code class=\"language-javascript\">":"<!-- wp:codemirror-blocks\/code-block {\"mode\":\"javascript\",\"mime\":\"text\/javascript\"} --><div class=\"wp-block-codemirror-blocks-code-block code-block\"><pre>",
 "<pre><code class=\"language-css\">":"<!-- wp:codemirror-blocks\/code-block {\"mode\":\"css\",\"mime\":\"text\/css\"} --><div class=\"wp-block-codemirror-blocks-code-block code-block\"><pre>",
-"<pre><code class=\"language-python\">":"<!-- wp:codemirror-blocks\/code-block {\"mode\":\"python\",\"mime\":\"text\/x-python\"} --><div class=\"wp-block-codemirror-blocks-code-block code-block\"><pre>"
+"<pre><code class=\"language-python\">":"<!-- wp:codemirror-blocks\/code-block {\"mode\":\"python\",\"mime\":\"text\/x-python\"} --><div class=\"wp-block-codemirror-blocks-code-block code-block\"><pre>",
+"<pre><code class=\"language-yml\">":"<!-- wp:codemirror-blocks\/code-block {\"mode\":\"yaml\",\"mime\":\"text/x-yaml\"} --><div class=\"wp-block-codemirror-blocks-code-block code-block\"><pre>"
 }

@@ -3,7 +3,7 @@ name: MD2WP
 on:
   push:
     branches:
-      - 'main'
+      - 'develop'
     paths:
       - 'posts/**'
     
@@ -41,13 +41,16 @@ jobs:
         env:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
-        run: python "markdown2wp.py" "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" ${{ steps.file_changes.outputs.files_modified }}
+        run: python "markdown2wp.py" "https://katatumuri.xyz/" "$WP_USERNAME" "$WP_PASSWORD" ${{ steps.file_changes.outputs.files_added }} ${{ steps.file_changes.outputs.files_modified }}
         
       - name: Commit and Push 
         run: |
           git config user.name "katatumuri-maimai"
           git config --local user.email "action@github.com"
           git add .
-          git commit -m "自動更新"
-          git pull
-          git push origin main
+          if ! git diff --exit-code --quiet
+          then
+            git commit -m "自動更新"
+            git pull
+            git push origin develop
+          fi

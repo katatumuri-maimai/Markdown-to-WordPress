@@ -20,7 +20,8 @@ print("はじめるよ")
 WP_URL = sys.argv[1]
 WP_USERNAME = sys.argv[2]
 WP_PASSWORD = sys.argv[3]
-UPDATED_FILES = sys.argv[4]
+ADDED_FILES = sys.argv[4]
+UPDATED_FILES = sys.argv[5]
 
 #
 # 送信処理関数
@@ -344,8 +345,11 @@ def md2html(article_content):
 
 
 
+add_filelist = find_md_file(ADDED_FILES)
+update_filelist = find_md_file(UPDATED_FILES)
 
-filelist = find_md_file(UPDATED_FILES)
+filelist = add_filelist.extend(update_filelist)
+
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")
     for file in filelist:

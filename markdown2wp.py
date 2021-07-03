@@ -348,7 +348,7 @@ def md2html(article_content):
 add_filelist = find_md_file(ADDED_FILES)
 update_filelist = find_md_file(UPDATED_FILES)
 
-filelist = add_filelist.extend(update_filelist)
+filelist = add_filelist + update_filelist
 
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")

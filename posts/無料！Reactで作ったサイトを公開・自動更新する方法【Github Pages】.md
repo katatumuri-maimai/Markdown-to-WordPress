@@ -32,11 +32,13 @@
 
 ## 環境
 - ソースコードをGitHubで管理
-  - GitHubにリポジトリがある
+  - GitHubに公開リポジトリがある
 - DockerでNode.jsの環境構築
 - create-react-appでReactアプリのひな形作成
+- サブディレクトリにReactのコードがある
 
 ※GitHubに登録済み・Reactで作ったサイト・アプリのリポジトリがあるものとして説明していきます！
+※無料で公開するにはリポジトリの公開設定を`public`にしておいてください
 
 ### ローカルのディレクトリ（ファイル）構造
 ![DirectoryStructure](images/2021/06/DirectoryStructure.png)
@@ -265,6 +267,14 @@ ymlファイルの編集ができたら、`Start commit`のボタンからコミ
 
 ## 3. GitHub Pagesの設定
 GitHub Pagesを公開する初期設定をしていきます。
+
+![picture 2](images/d96b6678bbe4908b2c36f763f3a950910c0e133355689cd00f7b35c67d6d3620.png)  
+
+リポジトリの中の`Setting`に`Pages`があると思うので、そこをクリックするとこの画面になります！
+
+![picture 3](images/53b7d1ea7ad49b360275901977a08de69b8b0d69859fb633667680ff4773738a.png)  
+
+↑のブランチの設定を`gh-pages`にして`Save`したらOKです✨
 
 ### デプロイ（公開）！
 実際にmainブランチにmergeして、公開を確認してみましょう～！

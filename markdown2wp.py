@@ -13,6 +13,7 @@ import lxml
 import base64
 from io import BytesIO
 from PIL import Image
+import os
 
 print("はじめるよ")
 
@@ -327,8 +328,10 @@ def md2html(article_content):
 
     for img in imgs:
         img_data = Image.open(img['src'])
-        img_str = pil_to_base64(img_data)
-        content = content.replace(img['src'],'data:image/jpeg;base64,'+img_str)
+
+        if os.path.exists(img_data):
+            img_str = pil_to_base64(img_data)
+            content = content.replace(img['src'],'data:image/jpeg;base64,'+img_str)
 
 
     f = open("collections.json", 'r')
@@ -346,28 +349,29 @@ filelist = find_md_file(UPDATED_FILES)
 if len(filelist)!= 0 :
     print(".mdファイルを検出したので、HTMLに変換します。")
     for file in filelist:
-        add_article_header(file)
-        title, upload, state, slug, category_ids, tag_ids, media_id, serial_number,article_content = find_article_header(file)
+        if os.path.exists(file):
+            add_article_header(file)
+            title, upload, state, slug, category_ids, tag_ids, media_id, serial_number,article_content = find_article_header(file)
 
-        articleid = set_article_json(serial_number,state,upload)
-        content = md2html(article_content)
+            articleid = set_article_json(serial_number,state,upload)
+            content = md2html(article_content)
 
-        if upload:
-            print("記事をWordPressにアップロードしてみます。")
-            if articleid == "none":
-                print("新規投稿します")
-                res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+            if upload:
+                print("記事をWordPressにアップロードしてみます。")
+                if articleid == "none":
+                    print("新規投稿します")
+                    res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
+                else:
+                    print("既存の記事を更新します")
+                    res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
+
+                if res.reason =='Not Found':
+                    print("既存記事の更新ができなかったので、新規投稿します。")
+                    res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
 
             else:
-                print("既存の記事を更新します")
-                res = patch_article(articleid,state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
-
-            if res.reason =='Not Found':
-                print("既存記事の更新ができなかったので、新規投稿します。")
-                res = post_article(state, slug, title, content, category_ids=category_ids, tag_ids=tag_ids, media_id=media_id)
-
-        else:
-            print("記事を保存しました。（WordPressにアップロードはしていません。）")
+                print("記事を保存しました。（WordPressにアップロードはしていません。）")
 
 
 else:

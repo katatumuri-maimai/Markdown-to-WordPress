@@ -328,9 +328,8 @@ def md2html(article_content):
     imgs = soup.find_all('img')
 
     for img in imgs:
-        img_data = Image.open(img['src'])
-
-        if os.path.exists(img_data):
+        if os.path.exists(img['src']):
+            img_data = Image.open(img['src'])
             img_str = pil_to_base64(img_data)
             content = content.replace(img['src'],'data:image/jpeg;base64,'+img_str)
 

@@ -48,7 +48,7 @@ jobs:
           git config user.name "katatumuri-maimai"
           git config --local user.email "action@github.com"
           git add .
-          if git diff --exit-code --quiet
+          if ! git diff --exit-code --quiet
           then
             git commit -m "自動更新"
             git pull

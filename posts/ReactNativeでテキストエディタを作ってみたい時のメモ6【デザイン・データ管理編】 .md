@@ -9,8 +9,7 @@
 - 識別番号[EaiJbsI7y45w]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
+
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -501,3 +500,6 @@ React Nativeはコンポーネントが用意されているから楽ですね�
 
 今日はこの辺にしたいと思います！
 続きをお楽しみに(*´ω｀)
+
+↓続き
+[kanren id="609"]

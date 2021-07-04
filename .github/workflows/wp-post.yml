@@ -3,7 +3,7 @@ name: MD2WP
 on:
   push:
     branches:
-      - 'myposts'
+      - 'develop'
     paths:
       - 'posts/**'
     
@@ -48,8 +48,9 @@ jobs:
           git config user.name "katatumuri-maimai"
           git config --local user.email "action@github.com"
           git add .
-          if ! git diff --exit-code --quiet
+          if git diff --exit-code --quiet
           then
+            echo'変更があったのでコミットします。'
             git commit -m "自動更新"
             git pull
             git push origin myposts

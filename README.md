@@ -23,7 +23,7 @@ WordPressの記事を更新したいときは、Markdownファイルを更新し
 
 ### 🖼画像付記事の投稿
 ```markdown
-![（画像の説明）](（画像ファイルのパス）)
+![（画像の説明）](（画像ファイルの絶対パス）)
 ```
 画像ファイルも一緒にpushして↑このような記述をすると、画像が表示されるようになりました。  
 動作確認済み  ✅ jpeg ✅ png
@@ -72,7 +72,7 @@ code
 ```
 ~~~
 ↑で囲まれたブロックはGutenbergのcodeブロックへ変換されます（現時点では、プラグインcodemirror-blocksのブロックになります）  
-一部のcodemirror-blocksのブロックは言語指定可能（HTML,CSS,Javascript,python）
+一部のcodemirror-blocksのブロックは言語指定可能（HTML,CSS,Javascript,python,yml）
 
 
 

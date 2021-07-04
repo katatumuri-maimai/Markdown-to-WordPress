@@ -3,7 +3,7 @@ name: MD2WP
 on:
   push:
     branches:
-      - 'main'
+      - 'develop'
     paths:
       - 'posts/**'
     
@@ -52,5 +52,5 @@ jobs:
           then
             git commit -m "自動更新"
             git pull
-            git push origin main
+            git push origin develop
           fi

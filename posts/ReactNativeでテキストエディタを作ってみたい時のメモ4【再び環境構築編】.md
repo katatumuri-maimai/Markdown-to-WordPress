@@ -21,7 +21,6 @@ DockerでReact Nativeを開発すると、ホットリロードが効きませ�
 あまりにもリロードが遅すぎるので、WSLで環境構築しなおします！
 
 
-[GitHub](https://github.com/katatumuri-maimai/ReactNative-TextEditer)でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="557"]

@@ -18,7 +18,6 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 環境構築があらかた終わったので、早速画面を作成してみたいと思います！
 
 
-[GitHub](https://github.com/katatumuri-maimai/ReactNative-TextEditer)でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="557"]

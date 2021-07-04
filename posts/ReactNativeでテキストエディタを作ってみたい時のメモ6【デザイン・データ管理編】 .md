@@ -19,7 +19,6 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 長い環境構築を経て、やっと前回ReactNativeを触ることができました✨
 これで、アプリは作れそうだってことが分かったので、ここから最低限の機能を付けていきたいと思います～！
 
-[GitHub](https://github.com/katatumuri-maimai/ReactNative-TextEditer)でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="557"]

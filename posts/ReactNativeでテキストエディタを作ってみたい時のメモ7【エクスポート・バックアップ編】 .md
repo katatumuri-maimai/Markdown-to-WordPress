@@ -23,7 +23,6 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 これができたら、見た目がすごくダサいので、デザインも変えていきたい…
 
 
-[GitHub](https://github.com/katatumuri-maimai/ReactNative-TextEditer)でソースコードを管理しています！
 
 よっしゃ！やっていきます！
 

@@ -17,7 +17,6 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 今回は、Dockerで、React Native+Expoの環境構築をしていきます～！
 
 
-[GitHub](https://github.com/katatumuri-maimai/ReactNative-TextEditer)でソースコードを管理しています！
 
 最初から見る↓
 [card2 id="557"]

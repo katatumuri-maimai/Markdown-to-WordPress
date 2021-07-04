@@ -3,7 +3,7 @@ name: MD2WP
 on:
   push:
     branches:
-      - 'develop'
+      - 'myposts'
     paths:
       - 'posts/**'
     

@@ -54,5 +54,15 @@
     "status": "publish",
     "upload": true,
     "articleid": 608
+  },
+  "UaKgaRtkerDT": {
+    "status": "draft",
+    "upload": false,
+    "articleid": "none"
+  },
+  "8aWGfatcMmgP": {
+    "status": "draft",
+    "upload": false,
+    "articleid": "none"
   }
 }

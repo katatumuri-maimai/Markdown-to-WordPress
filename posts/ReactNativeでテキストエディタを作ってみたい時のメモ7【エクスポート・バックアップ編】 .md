@@ -9,8 +9,7 @@
 - 識別番号[uYlINxUbQ9FT]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
+
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -505,3 +504,6 @@ Share.share({ url: cacheDirectoryUri })
 ここまでで「テキストエディタが作れるなぁ」と分かってきたので、一旦今作っているのはおいておいて、新しく作りなおそうと思います(*´ω｀)
 
 デザインから計画を立てていくので、続きからはその様子をお伝えします～！
+
+↓続き
+[kanren id="622"]

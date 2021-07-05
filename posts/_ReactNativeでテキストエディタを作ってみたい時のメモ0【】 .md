@@ -18,7 +18,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 そこで、次はReactNativeを触ってみようと思い、簡単なテキストエディタを作成しようと企んでおります(笑)
 
 
-[GitHub](https://github.com/katatumuri-maimai/ReactNative-TextEditer)でソースコードを管理しています！
+[GitHub]()でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="557"]

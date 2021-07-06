@@ -9,8 +9,6 @@
 - 識別番号[UaKgaRtkerDT]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -136,3 +134,6 @@ React Nativeで基本のコンポーネントがあるので、それを使い�
   次の記事では実際に、アプリを作っていきます！
 
   まずは、アプリの見た目を作成していきます(*´ω｀)
+
+↓続き
+[kanren id="628"]

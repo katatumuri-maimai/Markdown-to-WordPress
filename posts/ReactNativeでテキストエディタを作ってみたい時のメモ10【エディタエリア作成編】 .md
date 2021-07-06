@@ -1,12 +1,12 @@
 >------------<
-- タイトル:[【0】React Nativeでテキストエディタを作ってみる！【】]
+- タイトル:[【10】React Nativeでテキストエディタを作ってみる！【エディタエリア作成編】]
 - WordPressにアップロードしますか？:y[]はいn[x]まだしない
 - 投稿時:p[]公開d[x]下書き
-- カスタムURL:[React-Native-challenge-to-create-text-editor-0]
+- カスタムURL:[React-Native-challenge-to-create-text-editor-10]
 - カテゴリID:[3,11,12]
 - タグID:[]
 - 見出し画像のID:[]
-- 識別番号[8aWGfatcMmgP]
+- 識別番号[]
 >------------<
 
 <!-- ↓続き

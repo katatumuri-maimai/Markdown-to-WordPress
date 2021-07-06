@@ -61,8 +61,8 @@
     "articleid": 622
   },
   "8aWGfatcMmgP": {
-    "status": "draft",
-    "upload": false,
-    "articleid": "none"
+    "status": "publish",
+    "upload": true,
+    "articleid": 628
   }
 }

@@ -64,5 +64,10 @@
     "status": "publish",
     "upload": true,
     "articleid": 628
+  },
+  "R0yqAs9Fxr6H": {
+    "status": "draft",
+    "upload": false,
+    "articleid": "none"
   }
 }

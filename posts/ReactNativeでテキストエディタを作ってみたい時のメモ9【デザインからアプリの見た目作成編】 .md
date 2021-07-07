@@ -9,8 +9,7 @@
 - 識別番号[8aWGfatcMmgP]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
+
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -414,3 +413,6 @@ export default function name(props) {
 AndroidStudio謎すぎる。
 
 謎で終わりましたが、AndroidStudioの挙動がおかしくて1日つぶしてしまったので、今回はこの辺で終わります(*´ω｀)
+
+↓続き
+[kanren id="630"]

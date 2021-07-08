@@ -69,5 +69,15 @@
     "status": "publish",
     "upload": true,
     "articleid": 630
+  },
+  "iPGGqq8Z2JLJ": {
+    "status": "draft",
+    "upload": true,
+    "articleid": 634
+  },
+  "8T2ftVB8l8lH": {
+    "status": "draft",
+    "upload": false,
+    "articleid": "none"
   }
 }

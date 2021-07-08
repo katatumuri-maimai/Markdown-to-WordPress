@@ -9,8 +9,7 @@
 - 識別番号[R0yqAs9Fxr6H]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
+
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -660,4 +659,7 @@ return (
 
 今回はこんな感じで終わります(*´ω｀)
 次はメニューコンポーネントを作っていきます！
+
+↓続き
+[kanren id="634"]
 

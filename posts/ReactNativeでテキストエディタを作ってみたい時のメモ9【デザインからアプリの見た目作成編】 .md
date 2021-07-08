@@ -19,7 +19,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 前回、デザインから再スタートしました！
 今回は、デザインにそって見た目を作っていきます(*´ω｀)
 
-[GitHub]()でソースコードを管理しています！
+[GitHub](https://github.com/katatumuri-maimai/snail_Markdown_TextEditor)でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="557"]

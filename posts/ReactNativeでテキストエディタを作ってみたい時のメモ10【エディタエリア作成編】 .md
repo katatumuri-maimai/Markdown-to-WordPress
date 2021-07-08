@@ -20,7 +20,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 今回は、ナビとエディタエリアを作成していきます(*´ω｀)
 
 
-[GitHub]()でソースコードを管理しています！
+[GitHub](https://github.com/katatumuri-maimai/snail_Markdown_TextEditor)でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="557"]

@@ -9,9 +9,6 @@
 - 識別番号[iPGGqq8Z2JLJ]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
-
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -690,3 +687,6 @@ export function SetDataNameModal(props) {
 
 ここから、難関のファイルシステムが始まります(((o(*ﾟ▽ﾟ*)o)))
 がんばります！ｗｗ
+
+↓続き
+[kanren id="644"]

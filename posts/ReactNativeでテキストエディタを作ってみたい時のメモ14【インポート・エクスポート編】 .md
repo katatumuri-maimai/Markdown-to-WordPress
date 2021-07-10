@@ -310,6 +310,8 @@ export async function exportPdfFile(filename, content) {
 そのままフォルダごとエクスポートしたいのですが、それはちょっとできないみたいでした。
 そこで、Zipファイルに圧縮してエクスポートできるようにしたいと思います！
 
+[imaya/zlib.js](https://github.com/imaya/zlib.js/)でZipへの圧縮と解凍ができるみたいなので、これを導入していきます。
+
 
 ```javascript
 ```

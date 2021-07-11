@@ -365,3 +365,4 @@ iosで`Invariant Violation: Native module cannot be null.`とエラーが出る�
 まだ、画像のインポートが残っていますが、ちょっと大変そうなのでとばしますｗ
 
 次は端末タイプや向きによるデザインの変更をしていきます！
+

@@ -355,7 +355,7 @@ iosで`Invariant Violation: Native module cannot be null.`とエラーが出る�
 ## ファイル選択されていない時にモーダルを出す
 いまの状態だと、ファイルを選択されていない時にもエクスポートできてしまうので、ファイルを選択するように促すモーダルを作成します。
 
-![picture 1](../images/875ba0000aa8fd448144fc5b099dee2a0b17e2a0c22ebb77447bc4fb58d792ff.png)  
+![picture 1](images/875ba0000aa8fd448144fc5b099dee2a0b17e2a0c22ebb77447bc4fb58d792ff.png)  
 ↑このような感じになりました！
 ファイルを選択されていない時はこのモーダルが出て、エクスポートするファイルを選択できます。
 

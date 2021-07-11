@@ -9,8 +9,7 @@
 - 識別番号[YeKTPc1vpZQR]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
+
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -152,3 +151,9 @@ export async function setThemeSetting(themeName) {
 ↑このように、選べるようにしました。
 
 コードはテーマ選択の時と変わらないので省略します。
+
+
+次はファイルのインポート・エクスポートをしていきます！
+
+↓続き
+[kanren id="650"]

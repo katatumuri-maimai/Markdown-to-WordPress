@@ -153,7 +153,7 @@ export function exportHtmlFile(filename,content) {
 ↑こちらの様なコードを作成し、試しにマークダウンをHTMLに変換してみました
 
 マークダウン↓
-```
+~~~
 # snail - Markdown Text Editor
 　
 ## katatumuriの初めてのアプリ  
@@ -183,7 +183,7 @@ code
   
 
 ❤️
-```
+~~~
 ↓↓↓変換
 ↓HTML
 

@@ -1,7 +1,7 @@
 >------------<
 - タイトル:[【14】React Nativeでテキストエディタを作ってみる！【インポート・エクスポート編】]
 - WordPressにアップロードしますか？:y[x]はいn[]まだしない
-- 投稿時:p[]公開d[x]下書き
+- 投稿時:p[x]公開d[]下書き
 - カスタムURL:[React-Native-challenge-to-create-text-editor-14]
 - カテゴリID:[3,11,12]
 - タグID:[]
@@ -310,26 +310,58 @@ export async function exportPdfFile(filename, content) {
 そのままフォルダごとエクスポートしたいのですが、それはちょっとできないみたいでした。
 そこで、Zipファイルに圧縮してエクスポートできるようにしたいと思います！
 
-[imaya/zlib.js](https://github.com/imaya/zlib.js/)でZipへの圧縮と解凍ができるみたいなので、これを導入していきます。
+### ライブラリ選定
+[JSZip](https://stuk.github.io/jszip/)でZipへの圧縮と解凍ができるみたいなので、これを導入していきます。
+[JavaScript で複数ファイルを無圧縮 zip にまとめてダウンロードする](https://qiita.com/kerupani129/items/75a10111774aafd9250a)を参考に、ライブラリを選びました。
+
+`npm install --save jszip --legacy-peer-deps`
 
 
-```javascript
+と、思ったけど、使いやすそうなライブラリ見つけたので、そちらに変更します。
+[Node.jsで指定したファイルやフォルダをZIP圧縮する方法](https://qiita.com/mr_t_free/items/4448f809aca5dc4b58af)こちらを参考に、[Archiver](https://www.npmjs.com/package/archiver)をインストールします。
+`expo install archiver`
+
 ```
-
-```javascript
+Unable to resolve module util from /home/mymai/snil_Markdown_TextEditor/node_modules/archiver/lib/plugins/json.js: util could not be found within the project.
 ```
+↑のようにエラーがでたので、`util`をインストールします。
+`expo install util`
 
 
-```javascript
 ```
-
-
-```javascript
+Unable to resolve module zlib from /home/mymai/snil_Markdown_TextEditor/node_modules/archiver/lib/plugins/tar.js: zlib could not be found within the project.
 ```
+↑のようにエラーがでたので、`zlib`をインストールします。
+`expo install zlib`
 
-
-```javascript
 ```
+Unable to resolve module fs from /home/mymai/snil_Markdown_TextEditor/node_modules/archiver/lib/core.js: fs could not be found within the project.
+```
+↑のようにエラーがでたので、`fs`をインストールします。
+`expo install fs`
+
+`fs`使えないエラー出ました！
+そもそも、ReactNativeで使えないライブラリみたいだなと気づき、ライブラリを探す旅にでました。
+（マークダウンへの変換ライブラリも使えないかもしれないと不安になってきた）
+
+[mockingbot/react-native-zip-archive](https://github.com/mockingbot/react-native-zip-archive)こちらを使っていきます！
+`npm install react-native-zip-archive --save --legacy-peer-deps`
+
+iosで`Invariant Violation: Native module cannot be null.`とエラーが出るので、[Expoを使っていたReact NativeのアプリでNative Modulesを使うためにdetachする](https://blog.pchw.io/entry/2017/05/28/231607)を参考に、detachしようとしたけど、管理が大変になるみたいなので辞めました。
+
+バックアップ難しそうなので、ちょっと保留にしておいて次に進みます！
 
 
-- エクスポートする時の条件分岐（ファイル選択されていない時にモーダルを出す）
+## ファイル選択されていない時にモーダルを出す
+いまの状態だと、ファイルを選択されていない時にもエクスポートできてしまうので、ファイルを選択するように促すモーダルを作成します。
+
+![picture 1](../images/875ba0000aa8fd448144fc5b099dee2a0b17e2a0c22ebb77447bc4fb58d792ff.png)  
+↑このような感じになりました！
+ファイルを選択されていない時はこのモーダルが出て、エクスポートするファイルを選択できます。
+
+
+以上でインポート・エクスポート編を終わります！
+
+まだ、画像のインポートが残っていますが、ちょっと大変そうなのでとばしますｗ
+
+次は端末タイプや向きによるデザインの変更をしていきます！

@@ -17,6 +17,11 @@
 Reactを触ってみて、サイト的なものは作れるようになりました(*´ω｀)
 そこで、次はReactNativeを触ってみようと思い、簡単なテキストエディタを作成しようと企んでおります(笑)
 
+ほとんどできてきました！
+今回は、最難関の画像インポートと、デザインの微調節をしていきます。
+
+これが終わったら、GooglePlayStoreやAppStoreにアプリとして申請したい！
+あともうちょっと！がんばります！
 
 [GitHub](https://github.com/katatumuri-maimai/snail_Markdown_TextEditor)でソースコードを管理しています！
 

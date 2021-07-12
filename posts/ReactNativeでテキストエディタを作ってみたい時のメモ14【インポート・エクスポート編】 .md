@@ -9,8 +9,6 @@
 - 識別番号[In9Hx2NKUHln]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -366,3 +364,6 @@ iosで`Invariant Violation: Native module cannot be null.`とエラーが出る�
 
 次は端末タイプや向きによるデザインの変更をしていきます！
 
+
+↓続き
+[kanren id="654"]

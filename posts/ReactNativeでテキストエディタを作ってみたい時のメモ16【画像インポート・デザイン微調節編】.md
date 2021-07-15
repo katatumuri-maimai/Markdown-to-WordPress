@@ -327,6 +327,22 @@ supportedOrientations={['portrait', 'portrait-upside-down', 'landscape', 'landsc
 </ModalComponent>
 ```
 
+## カメラからのインポートを実装
+![picture 15](images/71d9f602e450ff80b578190d37756c8ef4622b9f7c22e6a5f78dff3b216d8acb.png)  
+↑今までは、一番上のアルバムからのインポートのみ対応していました。
+カメラからのインポートも追加していきます。
+
+`ImagePicker`の`ImagePicker.launchCameraAsync(options)`を使っていきます！
+ほぼメディアライブラリからのインポートと変わりません。
+
+## カメラからのインポートを実装
+`DocumentPicker`の`DocumentPicker.getDocumentAsync()`を使います！
+ほぼメディアライブラリからのインポートと変わりません。
+
+
+## 画像削除ボタンの実装
+プロジェクトフォルダやファイルを削除するときに使ったやり方で実装します！
+
 ## コンポーネントの再レンダリングを監視したい
 だんだんiPadの挙動が遅くなってきました。
 たぶん、ステート更新しすぎで何度もレンダリングされてるからなのかなと思います。
@@ -348,20 +364,6 @@ supportedOrientations={['portrait', 'portrait-upside-down', 'landscape', 'landsc
 [管理者権限で実行するPowerShellスクリプトをタスクスケジューラーに登録](https://blog.yamk.net/posts/20200724-ps1fortaskschedulerasadmin/)
 
 
-
-## カメラからのインポートを実装
-![picture 15](images/71d9f602e450ff80b578190d37756c8ef4622b9f7c22e6a5f78dff3b216d8acb.png)  
-↑今までは、一番上のアルバムからのインポートのみ対応していました。
-カメラからのインポートも追加していきます。
-
-`ImagePicker`の`ImagePicker.launchCameraAsync(options)`を使っていきます！
-ほぼメディアライブラリからのインポートと変わりません。
-
-## カメラからのインポートを実装
-`DocumentPicker`の`DocumentPicker.getDocumentAsync()`を使います！
-ほぼメディアライブラリからのインポートと変わりません。
-
-
 ## Androidで`ScrollView`が効かない
 Androidで`ScrollView`が全くきいていないことに気づきました💦
 色々調べてみてスタイルとかを変えてみても、うまくいきませんでした。
@@ -369,5 +371,9 @@ Androidで`ScrollView`が全くきいていないことに気づきました💦
 [react native scrollview not scrolling on android](https://stackoverflow.com/questions/55312631/react-native-scrollview-not-scrolling-on-android)より、`import { ScrollView } from 'react-native';`を`import { ScrollView } from 'react-native-gesture-handler';`に変えるとうまくいきました😊
 `react-native-gesture-handler`がこんなところで使えましたねｗ
 
+
+
 今回はこれで終了です✨
 あとはこまごまとした修正をやっていきます！
+
+[JavaScriptで画像をbase64形式のURLに変換するやり方](https://pisuke-code.com/js-way-to-convert-img-to-base64/)

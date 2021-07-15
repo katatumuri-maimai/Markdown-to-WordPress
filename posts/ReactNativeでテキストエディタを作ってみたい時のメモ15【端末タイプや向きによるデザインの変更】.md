@@ -9,8 +9,6 @@
 - 識別番号[DaEJWJgNj1bK]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -129,3 +127,7 @@ const isLandscape  = (windowWidth / windowHeight) >= 1
 
 ↑React Nativeでは、このようにスタイルを二つ渡すことが可能です。
 [React Nativeで複数のstyleを適用する](https://qiita.com/furusin_oriver/items/a05a5327af8b9dda037a)によると、配列にして渡すとどちらも適応され、右側のスタイルの方が強いそうです。
+
+
+↓続き
+[kanren id="656"]

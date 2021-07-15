@@ -129,7 +129,8 @@ const show =
     console.log(value);
     return src.toLowerCase().startsWith(value.toLowerCase());
   }).length > 0;
-  ```
+```
+
 これは、画像のuri(src)が、`http://`などで始まるかどうかを確認しているみたいですね。
 
 srcが`http://`などではじまっていた時は、そのままsrcを返すし、はじまっていない時は`defaultImageHandler`を前につけるみたいですね。

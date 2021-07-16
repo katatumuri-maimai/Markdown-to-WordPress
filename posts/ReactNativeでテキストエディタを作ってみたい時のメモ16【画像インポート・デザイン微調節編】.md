@@ -354,6 +354,8 @@ supportedOrientations={['portrait', 'portrait-upside-down', 'landscape', 'landsc
 
 が、WSLのせいで開けないので辞めましたｗｗｗ
 
+ホストマシンで`npx react-devtools`と打つと一時的に使えます😊
+
 ## LAN接続設定
 前からできなかったLAN接続設定ができちゃったので📝
 [WSL2で起動したサーバーに外部の端末からアクセスする](https://gunmagisgeek.com/blog/other/7171)を参考にしたらすんなりできちゃいました。

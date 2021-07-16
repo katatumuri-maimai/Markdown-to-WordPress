@@ -9,8 +9,6 @@
 - 識別番号[qUTKpX5eWJXe]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -380,3 +378,7 @@ Androidで`ScrollView`が全くきいていないことに気づきました💦
 あとはこまごまとした修正をやっていきます！
 
 [JavaScriptで画像をbase64形式のURLに変換するやり方](https://pisuke-code.com/js-way-to-convert-img-to-base64/)
+
+
+↓続き
+[kanren id="661"]

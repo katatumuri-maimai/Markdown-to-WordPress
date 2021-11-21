@@ -193,6 +193,9 @@ Expo使う設定にします。
 ![picture 7](../images/dc32b2f89894a10fe692784c0b1f6f2c9dd92ef69efcc53bc130657116673b79.png)  
 ビルドが終わったようです。
 
+![picture 6](../images/563fb57ca227a8f043726f9d350837a303033da8637722ea828b340957cb2937.png)  
+ビルドしたファイルをダウンロードしておきます。
+
 ## アプリをストアへ送信
 ビルドしたアプリを各ストアへ送信していきます。
 
@@ -251,31 +254,123 @@ Expo使う設定にします。
 
 
 #### アプリアイコン・グラフィックの作成
-アプリのアイコン・グラフィック・スクリーンショットを設定しないといけないみたいなので、作成していきます。
+![picture 2](../images/fa162f79360eea2a084cd10386b7ffb22e8d7c9e843695b1c329d53e4c23b5f6.png)  
+
+↑この画面で、アプリのアイコン・グラフィック・スクリーンショットを設定しないといけないみたいなので、作成していきます。
+
+![picture 1](../images/dc75ad44d7abd6f0cff0f14112f084cdb8be9ccc84c1adcaa4985d1053560980.png)  
 
 
+### アプリのリリース
+![picture 3](../images/b6de427c16923181f00c703cd0515b4383c83613237ed85db76a4db12946b033.png)  
+アプリを公開する前に、テストしないといけないみたいなので、、、
+今回はオープンテストで行うようにしようと思います。
 
-```
-Markdown Text Editor - snail
+「誰でもGooglePlayで登録することで、アプリをテストできるようにする」を選びました。
 
-シンプルマークダウンエディタ
+#### 国や地域を選択
+![picture 4](../images/42d3cd50cff18c4dd4fe3eaaa52aa8ff345babdc637e4f39ede09aebb258424f.png)  
+タスクを確認して、リリースする国を追加します。
 
-シンプルなマークダウンエディタです。
+#### オープンテスト版リリースの作成
+![picture 5](../images/c308d5a1310624092852cfb2ff9ba1d819588f868419b1fbe3c7d4e38552e957.png)  
 
-以下の機能が使用できます。
-・マークダウン記法での入力
-・マークダウンプレビュー
-・テーマカラーの変更
-・画像挿入（フォトアプリからのインポート）
-・マークダウンファイルのインポート・エクスポート（拡張子「.md」）
-・テキストファイルのインポート（拡張子「.txt」）
-・HTMLファイルのインポート・エクスポート（拡張子「.html」）
-・PDFファイルのエクスポート・印刷（拡張子「.pdf」）
-・フォルダ分けして保存可能
-```
 
+##### アプリバンドルでのビルド
+アプリバンドルが必要みたいですね…。
+アプリバンドルでビルドしなおします。
+
+`expo build:android -t app-bundle`
+
+![picture 14](../images/32af98d2901b48c54f3e4e24f4434e2cf0c2ce19e9b4fc5252670786f3d9fb1d.png)  
+おわりました！
+
+![picture 15](../images/f910bf9f3f7d1e56ef2814647c3c642dea64e90544fe5806d18c0233fb040e72.png)  
+こちらをExpoからダウンロードして、オープンテスト版リリースの作成画面でアップロードします。
+
+
+#### プライバシーポリシーの追加
+[こちらのサイト](https://topcourt-law.com/terms_of_service/privacy-policy-for-app)を参考に、プライバシーポリシーを作ります。
+このブログの固定ページに掲載して、URLを記載することにします。
+
+[スマホアプリ版アプリケーション・プライバシーポリシー](https://dnp-photobook.jp/app/privacypolicy/)
+[]()
 
 ### Apple Storeへ送信
-`eas submit -p ios`します。
+私はWindowsなので、直接送信できないのでは…と思い、Expoの有料プランに登録するか迷っていました。
+（MacOSでしか使えなさそうなTransporterというアプリが必要）
 
-[WindowsからApp Store Connectにipaファイルをアップロードする](https://takamii.hatenablog.com/entry/2020/12/26/140340)
+そこでこんな記事を発見→[WindowsからApp Store Connectにipaファイルをアップロードする](https://takamii.hatenablog.com/entry/2020/12/26/140340)
+ひとまずは、この方法で試していきたいと思います。
+
+
+#### App Store Connectへの接続
+![picture 7](../images/90516ae1352c0f6adfc873e87375cf2fc7dace1a1b6f96a729f164aee28c9e08.png)  
+App Store Connectとやらに接続しないといけないみたいなので、接続していきます。
+
+![picture 8](../images/cf4fbe549bb7bc7d508a7023ce92103fe02549ed16af0445fbaeaf5b6e42aa79.png)  
+なにやら管理画面が出てきました！
+「マイApp」を選択します。
+
+#### Appを追加
+![picture 9](../images/96b51d4c7ee5879386ed588238ec93582640aa4ad7cff2b949a24c95ccc5eeb5.png)  
+ここからアプリを追加していきます。
+
+![picture 10](../images/91bf39faff20dd4781b893e9159d289bd34010e118a125046471277aafc3bc77.png)  
+ここでもアプリの情報を入力していきます。
+
+![picture 12](../images/044de04f9839554bfa27e7c8edfb18c65adba11d82d924793f5d64e426a0afd9.png)  
+iOSを選択
+
+[こちら](https://zenn.dev/moutend/articles/feebf0120dce6e6426fa#%EF%BC%88%E8%A3%9C%E8%B6%B3%EF%BC%89sku%E3%83%BBapp-id%E3%83%BBbundle-id%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)の記事によると、SKUはなんでもいいらしい！
+
+#### App情報を追加
+![picture 13](../images/a40fa22957768cbea6c81500803114db6e9f51dffc5e2005a7d2719bc4966fab.png)  
+こちらで、アプリの情報を追加していきます。
+追加できたら、「審査へ提出」をおします。
+
+#### ビルド
+![picture 1](../images/743ab17a6930f2e1e965bf53aaf15198952f889be104f45158cbd2bc7eedd633.png)  
+アップロードツールを表示を押します。
+
+![picture 5](../images/dfeeae6823d84d20a5695fa4cc3ab5042a4fda6acd16038a0511a0539f863fb9.png)  
+
+Xcodeはないので、「Transporter App をダウンロード」を押したいところですが、Mac用のリンクなので、違うとこから行きます。
+
+上の方で紹介した、[WindowsからApp Store Connectにipaファイルをアップロードする](https://takamii.hatenablog.com/entry/2020/12/26/140340)を参考に、Windows用の`Transporter`をダウンロードします。
+
+[Transporter User Guide 2.2](https://help.apple.com/itc/transporteruserguide/en.lproj/static.html)こちらからダウンロードしていきます。
+ちなみに、linux用の物もあるようです。
+
+![picture 6](../images/5f604d9bf3c073ebe291e4327cf847154ae65070282274a3271f983d473304bb.png)  
+
+Windowsというリンクからダウンロードできます。
+
+![picture 7](../images/f32a3326e8c20d0931f7f8ce1cffaa08b40620661a82772d5545bba49ab4970e.png)  
+
+詳細を押して
+![picture 8](../images/646be5cb4793777f0513ee5cfd918187ea61212e2e275a3b17dbb6ae93fca35f.png)  
+実行を押します。
+
+![picture 9](../images/5c4e707f773bebb97e97243e3e835e8bf727855c6d70daddbe2150557f1d43fa.png)  
+
+![picture 10](../images/131ca6090e14da6e9d7a0dff900b500ad274a3ced65283849123a39ab3aac623.png)  
+
+![picture 11](../images/b863014500ada80ffdde67ba3f969b96ebf94ab9f7b25cd602e25640b8fdf85e.png)  
+
+![picture 12](../images/eec3657a3dcd5fc216ba7cfd7169773128ebf9f591ebae58ff23d6a9cb155cb5.png)  
+
+> 'C:\Program Files (x86)\itms というところに iTMSTransporter.cmd があるので、これをPowerShell上で実行すればよさそうです。
+PowerShell上で以下を行います。
+
+`& 'C:\Program Files (x86)\itms\iTMSTransporter.cmd' -help`
+
+![picture 13](../images/64d0fff907bb6aacdbba23b1653c4c22698400cdef7509647b78aa58a98e51ef.png)  
+こんな感じになった…ｗ
+ちゃんとインストールされてますね
+
+次は、以下をPowerShellで打ちます。
+
+`App uploads for macOS, Linux, and Windows: Specifies the directory and filename for the app source file (.pkg or .ipa). For Linux and Windows, -assetDescription is required.`
+
+`& 'C:\Program Files (x86)\itms\iTMSTransporter.cmd' -m upload -assetFile 【ipaファイルの場所】 -u 【Appleconnectのユーザー名】  -p 【Appleconnectのパスワード】 -assetDescription .\Desktop\AppStoreInfo.plist -v eXtreme`

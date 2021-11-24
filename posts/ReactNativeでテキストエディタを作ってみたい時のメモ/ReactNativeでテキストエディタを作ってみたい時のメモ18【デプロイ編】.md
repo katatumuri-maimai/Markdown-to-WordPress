@@ -39,6 +39,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 こちらを参考に公開申請していきます。
 
 
+
 ## 公開申請用の設定 app.jsonの構成
 まず、`app.json`に公開用の設定を書いていきます。[2.app.jsonを構成します](https://docs.expo.dev/distribution/building-standalone-apps/#2-configure-appjson)
 

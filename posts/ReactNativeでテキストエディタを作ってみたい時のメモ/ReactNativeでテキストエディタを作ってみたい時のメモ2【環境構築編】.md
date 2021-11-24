@@ -48,13 +48,13 @@ iPhoneとiPadでExpo Clientというシミュレーターみたいなものを�
 ↑こちらの手順とファイルを参考に作成　　
 
 ### `docker-compose build`でエラーがでた！
-![picture 1](images/2021/06/860e1bbc3dbf9a59713e1f7e7d8601b42059509f40b34e5d69178b32a391054e.png)  
+![picture 1](../../images/2021/06/860e1bbc3dbf9a59713e1f7e7d8601b42059509f40b34e5d69178b32a391054e.png)  
 `pywintypes.error: (2, 'CreateFile', '指定されたファイルが見つかりません。')`
 
 ↑DockerDesktopを起動していないだけだった
 
 ↓またエラー
-![picture 2](images/2021/06/6959d88234340008928ce20ff97aab50cffade3dc12756ca005144caa8c0247c.png)  
+![picture 2](../../images/2021/06/6959d88234340008928ce20ff97aab50cffade3dc12756ca005144caa8c0247c.png)  
 
 ```
 Building react_native
@@ -78,11 +78,11 @@ TypeScriptを使っていないので`blank`を選択しました。
 ### コンテナの起動とアプリでの確認
 参考記事にしたがって、起動していきます！  
 
-![picture 3](images/2021/06/f780cac06c0227063e60e572e6500238246f2d51f238b0d6603b4aacf47d6020.png)  
+![picture 3](../../images/2021/06/f780cac06c0227063e60e572e6500238246f2d51f238b0d6603b4aacf47d6020.png)  
 
 読むとるも起動せず…  
 
-![picture 5](images/2021/06/9650ab1202c8d06c78d4b863dd70a905bcf72d99973409a03785b721510a3d09.png)  
+![picture 5](../../images/2021/06/9650ab1202c8d06c78d4b863dd70a905bcf72d99973409a03785b721510a3d09.png)  
 
 
 Expoのデベロッパーツールが起動する`http://localhost:19002/`にも接続できませんでした(;´･ω･)
@@ -119,14 +119,14 @@ buildしなおすも特にかわらずｗ
 パソコンではアクセスできるものの、iPhoneからは難しく…こまったｗ
 どこかでパソコンかDockerとかの設定が変わってしまったんでしょう…
 
-![picture 6](images/2021/06/0163eb8144d2a3a9e08acd5bb4bef3dbb8a3dde844d03d94b6bb3528c7d7e989.png)  
+![picture 6](../../images/2021/06/0163eb8144d2a3a9e08acd5bb4bef3dbb8a3dde844d03d94b6bb3528c7d7e989.png)  
 
 このポートのところ、`0.0.0.0:3030`ですよね。
 以前は`localhost:3030`だったんです…。
 何が起きたんだろうｗ
 
 #### 解決！
-![picture 7](images/2021/06/730fefc190d143b24925aeffa312d061bf595d7282d6813221078b53d7def411.png)  
+![picture 7](../../images/2021/06/730fefc190d143b24925aeffa312d061bf595d7282d6813221078b53d7def411.png)  
 
 パソコンのネットワークがパブリックの設定になっていました。
 プライベートに設定しなおすと、iPhoneからも接続できるようになりました(*´ω｀)
@@ -168,9 +168,9 @@ buildしなおすも特にかわらずｗ
 
 
 #### とりあえずデバッグしてみた
-![picture 8](images/2021/06/29a43cb4726072ae2c0090c3017a1fc91980b32642672ca3b29e89cd111d9613.png)  
-![picture 9](images/2021/06/b9fb50b189a6ba4e4bd015a41fdf725ed01bef48ffa2e10dcadc6d5c85c997e2.png)  
-![picture 10](images/2021/06/4504e32c63ef253dc111b752ba613d41a8abd46fe8ecf626cc5273813693b7ad.png)  
+![picture 8](../../images/2021/06/29a43cb4726072ae2c0090c3017a1fc91980b32642672ca3b29e89cd111d9613.png)  
+![picture 9](../../images/2021/06/b9fb50b189a6ba4e4bd015a41fdf725ed01bef48ffa2e10dcadc6d5c85c997e2.png)  
+![picture 10](../../images/2021/06/4504e32c63ef253dc111b752ba613d41a8abd46fe8ecf626cc5273813693b7ad.png)  
 
 ```
 Runtime is not ready for debugging.
@@ -193,7 +193,7 @@ Runtime is not ready for debugging.
 
 `docker-compose up`しなおしてみます。
 
-![picture 11](images/2021/06/a6be0f0f535b1b8dc182c3d38df3e404d2f908fbd91626b87f2ceee5491da2d2.png)  
+![picture 11](../../images/2021/06/a6be0f0f535b1b8dc182c3d38df3e404d2f908fbd91626b87f2ceee5491da2d2.png)  
 
 真っ暗だけど開きました！
 コンテナ内のlocalhostに繋がっていたのですね。
@@ -235,7 +235,7 @@ services:
 
 再び`docker-compose up`しなおしてみます。  
 
-![picture 12](images/2021/06/1fc19756e525f291c511536c2eb810512efafcca10f8a114cfc2d0801c2e10a5.png)  
+![picture 12](../../images/2021/06/1fc19756e525f291c511536c2eb810512efafcca10f8a114cfc2d0801c2e10a5.png)  
 
 あ`http://192.168.0.19:19002/`でアクセスできました！
 ありゃ～、もしかしたら`yarn`のくだりは必要ないかもですね(笑)
@@ -245,10 +245,10 @@ services:
 
 
 #### 代替え案-webブラウザで確認する
-![picture 13](images/2021/06/1599fa88e2d6ff117d983dd9be386996cff4ea396311d992361d01415c9df0d9.png)  
+![picture 13](../../images/2021/06/1599fa88e2d6ff117d983dd9be386996cff4ea396311d992361d01415c9df0d9.png)  
 ここ押すとインストールが勝手に始まります。
 
-![picture 14](images/2021/06/a7d2ea1ca38f44cc24b5a36f7ce5f5ca9970bef54a52b4db23ea6b9832ee5104.png)  
+![picture 14](../../images/2021/06/a7d2ea1ca38f44cc24b5a36f7ce5f5ca9970bef54a52b4db23ea6b9832ee5104.png)  
 
 ポート`19006`で動くみたいなので、`docker-compose.yml`にポートを追加しました。
 ```yml
@@ -268,11 +268,11 @@ services:
 ```
 
 再び`docker-compose up`しなおしてみます。
-![picture 13](images/2021/06/1599fa88e2d6ff117d983dd9be386996cff4ea396311d992361d01415c9df0d9.png)  
+![picture 13](../../images/2021/06/1599fa88e2d6ff117d983dd9be386996cff4ea396311d992361d01415c9df0d9.png)  
 ここをもう一度押すと、勝手にWebpackが起動。
 `http://localhost:19006/`にアクセスすると、、、
 
-![picture 15](images/2021/06/80c7aa001aa8f2706eefb3d0cca5abd8fd2b77bef3d7e1b0cddbe55b8cd59ee4.png)  
+![picture 15](../../images/2021/06/80c7aa001aa8f2706eefb3d0cca5abd8fd2b77bef3d7e1b0cddbe55b8cd59ee4.png)  
 
 できました～！
 

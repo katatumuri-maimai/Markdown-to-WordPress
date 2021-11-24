@@ -1,7 +1,7 @@
 >------------<
 - タイトル:[【18】React Nativeでテキストエディタを作ってみる！【デプロイ編】]
-- WordPressにアップロードしますか？:y[]はいn[x]まだしない
-- 投稿時:p[]公開d[x]下書き
+- WordPressにアップロードしますか？:y[x]はいn[]まだしない
+- 投稿時:p[x]公開d[]下書き
 - カスタムURL:[React-Native-challenge-to-create-text-editor-18]
 - カテゴリID:[3,11,12]
 - タグID:[]
@@ -374,3 +374,9 @@ PowerShell上で以下を行います。
 `App uploads for macOS, Linux, and Windows: Specifies the directory and filename for the app source file (.pkg or .ipa). For Linux and Windows, -assetDescription is required.`
 
 `& 'C:\Program Files (x86)\itms\iTMSTransporter.cmd' -m upload -assetFile 【ipaファイルの場所】 -u 【Appleconnectのユーザー名】  -p 【Appleconnectのパスワード】 -assetDescription .\Desktop\AppStoreInfo.plist -v eXtreme`
+
+
+あ、、、これMac無いとアップロードできないやつですね…。
+詰みました💦
+
+結局、Macでアップロードして申請提出しました🙇💦

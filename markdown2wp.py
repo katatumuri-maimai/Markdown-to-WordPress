@@ -26,7 +26,6 @@ UPDATED_FILES = sys.argv[5]
 # 送信処理関数
 #
 def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
-   print("konkon")
 
    # 情報の設定
    JST = timezone(timedelta(hours=+9), 'JST')
@@ -48,10 +47,12 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
                        auth=(WP_USERNAME, WP_PASSWORD))
 
    articleid = res.json()["id"]
+   print("konkon1")
    with open('articles.json', 'r') as d:
        json_articles = json.load(d)
        json_articles[serial_number]["articleid"] = articleid
 
+   print("konkon2")
    with open('articles.json', mode='wt', encoding='utf-8') as f:
        json.dump(json_articles, f, ensure_ascii=False, indent=2)
        print('idをarticles.jsonに追加しました。')

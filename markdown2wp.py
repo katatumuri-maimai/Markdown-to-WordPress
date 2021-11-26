@@ -9,7 +9,6 @@ from datetime import datetime, timedelta, timezone
 import re
 import random, string
 from bs4 import BeautifulSoup
-import lxml
 import base64
 from io import BytesIO
 from PIL import Image
@@ -27,7 +26,7 @@ UPDATED_FILES = sys.argv[5]
 # 送信処理関数
 #
 def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
-    print("konkon")
+   print("konkon")
 
    # 情報の設定
    JST = timezone(timedelta(hours=+9), 'JST')

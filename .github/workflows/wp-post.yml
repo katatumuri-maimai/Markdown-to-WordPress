@@ -52,6 +52,6 @@ jobs:
           then
             echo '変更があったのでコミットします。'
             git commit -m "自動更新"
-            git pull
+            git config pull.rebase false
             git push origin myposts
           fi

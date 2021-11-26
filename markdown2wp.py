@@ -46,7 +46,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
                        data=json.dumps(payload),
                        headers={'Content-type': "application/json"},
                        auth=(WP_USERNAME, WP_PASSWORD))
-   print("konkon4")
+   print(res.json())
    articleid = res.json()["id"]
    print("konkon1")
    with open('articles.json', 'r') as d:

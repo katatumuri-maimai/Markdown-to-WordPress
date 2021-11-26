@@ -41,6 +41,7 @@ def post_article(status, slug, title, content, category_ids, tag_ids, media_id):
    if media_id is not None:
        payload['featured_media'] = media_id
    # 送信処理
+   print("konkon0")
    res = requests.post(urljoin(WP_URL, "wp-json/wp/v2/posts"),
                        data=json.dumps(payload),
                        headers={'Content-type': "application/json"},

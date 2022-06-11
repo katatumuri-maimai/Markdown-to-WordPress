@@ -157,5 +157,5 @@ function toArrayText(){
 
 それでは！
 
-<!-- ↓続き
-[kanren id=""] -->
+↓続き
+[kanren id="709"]

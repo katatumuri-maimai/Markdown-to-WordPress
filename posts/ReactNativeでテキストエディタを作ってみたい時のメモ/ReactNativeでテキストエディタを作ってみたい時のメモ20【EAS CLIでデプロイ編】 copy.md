@@ -2,8 +2,12 @@
 - タイトル:[【20】React Nativeでテキストエディタを作ってみる！【EAS CLIでデプロイ編】]
 - WordPressにアップロードしますか？:y[]はいn[x]まだしない
 - 投稿時:p[]公開d[x]下書き
+<<<<<<< HEAD
 - カスタムURL:[React-Native-challenge-to-create-text-editor-20]
 - カテゴリID:[3,11,12]
+=======
+- カスタムURL:[React-Native-challenge-to-create-text-editor-20
+>>>>>>> 00fcd2086ec5fbb288d12c8d997bf80d6e077b36
 - タグID:[]
 - 見出し画像のID:[]
 - 識別番号[]

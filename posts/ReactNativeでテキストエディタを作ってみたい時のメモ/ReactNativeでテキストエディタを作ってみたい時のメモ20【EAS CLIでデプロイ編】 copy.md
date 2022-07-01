@@ -38,27 +38,27 @@ EXPOのアカウントでログインします。
 
 `eas whoami`でログインで来てるか確認
 
-![picture 1](../../images/be78a9e1e6d23fb0b440ff93b44c41d8b254d9171a8630c321ee5b4630c91fa2.png)  
+![picture 1](images/be78a9e1e6d23fb0b440ff93b44c41d8b254d9171a8630c321ee5b4630c91fa2.png)  
 
 できました。
 
 ## プロジェクトを構成
 `eas build:configure`
 
-![picture 2](../../images/842a398a87352dc96a3a1026bc5364dc575730abce95042a5bc896e29eddcfd6.png)  
+![picture 2](images/842a398a87352dc96a3a1026bc5364dc575730abce95042a5bc896e29eddcfd6.png)  
 
 
 ## ビルドを実行
 `eas build --platform ios`
 appleのアカウントにログインするとビルドが始まります
 
-![picture 3](../../images/e8a5a45cdd402c875ee4624878a77d496a9254b613ddaf3dd7882555a3846351.png)  
+![picture 3](images/e8a5a45cdd402c875ee4624878a77d496a9254b613ddaf3dd7882555a3846351.png)  
 ビルドできました
 
 ## 送信を開始
 `eas submit -p ios`
 
-![picture 4](../../images/53ef9cfaad9c09123252cc245406239df68a1db8739c4ccf935b7c6815a156ae.png)  
+![picture 4](images/53ef9cfaad9c09123252cc245406239df68a1db8739c4ccf935b7c6815a156ae.png)  
 
 送信できました！
 

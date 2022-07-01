@@ -28,7 +28,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 
 
 ## 却下の原因
-![picture 1](../../images/0ccc3f1912d073292c6c75abd6bf75eb0b7652bff145a9ea0a8180317ac4d933.png)  
+![picture 1](images/0ccc3f1912d073292c6c75abd6bf75eb0b7652bff145a9ea0a8180317ac4d933.png)  
 
 公開申請をしたら却下されてしまいました(´;ω;｀)
 却下の原因は以下の2点です。
@@ -52,7 +52,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 このような表示だったので、以下のように`app.json`を編集しました
 [参考](https://qiita.com/mildsummer/items/3b17cf6f80e04ad37578)
 
-![picture 2](../../images/41cd29df3a9a27c7f31ed6743926bae4f4522a2fd539ded77699d1f3a6e02cab.png)  
+![picture 2](images/41cd29df3a9a27c7f31ed6743926bae4f4522a2fd539ded77699d1f3a6e02cab.png)  
 
 
 再ビルドしてみます。

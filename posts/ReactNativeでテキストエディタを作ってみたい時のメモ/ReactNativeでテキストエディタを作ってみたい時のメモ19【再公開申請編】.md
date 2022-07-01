@@ -9,8 +9,7 @@
 - 識別番号[IzC5Mdi4buJl]
 >------------<
 
-<!-- ↓続き
-[kanren id=""] -->
+
 
 こんにちは！かたつむり([@Katatumuri_nyan](https://twitter.com/Katatumuri_nyan))です！
 
@@ -80,3 +79,6 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 
 [iOSアプリのローカライズ](https://docs.expo.dev/distribution/app-stores/#localizing-your-ios-app)も見て設定してみました。
 
+
+↓続き
+[kanren id="717"]

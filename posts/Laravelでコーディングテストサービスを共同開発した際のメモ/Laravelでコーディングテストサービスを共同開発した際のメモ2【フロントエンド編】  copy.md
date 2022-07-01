@@ -22,7 +22,7 @@
 [GitHub](https://github.com/dt-torachan)/CodingTester)でソースコードを管理しています！
 
 **最初から見る↓**
-[kanren id=""]
+[kanren id="723"]
 
 <!-- **前回を見る↓**
 [kanren id=""] -->

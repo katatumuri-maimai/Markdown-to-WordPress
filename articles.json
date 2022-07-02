@@ -134,5 +134,20 @@
     "status": "publish",
     "upload": true,
     "articleid": 716
+  },
+  "kFRmsXefZML7": {
+    "status": "draft",
+    "upload": true,
+    "articleid": 727
+  },
+  "SmkJbFtz9uXF": {
+    "status": "draft",
+    "upload": false,
+    "articleid": "none"
+  },
+  "b085KWHwJt5n": {
+    "status": "draft",
+    "upload": false,
+    "articleid": "none"
   }
 }

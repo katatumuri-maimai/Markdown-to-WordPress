@@ -33,13 +33,13 @@ iPadのconceptというアプリを使って、手書きで書いていきまし
 （紙でも何でもいいと思いますうう）
 
 ### アイデア出し
-![picture 9](../../images/76bf68295ff718919769bed3989a8e2fe3831952b1f4da0a6c5c905f89fb20b4.jpg)  
+![picture 9](/76bf68295ff718919769bed3989a8e2fe3831952b1f4da0a6c5c905f89fb20b4.jpg)  
 
 作りたいアプリの機能を適当に書き出してみます。
 ざっくり書き出して、アイデアを固めていきました。
 
 ### デザインスケッチ
-![picture 10](../../images/7f38b7792f25f598b2e16cbb9802f42c79e2a28e4154b452d884642f0188e677.jpg)  
+![picture 10](/7f38b7792f25f598b2e16cbb9802f42c79e2a28e4154b452d884642f0188e677.jpg)  
 
 形から入るタイプなので←
 デザインをスケッチしていきました。
@@ -51,14 +51,14 @@ React Native+Expoでは、使えるライブラリが制限されているので
 
 
 ### コンポーネントの書き出し
-![picture 2](../../images/c891b8a1a4c70ce560b2bed73c4d9bc8055f83aded21edb0e2d2715f2e08c926.png)  
+![picture 2](/c891b8a1a4c70ce560b2bed73c4d9bc8055f83aded21edb0e2d2715f2e08c926.png)  
 必要そうなコンポーネントに名前をつけて書き出してみました。
 
 作成している途中で変わるかもしれませんが、大枠はこんな感じでしょう。
 
 
 ## アプリデザイン
-![picture 11](../../images/eabf59e981fc0bdbf7783509897000b4bbf6567dae53f076a77223bba099938d.png)  
+![picture 11](/eabf59e981fc0bdbf7783509897000b4bbf6567dae53f076a77223bba099938d.png)  
 
 早速デザインを作りました！
 使用したツールやデザインの詳細などを説明していきますね。
@@ -77,19 +77,19 @@ React Native+Expoでは、使えるライブラリが制限されているので
 ↑こんな感じで動く想定です！
 
 ### 1. 基本のエディターデザイン(InputArea)
-![picture 12](../../images/d1c749949fb9361040da72671015db78a030cd87cc6dbe9a373aee56dab91626.png)  
+![picture 12](/d1c749949fb9361040da72671015db78a030cd87cc6dbe9a373aee56dab91626.png)  
 [adobXD](https://www.adobe.com/jp/products/xd.html?sdid=19SCDRPN&mv=search&ef_id=CjwKCAjwuIWHBhBDEiwACXQYsc5KsJY2z-UKqr4C3iYddqYKHFgDkuBcTo623qFJ2_Hg-Ja1TmNhyBoCwP4QAvD_BwE:G:s&s_kwcid=AL!3085!3!380840905165!e!!g!!adobe%20xd!1641270158!61553403526)にて、デザインを作成していきます。
 シンプルで見やすくしたかったので、エディター部分を大きくしました。
 スクロールができる想定なのと、キーボードが物理かどうか判断してサイズが変わるようにしたいです。
 
 ### 2. プレビューのデザイン(Preview)
-![picture 1](../../images/2bae7dd9532f0bfde4f5f65dfa58fe2625d8590aa17182334bd585e49387aec2.png)  
+![picture 1](/2bae7dd9532f0bfde4f5f65dfa58fe2625d8590aa17182334bd585e49387aec2.png)  
 
 プレビューを見ながら書きたいので（自分が）
 右から左にスワイプすると、右からプレビューコンポーネントが出てくるようにします。
 
 ### 3. ナビのデザイン(Nav)
-![picture 3](../../images/8f648af0423d81f5e4d04a8779c674145d906dfeb498f31b8286d2c372dfc686.png)  
+![picture 3](/8f648af0423d81f5e4d04a8779c674145d906dfeb498f31b8286d2c372dfc686.png)  
 左上にナビを開くボタンがあって、そこを押すとこのようにナビが開くようにしたい。
 
 左にスワイプすると、閉じるはず。
@@ -105,7 +105,7 @@ React Native+Expoでは、使えるライブラリが制限されているので
 
 
 ### 4. メニューのデザイン(Menu)
-![picture 4](../../images/9d5ca01420effa58af28cc89368239332deb32899a0874f3d70719e9d45f0b33.png)  
+![picture 4](/9d5ca01420effa58af28cc89368239332deb32899a0874f3d70719e9d45f0b33.png)  
 ナビのボタンを押すと、メニューが左から右にスライドして開くようにします。
 画像にはないですが、メニューのボタン(MenuBtnなど)を押した場合の挙動なども考えました。
 
@@ -114,7 +114,7 @@ React Nativeで基本のコンポーネントがあるので、それを使い�
 
 ## テーマカラーを選ぶ
 テーマを変えれるようにしたいので、いくつかテーマを作成しました。
-![picture 5](../../images/e7c6291ca91ebfd6780bbf0f6360337b59b8694d533829e3721b171521232420.png)  
+![picture 5](/e7c6291ca91ebfd6780bbf0f6360337b59b8694d533829e3721b171521232420.png)  
 
 [COLOR TOOL](https://material.io/resources/color/#!/?view.left=0&view.right=0)でカラーを選んだり、自分で微調整しながら決めました。
 

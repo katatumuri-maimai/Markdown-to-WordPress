@@ -43,7 +43,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 ↑このあたりを直していきたいと思います！
 
 ## 1. モーダルの出る向き（iPhone）
-![picture 1](../../images/a98fc6989648b7a94e5a5a049ce91d2d9b9350cd32bba9f4939d3c1990f7154d.png)  
+![picture 1](/a98fc6989648b7a94e5a5a049ce91d2d9b9350cd32bba9f4939d3c1990f7154d.png)  
 
 横画面でアプリを使用していても、なぜかモーダルが出る時は縦画面になってしまいますｗ
 AndroidStudioではならなかったので、iosの仕様かな…？
@@ -58,7 +58,7 @@ supportedOrientations={['portrait', 'portrait-upside-down', 'landscape', 'landsc
 
 
 ## 2. 縦向きの時のインプット・プレビューエリアのレイアウト
-![picture 1](../../images/9bdccd1a5bfe042ed9e0a3d698347a679d9c1136b405d36381203a1a9355007b.png)  
+![picture 1](/9bdccd1a5bfe042ed9e0a3d698347a679d9c1136b405d36381203a1a9355007b.png)  
 
 スマホでアプリ画面が縦向きの時、プレビューエリアがめちゃくちゃ見にくいので、上下にするなど試行錯誤していきます！
 
@@ -77,11 +77,11 @@ lexDirection: isWindowWidthSmall ? 'column-reverse': 'row',
 
 手持ちのiPadの横幅が`768`なので、アプリの横幅が`760`より小さい時に、レイアウトを変更するように設定しました。
 
-![picture 7](../../images/78d0ac4047de419d93b96de3960746e599c99cb119961fae8e10626ecee9be9d.png)  
+![picture 7](/78d0ac4047de419d93b96de3960746e599c99cb119961fae8e10626ecee9be9d.png)  
 
 
 ## 3. 縦向きの時のモーダルのレイアウト
-![picture 2](../../images/34efa42a83e74887af59c9050d866eb0af357aad19313d828af17f83f092b5cf.png)  
+![picture 2](/34efa42a83e74887af59c9050d866eb0af357aad19313d828af17f83f092b5cf.png)  
 
 横の長さが足りていないので、レイアウトを変えていきますｗ
 
@@ -97,19 +97,19 @@ const isLandscape  = (windowWidth / windowHeight) >= 1
 ↑`isLandscape`を`context.js`で定義して、各所で使えるようにしました。
 
 ## 4. 縦向きの時にキーボードの高さに合わせて要素の高さが変更されない
-![picture 3](../../images/401d6f02380887d7c73e4ca61a3327fe46a00490807050d83f7666341e613095.png)  
-![picture 5](../../images/331f0a9cbd8f9fdf25f7f062a176a2a7f813edbfba191a81465be19facbc140c.png)  
+![picture 3](/401d6f02380887d7c73e4ca61a3327fe46a00490807050d83f7666341e613095.png)  
+![picture 5](/331f0a9cbd8f9fdf25f7f062a176a2a7f813edbfba191a81465be19facbc140c.png)  
 
 横画面の時は↓下のように、キーボードを避けるようになってるのですが、縦向きだと適応してくれませんｗ
 適応させていきたいと思います！
-![picture 6](../../images/d180ec7c96a954d3d17bb16183e7ba3a7690bed64984f544efffc7a207af9615.png)  
+![picture 6](/d180ec7c96a954d3d17bb16183e7ba3a7690bed64984f544efffc7a207af9615.png)  
 
 おそらく、`KeyboardAvoidingView`がちゃんと動いてないのだろうというのと、挙動がおかしいので、自分で書き換えられるか検討しました。
 
 
 ## 5. 名前が長い時に収まりきらない
-![picture 8](../../images/2e25268a3aac0230cc0f4f55780ad86e4b6fe0f9e6f0705f86c4e8244a07143e.png)  
-![picture 9](../../images/128e8a4b92f59fb42c22822851f14061b6f612094193381fcb08927952ffce9d.png)  
+![picture 8](/2e25268a3aac0230cc0f4f55780ad86e4b6fe0f9e6f0705f86c4e8244a07143e.png)  
+![picture 9](/128e8a4b92f59fb42c22822851f14061b6f612094193381fcb08927952ffce9d.png)  
 ↑こんな風に、名前がちゃんとおさまっていない場合があるので、調節していきます。
 
 `numberOfLines`で行数を指定し、横幅を固定することで、おさまるようにしました。

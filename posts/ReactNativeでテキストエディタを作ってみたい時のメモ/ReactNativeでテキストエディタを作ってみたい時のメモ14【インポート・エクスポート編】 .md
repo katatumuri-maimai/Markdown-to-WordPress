@@ -69,7 +69,7 @@ export async function importFile() {
 ↑このような関数を作成し、インポートしたデータを読み取りました。
 
 ## ファイルのエクスポート
-![picture 20](../../images/4337c5d32df2512a7665aafd6d1c2883574766df0777ad8c7e3f6db0a08bf043.png)  
+![picture 20](/4337c5d32df2512a7665aafd6d1c2883574766df0777ad8c7e3f6db0a08bf043.png)  
 ファイルを4つの方法でエクスポートできるようにしていきます！
 
 React Nativeの`Share`という機能を使います。
@@ -122,7 +122,7 @@ Javascriptのライブラリで、内部で変換してエクスポートする�
 
 #### エラー
 
-![picture 21](../../images/4a176e760fb3a671162fd1b08577c5778c44898d234b77de2a895e43838c23d5.png)  
+![picture 21](/4a176e760fb3a671162fd1b08577c5778c44898d234b77de2a895e43838c23d5.png)  
 
 ```
 Failed building JavaScript bundle.
@@ -353,7 +353,7 @@ iosで`Invariant Violation: Native module cannot be null.`とエラーが出る�
 ## ファイル選択されていない時にモーダルを出す
 いまの状態だと、ファイルを選択されていない時にもエクスポートできてしまうので、ファイルを選択するように促すモーダルを作成します。
 
-![picture 1](../../images/875ba0000aa8fd448144fc5b099dee2a0b17e2a0c22ebb77447bc4fb58d792ff.png)  
+![picture 1](/875ba0000aa8fd448144fc5b099dee2a0b17e2a0c22ebb77447bc4fb58d792ff.png)  
 ↑このような感じになりました！
 ファイルを選択されていない時はこのモーダルが出て、エクスポートするファイルを選択できます。
 

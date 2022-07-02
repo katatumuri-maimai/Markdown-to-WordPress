@@ -35,7 +35,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 ↑テーマ機能の完成版ははこんな感じです！
 
 ## ユーザーがテーマを選べるようにする
-![picture 12](../../images/ed9a2a76a8a1da4da8f5ec15318799669c3aacc70f07231a0cbca6215ee1bafe.png)  
+![picture 12](/ed9a2a76a8a1da4da8f5ec15318799669c3aacc70f07231a0cbca6215ee1bafe.png)  
 
 まずは、↑このようにユーザーがテーマを選べるようにします。
 テーマ情報は`snailSetting.json`に保存しているので、ここにユーザーが選んだテーマを上書きしていきます。
@@ -75,10 +75,10 @@ export const themeList=[
 ```
 ↑このように、`Setting.js`にピッカーを導入しました。
 
-![picture 13](../../images/5bb3a25334f6b2a5925a337647ad408b5247774e37c158cdfb4c07b3b5e5894d.png)  
+![picture 13](/5bb3a25334f6b2a5925a337647ad408b5247774e37c158cdfb4c07b3b5e5894d.png)  
 Android↑
 iPad↓
-![picture 14](../../images/41177a78cfa31d6bebad50a7f94ad94cf019c2f5db5b2519c8bb0f2d024607ab.png)  
+![picture 14](/41177a78cfa31d6bebad50a7f94ad94cf019c2f5db5b2519c8bb0f2d024607ab.png)  
 
 ↑こんな感じで表示されました！
 
@@ -94,10 +94,10 @@ const [appTheme, setAppTheme] = useState("Night")
 ピッカーのデザインを変更していきます。
 思ってたよりAndroidとiPadでピッカーが違いすぎるので、適度にやっていきます！
 
-![picture 15](../../images/79b5362b40a2a7368c1a2264aba16c5b186ca65d9bf14f73088619341d8275d6.png)  
+![picture 15](/79b5362b40a2a7368c1a2264aba16c5b186ca65d9bf14f73088619341d8275d6.png)  
 ↑Android
 iPad↓
-![picture 16](../../images/82471f9ee7370439adcac49db9e5c21fb5ac04a3b09d3baeec21d50dca603eea.png)  
+![picture 16](/82471f9ee7370439adcac49db9e5c21fb5ac04a3b09d3baeec21d50dca603eea.png)  
 
 スタイルの適応範囲が制限されているみたいだったので、このくらいにしておきました。
 
@@ -134,7 +134,7 @@ export async function setThemeSetting(themeName) {
 
 
 ## テーマの色を拾っていく。
-![picture 17](../../images/e7c6291ca91ebfd6780bbf0f6360337b59b8694d533829e3721b171521232420.png)  
+![picture 17](/e7c6291ca91ebfd6780bbf0f6360337b59b8694d533829e3721b171521232420.png)  
 
 ↑これだけテーマを作ったので、色を`theme.js`に追加していきます。
 
@@ -146,7 +146,7 @@ export async function setThemeSetting(themeName) {
 
 その設定も設定ファイルに保存しておきます！
 
-![picture 19](../../images/ca75548dff763a9ab342ac476f36f22f039ebd5517fb577d513bb4cb10dde37e.png)  
+![picture 19](/ca75548dff763a9ab342ac476f36f22f039ebd5517fb577d513bb4cb10dde37e.png)  
 
 ↑このように、選べるようにしました。
 

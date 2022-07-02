@@ -116,7 +116,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 ### 1. 保存・開くボタンを作る
 パネルの上にメニューバーを作って、そこに保存・開くボタンを作ります。
 
-![picture 10](../../images/39644acd8046cf6a87bade3f29d0fee024c7890b75740770f8f2e1af7cbfef38.png)  
+![picture 10](/39644acd8046cf6a87bade3f29d0fee024c7890b75740770f8f2e1af7cbfef38.png)  
 
 ```javascript
 // panelコンポーネントの上の方
@@ -156,7 +156,7 @@ export function fileData(filetitle, filetext) {
 ↑テストデータはこんな感じ
 
 #### データの保存関数の作成
-![picture 11](../../images/9a4e74c5922905ec72b1fb2e36bb16a76d2bf99bbe295901cc38c303a75978af.png)  
+![picture 11](/9a4e74c5922905ec72b1fb2e36bb16a76d2bf99bbe295901cc38c303a75978af.png)  
 あれ！`AsyncStorage`が非推奨だ！ｗｗｗ
 
 [sunnylqm/react-native-storage](https://github.com/sunnylqm/react-native-storage)によると`npm install @react-native-community/async-storage`これも必要みたいです。
@@ -271,7 +271,7 @@ function saveFileData(){
 ### 3. データを開けるようにする
 とりあえず、保存したものをロードしてみますｗ
 
-![picture 12](../../images/6a9402a076b0596e598bd5b7d4f3bfdf781a270108442aeb7c51ef8a79c360f1.png)  
+![picture 12](/6a9402a076b0596e598bd5b7d4f3bfdf781a270108442aeb7c51ef8a79c360f1.png)  
 開けている！！！
 
 どこに保存しているんだろうｗ
@@ -282,7 +282,7 @@ function saveFileData(){
 データ一覧の取得ってできるんかいな…？
 
 [getallkeys](https://react-native-async-storage.github.io/async-storage/docs/api#getallkeys)これかな？
-![picture 13](../../images/0310eeefe7200caddef1400bf42d40189cb2f11d1db289a5fcd9314290bb9a98.png)  
+![picture 13](/0310eeefe7200caddef1400bf42d40189cb2f11d1db289a5fcd9314290bb9a98.png)  
 
 取得はできたっぽいですね。
 
@@ -340,16 +340,16 @@ export async function GetAllData(){
 ```
 
 #### データ一覧を表示
-![picture 14](../../images/7704dc8c2d3b1c2b60ae5957699a355382b358b59bcceda31164a3830085282c.png)  
+![picture 14](/7704dc8c2d3b1c2b60ae5957699a355382b358b59bcceda31164a3830085282c.png)  
 こんな感じでデータを取得できたので、表示してみたいと思います(*´ω｀)
 
-![picture 15](../../images/2dd349b41cce34e2bde98a76d353be9da4cf466d459f6c5d832b2c0387b30d7d.png)  
+![picture 15](/2dd349b41cce34e2bde98a76d353be9da4cf466d459f6c5d832b2c0387b30d7d.png)  
 
 お！表示できました。
 今はTextコンポーネントで表示しているので、ボタンにしたりなんやかんやします。
 あと、`App.js`に書いているので、パネルコンポーネントの方に移植します。
 
-![picture 16](../../images/142efba9b65948b53068db0d5e39b332e471caf1c61a912c34894149bf0643b6.png)  
+![picture 16](/142efba9b65948b53068db0d5e39b332e471caf1c61a912c34894149bf0643b6.png)  
 
 パネルに移植できました(*´ω｀)
 色が絶賛やばいですが、何も考えないことにしましょうｗ
@@ -361,11 +361,11 @@ export async function GetAllData(){
 とりあえず、`key`でとってこれるみたいなので、データ名を押されたときに`key`を親コンポーネントにとばしたいと思います。
 
 
-![picture 17](../../images/3f275b57a0a24db69d7a845cb298065c8a7e0ec0377a92de9c77defd94bf998d.png)  
+![picture 17](/3f275b57a0a24db69d7a845cb298065c8a7e0ec0377a92de9c77defd94bf998d.png)  
 とりあえず、プレビューの方には反映できました！
 テキストエリアにも反映したい🤔
 
-![picture 18](../../images/f95dadd80a4abd4af00d79952ce3ffa91f65f35f37a9e67dc9882c3494f0a1eb.png)  
+![picture 18](/f95dadd80a4abd4af00d79952ce3ffa91f65f35f37a9e67dc9882c3494f0a1eb.png)  
 
 できました～！
 とりあえずこれで、データを保存して開くことはできますね。
@@ -465,7 +465,7 @@ function saveFileData(){
 [公式ドキュメント](https://reactnative.dev/docs/modal)にモーダルコンポーネントがあるので、使っていきます。
 
 アラートって言うコンポーネントもあるんですが、モーダルの方が可愛いので、モーダルにしますｗ
-![picture 1](../../images/06f47713a8135377ff231dc07586c8f5ec839ce4bf265cae123cdf69c6461b0d.png)  
+![picture 1](/06f47713a8135377ff231dc07586c8f5ec839ce4bf265cae123cdf69c6461b0d.png)  
 
 
 

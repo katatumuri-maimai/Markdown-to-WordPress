@@ -36,12 +36,12 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 
 
 ## 1. PDF出力時に画像があると反映されない
-![picture 17](/5df58ec5d0b7143c306ed7665c6d93939846d4990e31b972f3eb693156b2279b.png)  
+![picture 17](images/5df58ec5d0b7143c306ed7665c6d93939846d4990e31b972f3eb693156b2279b.png)  
 
 ↑左ように入力すると、右のようにプレビューされます。
 しかし、PDF出力結果は↓です。
 
-![picture 16](/e32b296325c61dc818f25aabe1b0935527ef3957ade4c6e8dad1977ec48e5b97.png)  
+![picture 16](images/e32b296325c61dc818f25aabe1b0935527ef3957ade4c6e8dad1977ec48e5b97.png)  
 
 PDF出力に試用している`Print`ライブラリの仕様で、PDFに出力する際に、ローカルの画像はbase64に変換する必要があります。
 
@@ -118,14 +118,14 @@ async function convertImage(html) {
 
 
 ## 2. プレビュー画面の一番下が見切れてしまう
-![picture 18](/ca30e64cfa7c01c3180cb89af5ef8977eb9058bbc041a25f43bba324c07d4df4.png)  
+![picture 18](images/ca30e64cfa7c01c3180cb89af5ef8977eb9058bbc041a25f43bba324c07d4df4.png)  
 
 ↑右側のプレビュー画面、下までスクロールしているのですが、一番下が見えていないですね。
 
 スタイル調節していきます。
 
 ## 3. プレビュー画面のスクロール位置が入力のたびにトップに戻ってしまう
-![picture 19](/b039e03dd08446ceba675e7cec2c6f17da9bb0c23185364e3b3b717ab0dd1dad.gif)  
+![picture 19](images/b039e03dd08446ceba675e7cec2c6f17da9bb0c23185364e3b3b717ab0dd1dad.gif)  
 ↑こんな風に、プレビュー画面を下までスクロールしても、入力を始めると上まで戻ってしまいます。
 
 `Markdown`の再レンダリングのせいみたいですね。

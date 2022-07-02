@@ -59,12 +59,12 @@ console.log('Hello from my first block!');
 ```
 
 とりあえずこちらを作成し、アップロードしてみました！
-![picture 2](/6ee60e4e9dbfd7242e70da9197b1228d5cca373c9486d05e473089bec34685b3.png)  
+![picture 2](images/6ee60e4e9dbfd7242e70da9197b1228d5cca373c9486d05e473089bec34685b3.png)  
 いるいる！
 
 
 有効化すると、以下のように投稿画面のコンソールで表示されました！成功
-![picture 1](/a7eb9e49faf2e82e48a32692af032e52bee76d044394a495b9cb985772b995b3.png)  
+![picture 1](images/a7eb9e49faf2e82e48a32692af032e52bee76d044394a495b9cb985772b995b3.png)  
 
 
 ## 依存するスクリプトの追加

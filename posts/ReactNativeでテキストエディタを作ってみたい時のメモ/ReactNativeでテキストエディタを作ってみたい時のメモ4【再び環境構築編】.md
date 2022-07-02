@@ -50,9 +50,9 @@ WSL2の方が新しいみたいなので、WSL2をインストールします。
 
 なじみのUbuntuにしました～！
 
-![picture 1](/fe0ccf66833c587d34ac20d86c109042d33689065a21bbf2a7044155a4abac1e.png)  
+![picture 1](images/fe0ccf66833c587d34ac20d86c109042d33689065a21bbf2a7044155a4abac1e.png)  
 
-![picture 2](/f0d22e0f0f1c1e5f39c9c2ce41ca3b4ce1e38914fe4cbee62173da18e89d624f.png)  
+![picture 2](images/f0d22e0f0f1c1e5f39c9c2ce41ca3b4ce1e38914fe4cbee62173da18e89d624f.png)  
 
 ```
 > WslRegisterDistribution failed with error: 0xc03a001a
@@ -65,7 +65,7 @@ WSL2の方が新しいみたいなので、WSL2をインストールします。
 
 無事起動・ログインできました(*´ω｀)
 
-![picture 3](/b62c08ce44b946a25002a83dbe6c6874d6321263472937057ae760ee79416dfa.png)  
+![picture 3](images/b62c08ce44b946a25002a83dbe6c6874d6321263472937057ae760ee79416dfa.png)  
 
 Ubunto久しぶりで嬉しい～（普段Dockerで使っているけどなんとなくｗ）
 
@@ -95,7 +95,7 @@ sourcetreeにも作業ディレクトリ登録できたので、いい感じで�
 
 ubuntuを起動すると最初に表示される画面で、`ls -a`と打ってみます。
 
-![picture 4](/1c138014db7e979e819b8dc016eb5e38c5f8c2818386b039b2cfaa46010320e0.png)  
+![picture 4](images/1c138014db7e979e819b8dc016eb5e38c5f8c2818386b039b2cfaa46010320e0.png)  
 
 `.profile`あった！！！
 
@@ -110,7 +110,7 @@ vimで編集できました。[Vim初心者に捧ぐ実践的入門](https://qii
 
 ファイアウォール切ってみましたが特に何も起こらず。
 
-![picture 5](/ccb4e6ccc584e31981e02b860b5a27101505a3ddec05a535c639bc394fb43357.png)  
+![picture 5](images/ccb4e6ccc584e31981e02b860b5a27101505a3ddec05a535c639bc394fb43357.png)  
 
 とりあえずTunnelモードで使ってみることにしたら、開けました！
 ホットリロードも効くので、実機確認できたあ良かった(*´ω｀)
@@ -210,7 +210,7 @@ cd ~/.android/platform-tools
 
 rootに入っていましたｗ
 
-![picture 1](/234b3811c62e3cdc86f4ffc09e79ab6cc9a4ed0a704f85adf267d454eb662d92.png)  
+![picture 1](images/234b3811c62e3cdc86f4ffc09e79ab6cc9a4ed0a704f85adf267d454eb662d92.png)  
 
 ファイル移動させますｗ
 
@@ -303,7 +303,7 @@ fi
 たぶんだけど、ポートの設定がうまくいっていないらしい。
 `source ~/.profile`で`adb kill-server 2> /dev/null`までしか読み込まれていない。
 
-![picture 1](/c342f227d8f42477e1b509d7c7b233f3ca4bffb5aeb6637f4be0ac0556c970f8.png)  
+![picture 1](images/c342f227d8f42477e1b509d7c7b233f3ca4bffb5aeb6637f4be0ac0556c970f8.png)  
 
 WindowsとWSLの`adb`んｐバージョンが違うとうまくいかないみたいだけど、同じでした。
 
@@ -346,17 +346,17 @@ WindowsとWSLのadbが一緒のバージョンじゃないといけないらし�
 ## AndroidデバイスでのUSBデバッグの有効化
 [ReactNative-EXPOでAndroidエミュレータでアプリ起動するまでにはまったところ](https://qiita.com/ageage-hamsters/items/c5dd95c9f6dc87dac298)
 [AndroidデバイスでのUSBデバッグの有効化](https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html)
-![picture 1](/dbc1b6541b34fd6e330f3ff7fe7122ca00293238980a8fe76b3db160b241adfa.png)  
+![picture 1](images/dbc1b6541b34fd6e330f3ff7fe7122ca00293238980a8fe76b3db160b241adfa.png)  
 
-![picture 2](/6715bc6b335fc02f49d3969bcc46fb4d432ae6a3e279ac462227cd852f64d8ee.png)  
+![picture 2](images/6715bc6b335fc02f49d3969bcc46fb4d432ae6a3e279ac462227cd852f64d8ee.png)  
 
-![picture 5](/b6b9608691a535f5b892508259a02b23fec17e76de9080cc38bd8f70f42f7509.png)  
+![picture 5](images/b6b9608691a535f5b892508259a02b23fec17e76de9080cc38bd8f70f42f7509.png)  
 
-![picture 7](/604a88db79de4a32dec8f8f003e176f1bece9342dacfa32427d1fb63786761a7.png)  
+![picture 7](images/604a88db79de4a32dec8f8f003e176f1bece9342dacfa32427d1fb63786761a7.png)  
 
-![picture 6](/4dc24d4aef1b9031745eed0f7c7444c8f94565f085e7bbab9672e0d8d39c06fe.png)  
+![picture 6](images/4dc24d4aef1b9031745eed0f7c7444c8f94565f085e7bbab9672e0d8d39c06fe.png)  
 
-![picture 8](/0c9ce5376d456be4091f78f8339fb3788a567c044cc42adda90f49e91ec1bdcf.png)  
+![picture 8](images/0c9ce5376d456be4091f78f8339fb3788a567c044cc42adda90f49e91ec1bdcf.png)  
 
 
 できない！！！
@@ -474,7 +474,7 @@ sudo rm adb
 
 しかし以下のエラーが…
 
-![picture 1](/ca08a986deb5253a35a1aebe118e64dfe019f40aa25814a9e0f8da1a6719c924.png)  
+![picture 1](images/ca08a986deb5253a35a1aebe118e64dfe019f40aa25814a9e0f8da1a6719c924.png)  
 
 
 `192.168.0.19:19000`にLAN接続できないので、しょうがないですね。
@@ -484,7 +484,7 @@ sudo rm adb
 いけた！！！！！！
 やった！！！！！！
 
-![picture 2](/b60903185f855ac13010dbaefc00be0f89d328ed2339879222e7166f45929cca.png)  
+![picture 2](images/b60903185f855ac13010dbaefc00be0f89d328ed2339879222e7166f45929cca.png)  
 
 
 長かったｗｗｗ
@@ -512,7 +512,7 @@ Error starting tunnel protocol fault (couldn't read status): connection reset
 
 ちなみに、最初のandroidにクライアントをExpoインストールする時は、`LAN`、そのあとの接続は`tunnel`でできます。
 
-![picture 1](/3f448e8c51b378af9b5d09eccd2d0f3c87cb4c969c0ac18e13a937c2ad0ffb83.png)  
+![picture 1](images/3f448e8c51b378af9b5d09eccd2d0f3c87cb4c969c0ac18e13a937c2ad0ffb83.png)  
 
 Pixel Xにしてみてもできました！
 

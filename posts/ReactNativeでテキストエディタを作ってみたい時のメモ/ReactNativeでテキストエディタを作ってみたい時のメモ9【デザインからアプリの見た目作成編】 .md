@@ -29,11 +29,11 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 
 
 ## コンポーネントとデザイン
-![picture 7](/c891b8a1a4c70ce560b2bed73c4d9bc8055f83aded21edb0e2d2715f2e08c926.png)  
+![picture 7](images/c891b8a1a4c70ce560b2bed73c4d9bc8055f83aded21edb0e2d2715f2e08c926.png)  
 
 今回はこれらの↑コンポーネントを作っていきます。
 
-![picture 8](/e18a9426953d975d35a3ccf382b701d6763d181655322aaaa180e2bda190f25a.png)  
+![picture 8](images/e18a9426953d975d35a3ccf382b701d6763d181655322aaaa180e2bda190f25a.png)  
 ↑各コンポーネントのデザインはこんな感じ
 （ちょっと足りてないですがｗ手元にはあります！）
 
@@ -271,7 +271,7 @@ useEffect(()=>{
 ```
 
 ## `Title.js`の作成
-![picture 9](/e7f263d9ed3fbde529ba4cd73b9450be0726418bd84eab813df0cd2930e6d28d.png)  
+![picture 9](images/e7f263d9ed3fbde529ba4cd73b9450be0726418bd84eab813df0cd2930e6d28d.png)  
 
 タイトルを作っていきます(*´ω｀)
 `TopBar.js`におきます！
@@ -326,7 +326,7 @@ export default function App() {
 
 
 ## `Nav.js`の作成
-![picture 10](/3931e26b176c8d4ded89bc2b385145f4ec87593c5113c2bf42b3eb73da834eab.png)  
+![picture 10](images/3931e26b176c8d4ded89bc2b385145f4ec87593c5113c2bf42b3eb73da834eab.png)  
 
 ナビを作っていきます(*´ω｀)
 `react-native-elements`の`icon`に私がデザインで使ったアイコンが入ってるみたいなので、使っていきます。

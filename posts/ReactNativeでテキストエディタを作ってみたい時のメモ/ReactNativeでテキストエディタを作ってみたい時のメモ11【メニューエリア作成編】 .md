@@ -29,14 +29,14 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 
 
 ## メニューエリアを作成
-![image 1](/9d5ca01420effa58af28cc89368239332deb32899a0874f3d70719e9d45f0b33.png)
+![image 1](images/9d5ca01420effa58af28cc89368239332deb32899a0874f3d70719e9d45f0b33.png)
 ↑この左側に表示されるメニューエリアを作っていきます！
 
 デザイン段階では、テキストエリアの上に被るように表示する予定でした。
 しかし今回は、利便性を考えて、テキストエリアと並ぶように表示したいと思います！
 
 ### `Menu.js`の作成
-![picture 6](/0758dbe29085f7d8b23a0dd8ceb7a81b8fa1a5eacaaf49aee6dc945463043115.png)  
+![picture 6](images/0758dbe29085f7d8b23a0dd8ceb7a81b8fa1a5eacaaf49aee6dc945463043115.png)  
 ↑こんな感じで左側にメニューエリアを作成しました。
 
 コードは↓このようになりました。
@@ -107,7 +107,7 @@ if (lefghtArea && swipeX < 0) {
 あと、メニューエリアが開いていると、プレビューエリアの大きさが変わるので、スワイプ判定を変えました！
 
 ## メニューボタンの作成
-![picture 7](/7df072ac4b2d6c4a57d58d0a5afc87bb8eb5ddda79ab505180e0c46c285d2354.png)  
+![picture 7](images/7df072ac4b2d6c4a57d58d0a5afc87bb8eb5ddda79ab505180e0c46c285d2354.png)  
 ↑このようにボタンを作成しました(*´ω｀)
 
 色々機能をつけるので、とりあえずシンプルなボタンにしました。
@@ -214,7 +214,7 @@ export default function MenuBtnChild() {
 ```
 
 ## ナビの開閉の連動
-![picture 8](/7c946d07e5a9db9bce78c78af200f1b545fd2f23bf066f031989b14db8875f39.png)  
+![picture 8](images/7c946d07e5a9db9bce78c78af200f1b545fd2f23bf066f031989b14db8875f39.png)  
 ↑こんな感じで、メニューが開いたとき、ナビも開いてほしいので、連動させます。
 
 `Nav.js`で以下のようにしました。
@@ -226,7 +226,7 @@ export default function MenuBtnChild() {
 ```
 
 ## ナビボタンを押したときの動作設定
-![picture 8](/7c946d07e5a9db9bce78c78af200f1b545fd2f23bf066f031989b14db8875f39.png)  
+![picture 8](images/7c946d07e5a9db9bce78c78af200f1b545fd2f23bf066f031989b14db8875f39.png)  
 ↑このナビボタンを押したときに、メニューが開いてほしいので、機能を付けていきます！
 
 ```javascript
@@ -273,7 +273,7 @@ function WhichMenu(params) {
 ## メニュー内のボタンを押したときの挙動追加
 
 ### 設定メニュー
-![picture 9](/9dd33206559d33e220bd2215a25427545abda5d6ffaccf58a3e7f9087bc3dfc4.png)  
+![picture 9](images/9dd33206559d33e220bd2215a25427545abda5d6ffaccf58a3e7f9087bc3dfc4.png)  
 ↑左のように表示したいのですが、ボタンを押すと右のように下に開くようにしたいです。
 これを設定していきます！
 
@@ -332,7 +332,7 @@ export default function Settings(props) {
 
 
 ### エクスポートメニュー
-![picture 10](/a6160dedf69ea515c3f8e465874e0bcb41c9300ebfd0db5bb44c18c127bb6a5b.png)  
+![picture 10](images/a6160dedf69ea515c3f8e465874e0bcb41c9300ebfd0db5bb44c18c127bb6a5b.png)  
 ↑このようなかんじになります！
 エクスポートメニューでは、開くようにはせず、押すだけのボタンにします。
 
@@ -382,12 +382,12 @@ export default function Export() {
 
 
 ### フォルダーメニュー
-![picture 11](/8a96474900cec139cea1771963165869fc629ff456c55b58dceac5d524f6bc02.png)  
+![picture 11](images/8a96474900cec139cea1771963165869fc629ff456c55b58dceac5d524f6bc02.png)  
 ↑フォルダーメニューを作成します。
 
 ボタンを押すと開くのは設定メニューと同じですが、ファイルを選択した時などの挙動が変わるので、ちょっと難しいです。
 
-![picture 1](/fa2a4b0b32b3f30c80bf58fa5069e3ad8d2ae4fe7a3f4dbf56b6ff1b19bfaa15.png)  
+![picture 1](images/fa2a4b0b32b3f30c80bf58fa5069e3ad8d2ae4fe7a3f4dbf56b6ff1b19bfaa15.png)  
 
 ↑のようになりました。
 
@@ -500,11 +500,11 @@ function Project(props) {
 
 
 ### フォルダー・ファイル追加メニュー
-![picture 12](/94b8d9ac18c8b8c939dc389ef3b3a1f49b472de9bb523bef475e7f4a38c2380b.png)  
+![picture 12](images/94b8d9ac18c8b8c939dc389ef3b3a1f49b472de9bb523bef475e7f4a38c2380b.png)  
 ↑このように、新規ディレクトリ・ファイルを作成できるようにします。
 とりあえず、ボタンを作成しておきます。
 
-![picture 3](/d23cbf85287cdef9cddddaf7dd001a3accbfc952dbbbba82cf1000a5128ba09d.png)  
+![picture 3](images/d23cbf85287cdef9cddddaf7dd001a3accbfc952dbbbba82cf1000a5128ba09d.png)  
 ↑このようになりました。
 
 
@@ -573,7 +573,7 @@ function TypeSelectMenuBtn(props) {
 `Modal.js`を作っていきます！
 
 
-![picture 4](/62f71a607cc6701da9ee45e9de8d91d9eef7bad720a4293cf7b49ba36c183752.png)  
+![picture 4](images/62f71a607cc6701da9ee45e9de8d91d9eef7bad720a4293cf7b49ba36c183752.png)  
 ↑できました!
 
 ```javascript

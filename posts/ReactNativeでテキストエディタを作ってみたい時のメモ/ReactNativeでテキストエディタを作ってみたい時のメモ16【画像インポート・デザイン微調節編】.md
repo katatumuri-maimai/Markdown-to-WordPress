@@ -30,7 +30,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 [kanren id="654"]
 
 ## 画像のインポート機能を作る
-![picture 10](/c7508733d213419243bc50f8c679a28f81905d4ec8b1a864cde3b72931e8c397.png)  
+![picture 10](../../images/c7508733d213419243bc50f8c679a28f81905d4ec8b1a864cde3b72931e8c397.png)  
 ↑この画像マークを押したときに、画像をインポートできるようにしたいと思います。
 
 インポートした画像は、
@@ -58,7 +58,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 `expo install expo-clipboard`
 
 
-![picture 11](/e49e9ff53b25932d8df47bb0d4b14b4b866c5b754a6e8502b55f79d00c9455f7.png)  
+![picture 11](../../images/e49e9ff53b25932d8df47bb0d4b14b4b866c5b754a6e8502b55f79d00c9455f7.png)  
 ↑クリップボードまでコピーはできたけど、うまくいきませんでしたｗ
 
 uriをbase64にしてみたらうまくいきました。
@@ -154,7 +154,7 @@ defaultImageHandler = 'https://',
 また、画像一覧から選択することで、再び`![image](image.png)`のようなテキストをクリップボードにコピーできるようにしたいと思います。
 
 ### インポートした画像を一覧で表示
-![picture 12](/b0af564278eb583af9c39cbd7660c168e9895abc1b9fdccbd46c3d3843e6adcb.png)  
+![picture 12](../../images/b0af564278eb583af9c39cbd7660c168e9895abc1b9fdccbd46c3d3843e6adcb.png)  
 ↑こんな感じで実装しました。
 やり方はプロジェクト一覧を作った時と同じです。
 
@@ -238,7 +238,7 @@ export async function importImage() {
 }
 ```
 
-![picture 13](/58c2d841eb6eccdebf5da7e80548f36292677541544c1fad51f1e8433ce8ebb5.jpg)  
+![picture 13](../../images/58c2d841eb6eccdebf5da7e80548f36292677541544c1fad51f1e8433ce8ebb5.jpg)  
 iPadで画像をインポートする際、この画像↑の赤丸の「キャンセル」ボタンを押すと、きちんと返り値があり、処理が実行されます。
 ですが、画像選択のウィンドウの外をタップしてキャンセルすると、返り値がなく、`importImage()`の処理が止まってしまい、`onPressPhoto()`自体がキャンセルされてしまいます。
 
@@ -310,7 +310,7 @@ export async function launchImageLibraryAsync(options) {
 画像一覧の画像をタップしても同じように出てほしいので、モーダルだと少し大げさすぎる気がしました。
 そこで、`react-native-elements`の[Tooltip](https://reactnativeelements.com/docs/1.2.0/tooltip#interaction-methods)を使うことにしました！
 
-![picture 14](/14794031889f7498422156f6b1e122f41b9e604c77410c335c41eaa936b9bc72.png)  
+![picture 14](../../images/14794031889f7498422156f6b1e122f41b9e604c77410c335c41eaa936b9bc72.png)  
 ↑こんな感じで表示されます😊
 
 `Tooltip`に一部Modalコンポーネント関連のバグがあったので、ライブラリを編集しました。
@@ -327,7 +327,7 @@ supportedOrientations={['portrait', 'portrait-upside-down', 'landscape', 'landsc
 ```
 
 ## カメラからのインポートを実装
-![picture 15](/71d9f602e450ff80b578190d37756c8ef4622b9f7c22e6a5f78dff3b216d8acb.png)  
+![picture 15](../../images/71d9f602e450ff80b578190d37756c8ef4622b9f7c22e6a5f78dff3b216d8acb.png)  
 ↑今までは、一番上のアルバムからのインポートのみ対応していました。
 カメラからのインポートも追加していきます。
 

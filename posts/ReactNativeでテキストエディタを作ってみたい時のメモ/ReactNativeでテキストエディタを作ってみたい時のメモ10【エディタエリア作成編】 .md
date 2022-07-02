@@ -29,7 +29,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 
 
 ## 前回までのできたところ
-![picture 1](/69ad7d6963e8ac13dece19457387152cc2fe85216673b26b0031417e28c148da.png)  
+![picture 1](images/69ad7d6963e8ac13dece19457387152cc2fe85216673b26b0031417e28c148da.png)  
 ここまでできました～！
 
 - App.js
@@ -41,13 +41,13 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 ↑を作成ました。
 
 
-![picture 8](/eabf59e981fc0bdbf7783509897000b4bbf6567dae53f076a77223bba099938d.png)  
+![picture 8](images/eabf59e981fc0bdbf7783509897000b4bbf6567dae53f076a77223bba099938d.png)  
 ↑こちらが目標なので、がんばります！
 
 
 
 ## ナビの編集
-![picture 2](/aef14bd2e45aa114cae4a616678a3f21b9e7e8e5c9e2c18dcadb27ed3614ed89.png)  
+![picture 2](images/aef14bd2e45aa114cae4a616678a3f21b9e7e8e5c9e2c18dcadb27ed3614ed89.png)  
 
 `Nav.js`を編集していきます！
 右から左にスワイプで閉じるようにしたいです～！(*´ω｀)
@@ -213,7 +213,7 @@ export default function Nav(props) {
 ```
 
 ## エディタエリア（`InputArea.js`）の作成
-![InputArea ](/d1c749949fb9361040da72671015db78a030cd87cc6dbe9a373aee56dab91626.png)
+![InputArea ](images/d1c749949fb9361040da72671015db78a030cd87cc6dbe9a373aee56dab91626.png)
 ↑こちらの白いエリアを作ります。
 
 `InputArea.js`という名前で作成しました(*´ω｀)
@@ -221,7 +221,7 @@ export default function Nav(props) {
 `TextInput`を使っていきます。
 
 
-![picture 3](/6d497b0ed4f79905fdbfaa2ea2d71c231a2db800359b0ff471ed822edbccb355.png)  
+![picture 3](images/6d497b0ed4f79905fdbfaa2ea2d71c231a2db800359b0ff471ed822edbccb355.png)  
 ↑こんな感じにできました！
 ↓コードはこちら
 
@@ -313,7 +313,7 @@ function EditorArea(props) {
 
 
 ## エディタエリア（`Preview.js`）の作成
-![image 2](/2bae7dd9532f0bfde4f5f65dfa58fe2625d8590aa17182334bd585e49387aec2.png)
+![image 2](images/2bae7dd9532f0bfde4f5f65dfa58fe2625d8590aa17182334bd585e49387aec2.png)
 テキストエリアで入力したマークダウンテキストをHTMLに変換してプレビューするエリアをつくります。
 ↑上の画像で言うと右側のエリアです。
 
@@ -350,7 +350,7 @@ npm ERR!     /home/mymai/.npm/_logs/2021-07-07T04_44_33_558Z-debug.log
 [【5】React Nativeでテキストエディタを作ってみる！【テキストエリア作成編】](https://katatumuri.xyz/react/575/react-native-challenge-to-create-text-editor-5/#%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%80%E3%82%A6%E3%83%B3%E3%81%AB%E5%AF%BE%E5%BF%9C%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B%E3%80%82)この時に起きたエラーと同様のエラーが起きたので、解決しておきます！
 
 ### プレビューエリア作成
-![picture 4](/e0f065cbfe864b4834a54f61b778b682880515ecc4646ecd0dc20d606c65ff55.png)  
+![picture 4](images/e0f065cbfe864b4834a54f61b778b682880515ecc4646ecd0dc20d606c65ff55.png)  
 
 `Preview.js`のcodeはとりあえず以下のようになりました。
 
@@ -611,7 +611,7 @@ export default function EditorArea(props) {
 
 
 ## キーボードをよける設定
-![picture 5](/b93f46794b6cbfea2f9a7d2c207d0de21886f243687e32bb955d7176821af62e.png)  
+![picture 5](images/b93f46794b6cbfea2f9a7d2c207d0de21886f243687e32bb955d7176821af62e.png)  
 ↑こんな感じで仮想キーボードが出てきたらテキストエリアとプレビューを上に縮めます。
 
 iOSの時、仮想キーボードがあっても勝手に縮んでくれないので、`KeyboardAvoidingView`を使用して実装しました。

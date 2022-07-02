@@ -28,7 +28,7 @@ Reactを触ってみて、サイト的なものは作れるようになりまし
 
 
 ## いきなりエラーから始まります…
-![picture 1](/123927f99a07ed87ca0beb39fefd9a2bbb4bd6e4ac201cd1721440248597feaf.png)  
+![picture 1](images/123927f99a07ed87ca0beb39fefd9a2bbb4bd6e4ac201cd1721440248597feaf.png)  
 
 ```
 /usr/src/app/node_modules/react-native-web/node_modules/fbjs/lib/ExecutionEnvironment.js
@@ -41,20 +41,20 @@ Error: ENOENT: no such file or directory, open '/usr/src/app/node_modules/react-
 でも
 `/usr/src/app/node_modules/react-native-web/node_modules/fbjs/lib/ExecutionEnvironment.js`はないですね…。
 
-![picture 2](/ca86bce1f2c68e86f5281730e93a7c858bec2afd910f8c0fd69c1f0888bca77a.png)  
+![picture 2](images/ca86bce1f2c68e86f5281730e93a7c858bec2afd910f8c0fd69c1f0888bca77a.png)  
 
 よく見たら、`expo upgrade`のエラーが残っていました。
 内容は同じっぽいですね。
 
 
-![picture 3](/58bfb70e2700a0384218d1d369e42e45497e76e5ead9e3073fa21e7b2cdc03db.png)  
+![picture 3](images/58bfb70e2700a0384218d1d369e42e45497e76e5ead9e3073fa21e7b2cdc03db.png)  
 ↑一応コンテナ側で確認するも、確かに`/usr/src/app/node_modules/react-native-web/node_modules/fbjs/lib/ExecutionEnvironment.js`はない…。
 
 `react-native-web`を入れなおしてみます。
 `yarn add react-native-web`をしてインストール
 
 
-![picture 4](/6482375d3d2861c8a0c6ef2a6b7b6dd63cb842b94bbabc7f983f16f7f2765cc6.png)  
+![picture 4](images/6482375d3d2861c8a0c6ef2a6b7b6dd63cb842b94bbabc7f983f16f7f2765cc6.png)  
 
 ```
 /usr/src/app/node_modules/react-dom/node_modules/scheduler/index.js
@@ -69,14 +69,14 @@ Module build failed: Error: ENOENT: no such file or directory, open '/usr/src/ap
 ## Google Chromeデベロッパーツールの拡張
 やっと開発できるようになったので、デベロッパーツールでiPhoneとiPadの表示を確認しながらやっていきます。
 
-![picture 5](/e44d709426e4cc366f6bf1c48a3aa46b8960aad491e86e8cea17fc3350746d29.png)  
+![picture 5](images/e44d709426e4cc366f6bf1c48a3aa46b8960aad491e86e8cea17fc3350746d29.png)  
 
 こんなことができたので( ..)φメモメモ
 
 三点マークを押して、`show device frame`で一部のデバイスのフレームが表示されました。
 
 ## 今のディレクトリ構成
-![picture 6](/987bb665cb2d7fc203b662742be3172ee268680760ec4e024503d1a935f76662.png)  
+![picture 6](images/987bb665cb2d7fc203b662742be3172ee268680760ec4e024503d1a935f76662.png)  
 
 `App.js`がおそらくメインの枠になるので、これに合わせてコンポーネントを作っていきます。
 
@@ -130,7 +130,7 @@ export default function UselessTextInput(props) {
 };
 ```
 
-![picture 7](/747a6f470c61e29af107d38340b8995b15e0689caca62b84333a804fca3e5712.png)  
+![picture 7](images/747a6f470c61e29af107d38340b8995b15e0689caca62b84333a804fca3e5712.png)  
 
 とりあえず、文字は打てるようになりました(*´ω｀)
 
@@ -145,7 +145,7 @@ export default function UselessTextInput(props) {
 `yarn install`しろとのことなので、しておきました。
 
 
-![picture 8](/f1f8c3446b09f79425c29e8356c5ec12e95a2140f2c3b33445dcd8f524df7b83.png)
+![picture 8](images/f1f8c3446b09f79425c29e8356c5ec12e95a2140f2c3b33445dcd8f524df7b83.png)
 ```  
 /usr/src/app/node_modules/react-native-editor/src/RichToolbar.js  
 Module not found: Can't resolve '../img/icon_format_bold.png' in '/usr/src/app/node_musr/src/app/node_modules/react-native-editor/src'
@@ -166,7 +166,7 @@ function getDefaultIcon() {
 }
 ```
 
-![picture 9](/36998eb0ca82a7e607ecb573c18670fb0ec962baa715de7fdac052352af0e358.png)  
+![picture 9](images/36998eb0ca82a7e607ecb573c18670fb0ec962baa715de7fdac052352af0e358.png)  
 ```
 /usr/src/app/node_modules/react-native-editor/src/RichEditor.js    
 react_native_1  
@@ -190,7 +190,7 @@ Module not found: Can't resolve 'react-native-webview' in '/usr/src/app/node_mod
 ↑この方法でできそう…？
 ということで、ちょっと自前で色々作ってみます。
 
-![picture 10](/6363fc04307323a7567cc032200e586fdf24cb0460e1831552a02dc3ed081e3e.png)  
+![picture 10](images/6363fc04307323a7567cc032200e586fdf24cb0460e1831552a02dc3ed081e3e.png)  
 
 とりあえず、こんな感じです！
 コードは以下。
@@ -491,7 +491,7 @@ make
 make install
 ```
 
-![picture 11](/25dc0746867d641f0297529d354f60b74499a19529c2f5d3457f70b0319bcb8f.png)  
+![picture 11](images/25dc0746867d641f0297529d354f60b74499a19529c2f5d3457f70b0319bcb8f.png)  
 いけたかな？
 
 ```

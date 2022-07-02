@@ -17,7 +17,7 @@
 今回は、[とらちゃん](https://github.com/dt-torachan)と共同開発した際の開発メモを書いていきます！
 コーディングの試験を登録できるサービスを作成しています。
 
-[GitHub](https://github.com/dt-torachan)/CodingTester)でソースコードを管理しています！
+[GitHub](https://github.com/dt-torachan/CodingTester)でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="723"]

@@ -19,7 +19,7 @@
 
 今回は、デザインをもとにコーディングしていきます。
 
-[GitHub](https://github.com/dt-torachan)/CodingTester)でソースコードを管理しています！
+[GitHub](https://github.com/dt-torachan/CodingTester)でソースコードを管理しています！
 
 **最初から見る↓**
 [kanren id="723"]

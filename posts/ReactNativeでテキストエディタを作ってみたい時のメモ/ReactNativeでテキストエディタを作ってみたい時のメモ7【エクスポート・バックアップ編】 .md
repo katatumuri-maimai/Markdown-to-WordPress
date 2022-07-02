@@ -154,7 +154,7 @@ FileSystem.readDirectoryAsync(fileUri)
 これでディレクトリがあるか確認してみます。
 
 
-![picture 2](/8b3312f52cc77bed3a65ffe73a6ed90e22ae2d06a92444dac86e8d6b05521ee7.png)  
+![picture 2](images/8b3312f52cc77bed3a65ffe73a6ed90e22ae2d06a92444dac86e8d6b05521ee7.png)  
 いるｗｗｗｗｗ
 
 `FileSystem.makeDirectoryAsync()`これでファイルも保存できるっぽいですね。
@@ -202,7 +202,7 @@ export default async function saveMdFile(){
 ```
 
 ↑の実行結果が↓です。
-![picture 3](/f4e75c7ea0e4922baacb83ba516cc25cf794ad778c83d68e0042de05fa6bca8b.png)  
+![picture 3](images/f4e75c7ea0e4922baacb83ba516cc25cf794ad778c83d68e0042de05fa6bca8b.png)  
 
 ファイル作成までできちゃった。
 でもどこにいるのかイマイチ分からないですね…。
@@ -235,9 +235,9 @@ Error: This file type is not supported yet
 
 `FileSystem.getContentUriAsync(fileUri)`と`share(content, options)`をしてみて、ファイルアプリで開いてみます。
 
-![picture 4](/cbf311fe7cddfeb284224ac58e8f38214f6f6f3d447ae78581e7ea3da8fad593.png)  
-![picture 5](/fac5b1b9524bb01b1a2e2b6eea7e596b9e6012670244e64bb6835157587b44c4.png)  
-![picture 6](/5043d3f47a4903196fafb6ca4a46d908fe03784a9229d87547d2f32f8e9903f3.png)  
+![picture 4](images/cbf311fe7cddfeb284224ac58e8f38214f6f6f3d447ae78581e7ea3da8fad593.png)  
+![picture 5](images/fac5b1b9524bb01b1a2e2b6eea7e596b9e6012670244e64bb6835157587b44c4.png)  
+![picture 6](images/5043d3f47a4903196fafb6ca4a46d908fe03784a9229d87547d2f32f8e9903f3.png)  
 
 できたー！！やった(*´ω｀)
 普段はアプリ内に保存して、取り出したいときはエクスポートできる感じになりましたね！やった！
@@ -364,11 +364,11 @@ export async function fileSelect(){
   }
 ```
 
-![picture 7](/92ee9f247948aee48d0b9c6ece319372692d7fd3394e31f28c06b33c3f487e3e.png)  
+![picture 7](images/92ee9f247948aee48d0b9c6ece319372692d7fd3394e31f28c06b33c3f487e3e.png)  
 
 おお！使えました(*´ω｀)
 
-![picture 8](/8930e62121a29b2de3734274d99f4cba60774b185dd851fd0042323249ec30e2.png)  
+![picture 8](images/8930e62121a29b2de3734274d99f4cba60774b185dd851fd0042323249ec30e2.png)  
 
 データはこんな感じで取り出せますね✨
 やった～！

@@ -1,8 +1,8 @@
 >------------<
-- タイトル:[【0】LaravelでPortfolioサイトをCMS付きで作るときのメモ【】 ]
+- タイトル:[【2】LaravelでPortfolioサイトをCMS付きで作るときのメモ【要件定義編】 ]
 - WordPressにアップロードしますか？:y[]はいn[x]まだしない
 - 投稿時:p[]公開d[x]下書き
-- カスタムURL:[laravel-portfolio-site-with-cms-0]
+- カスタムURL:[laravel-portfolio-site-with-cms-2]
 - カテゴリID:[12,15]
 - タグID:[]
 - 見出し画像のID:[]
@@ -31,11 +31,4 @@ Forkしたら誰でも使えるようにする予定なので、お楽しみに�
 <!-- **前回を見る↓**
 [kanren id=""] -->
 
-## 書いていくこと
-- 要件定義
-- デザイン
-- DB設計
-- 環境構築
-- 製作
-- デプロイ
-- みんなの使い方
+## 
